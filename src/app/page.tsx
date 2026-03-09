@@ -34,7 +34,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 w-full max-w-2xl">
+        <div className="flex flex-col gap-8 w-full max-w-2xl">
           <div className="grid grid-cols-3 items-center justify-items-center w-1/2 self-center gap-2">
             <Link
               href={"https://www.instagram.com/realizacaldeiraria"}
@@ -61,7 +61,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex flex-col gap-4 items-center">
+          <div className="flex flex-col gap-2 items-center">
             <div className="flex relative">
               <PhoneIcon className="size-5 text-muted absolute -translate-x-8 -translate-y-1/2 top-1/2" />
               <p className="text-muted-light  col-span-2">(11) 4040-5589</p>
