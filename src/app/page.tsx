@@ -6,9 +6,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="h-svh w-screen overflow-hidden flex items-center justify-center bg-linear-130 from-background via-white to-background p-8">
+    <main className="h-svh w-screen overflow-hidden flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-xl min-h-max gap-8 flex flex-col items-center justify-center">
-        <div className="w-full h-40 flex items-center justify-center">
+        <div className="h-30 md:h-50 flex items-center justify-center">
           <Image
             src={logo}
             alt="Logo Caldeiraria Realiza"
@@ -17,16 +17,24 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <h1>Em breve</h1>
-          <p className="text-muted-light text-center text-small md:text-p">
-            Caldeiraria especializada em estruturas metálicas, soldas
-            industriais e serviços de usinagem de precisão. Qualidade,
-            resistência e compromisso com prazos em cada projeto.
+          <div className="text-center">
+            <h2>Realiza Caldeiraria</h2>
+          </div>
+          <p className="text-muted-light text-center">
+            Desde 2015, a Realiza atua em caldeiraria, soldagem industrial e
+            usinagem de precisão, com certificação NBR ISO 9001:2015. Atendemos
+            empresas que exigem rigor técnico, prazo e rastreabilidade em cada
+            etapa do processo.
           </p>
         </div>
-        <div className="h-px w-full bg-linear-to-r from-primary via-muted to-primary" />
+        <div className="relative w-full">
+          <div className="h-px w-full bg-linear-to-r from-primary via-muted to-primary" />
+          <div className="bg-background absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4">
+            <p className="">Fale conosco</p>
+          </div>
+        </div>
 
-        <div className="flex flex-col gap-8 w-full max-w-2xl">
+        <div className="flex flex-col gap-4 w-full max-w-2xl">
           <div className="grid grid-cols-3 items-center justify-items-center w-1/2 self-center gap-2">
             <Link
               href={"https://www.instagram.com/realizacaldeiraria"}
@@ -53,25 +61,27 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-center gap-2">
-              <PhoneIcon className="size-5 text-muted" />
-              <p className="text-muted-light text-small md:text-p">
-                (11) 4040-5589
-              </p>
+          <div className="flex flex-col gap-4 items-center">
+            <div className="flex relative">
+              <PhoneIcon className="size-5 text-muted absolute -translate-x-8 -translate-y-1/2 top-1/2" />
+              <p className="text-muted-light  col-span-2">(11) 4040-5589</p>
             </div>
 
-            <div className="flex items-center justify-center gap-2">
-              <MapPinIcon className="size-7 text-muted lg:left-30" />
-              <div className="flex flex-col items-center justify-centers">
-                <p className="text-small md:text-p text-muted-light">
+            <div className="flex relative">
+              <MapPinIcon className="size-7 text-muted absolute -translate-x-10 -translate-y-1/2 top-1/2" />
+              <div className="flex flex-col items-center justify-centers col-span-4">
+                <p className=" text-muted-light">
                   Av. das Monções, Nº 50, 08592-150
                 </p>
-                <p className="text-small md:text-p text-muted-light">
+                <p className=" text-muted-light">
                   Itaquaquecetuba São Paulo - Brasil
                 </p>
               </div>
             </div>
+            <small className="text-center text-muted-light opacity-50">
+              © 2025 Realiza Caldeiraria, Usinagem e Serviços. Todos os direitos
+              reservados.
+            </small>
           </div>
         </div>
       </div>
