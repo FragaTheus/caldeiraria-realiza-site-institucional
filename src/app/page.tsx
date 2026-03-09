@@ -69,7 +69,7 @@ export default function Home() {
             </div>
 
             <div className="flex relative">
-              <MapPinIcon className="size-7 text-muted absolute -translate-x-10 -translate-y-1/2 top-1/2" />
+              <MapPinIcon className="size-6 text-muted absolute -translate-x-10 -translate-y-1/2 top-1/2" />
               <div className="flex flex-col items-center justify-centers col-span-4">
                 <p className=" text-muted-light">
                   Av. das Monções, Nº 50, 08592-150
