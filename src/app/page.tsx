@@ -64,12 +64,12 @@ export default function Home() {
 
           <div className="flex flex-col gap-2 items-center">
             <div className="flex relative">
-              <PhoneIcon className="size-5 text-muted absolute -translate-x-8 -translate-y-1/2 top-1/2" />
+              <PhoneIcon className="size-4 md:size-5 text-muted absolute -translate-x-6 -translate-y-1/2 top-1/2" />
               <p className="text-muted-light  col-span-2">(11) 4040-5589</p>
             </div>
 
             <div className="flex relative">
-              <MapPinIcon className="size-6 text-muted absolute -translate-x-10 -translate-y-1/2 top-1/2" />
+              <MapPinIcon className="size-4 md:size-5 text-muted absolute -translate-x-6 -translate-y-1/2 top-1/2" />
               <div className="flex flex-col items-center justify-centers col-span-4">
                 <p className=" text-muted-light">
                   Av. das Monções, Nº 50, 08592-150

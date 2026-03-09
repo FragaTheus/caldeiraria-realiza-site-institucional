@@ -11,18 +11,32 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title:
-    "Realiza Caldeiraria - Caldeiraria em Itaquaquecetuba | Serviços de Caldeiraria SP",
+    "Realiza Caldeiraria - Caldeiraria, Usinagem e Metais em Itaquaquecetuba SP | Estruturas Metálicas",
   description:
-    "Realiza Caldeiraria é uma empresa especializada em serviços de caldeiraria industrial e comercial em Itaquaquecetuba, SP. Soldas, estruturas metálicas, tubulações e mais. Entre em contato: (11) 4040-5589",
+    "Realiza Caldeiraria é especializada em caldeiraria industrial, usinagem de precisão, estruturas metálicas, solda industrial e serviços em metais. Atendemos Itaquaquecetuba, Guarulhos, Mogi das Cruzes, Suzano, Poá, Ferraz de Vasconcelos, Arujá e toda região metropolitana de São Paulo. Entre em contato: (11) 4040-5589",
   keywords: [
     "caldeiraria",
     "caldeiraria Itaquaquecetuba",
     "caldeiraria SP",
+    "caldeiraria São Paulo",
+    "caldeiraria Guarulhos",
+    "caldeiraria Mogi das Cruzes",
+    "caldeiraria Suzano",
+    "caldeiraria zona leste",
     "serviços de caldeiraria",
     "solda industrial",
     "estruturas metálicas",
+    "estruturas metálicas Itaquaquecetuba",
     "tubulações industriais",
     "caldeiraria industrial",
+    "usinagem",
+    "usinagem de precisão",
+    "usinagem Itaquaquecetuba",
+    "usinagem SP",
+    "serviços em metais",
+    "fabricação de estruturas metálicas",
+    "metalurgia",
+    "serralheria industrial",
     "Realiza Caldeiraria",
   ],
   authors: [{ name: "Realiza Caldeiraria" }],
@@ -38,19 +52,29 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Realiza Caldeiraria - Caldeiraria em Itaquaquecetuba",
+    title:
+      "Realiza Caldeiraria - Caldeiraria, Usinagem e Estruturas Metálicas em Itaquaquecetuba SP",
     description:
-      "Empresa especializada em serviços de caldeiraria industrial e comercial em Itaquaquecetuba, SP. Qualidade e compromisso.",
+      "Empresa especializada em caldeiraria industrial, usinagem de precisão e estruturas metálicas em Itaquaquecetuba e região metropolitana de São Paulo. Qualidade, resistência e compromisso com prazos.",
     url: "https://realizacaldeiraria.com.br",
     siteName: "Realiza Caldeiraria",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Realiza Caldeiraria - Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Realiza Caldeiraria - Caldeiraria em Itaquaquecetuba",
+    title: "Realiza Caldeiraria - Caldeiraria e Usinagem em Itaquaquecetuba SP",
     description:
-      "Empresa especializada em serviços de caldeiraria industrial e comercial em Itaquaquecetuba, SP.",
+      "Empresa especializada em caldeiraria industrial, usinagem de precisão e estruturas metálicas em Itaquaquecetuba e região de São Paulo.",
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -62,9 +86,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code",
   },
 };
 
