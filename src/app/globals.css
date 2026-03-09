@@ -5,8 +5,6 @@
   --surface: #FFFFFF;
   --bg: #EDEEF9;
   --muted-light: #5B6080;
-  --bg-dark: #0B0C1E;
-  --surface-dark: #16183A;
   --muted: #1C1E2E;
   
   --background: var(--bg);
@@ -58,13 +56,6 @@
 
   --text-small: var(--fs-small);
   --text-small--line-height: 1.5;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--bg-dark);
-    --foreground: var(--surface);
-  }
 }
 
 @layer base {
