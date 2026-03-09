@@ -13,6 +13,7 @@ export default function Home() {
             src={logo}
             alt="Logo Caldeiraria Realiza"
             className="w-full h-full object-contain"
+            priority
           />
         </div>
 
