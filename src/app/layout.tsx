@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import AppHeader from "@/components/global/app-header";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -102,7 +103,12 @@ export default function RootLayout({
         <meta name="geo.position" content="-23.486389;-46.348611" />
         <meta name="ICBM" content="-23.486389, -46.348611" />
       </head>
-      <body className={`${poppins.variable} antialiased`}>{children}</body>
+      <body
+        className={`${poppins.variable} antialiased max-w-screen overflow-x-hidden bg-background`}
+      >
+        <AppHeader />
+        {children}
+      </body>
     </html>
   );
 }

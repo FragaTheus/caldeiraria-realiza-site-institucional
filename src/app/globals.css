@@ -3,11 +3,13 @@
 :root {
   --primary: #0D0DE0;
   --surface: #FFFFFF;
-  --bg: #EDEEF9;
+  --bg: #f1f5f9;
+  --surface-blue: #EDEEF9;
   --muted-light: #5B6080;
   --muted: #1C1E2E;
   
   --background: var(--bg);
+  --surface-blue: var(--surface-blue);
   --foreground: var(--muted);
 
   --fs-h1: clamp(2rem, 1.4rem + 2.2vw, 2.5rem);
@@ -21,6 +23,7 @@
 }
 
 @theme inline {
+  --color-background: var(--background);
   --color-primary: var(--primary);
   --color-surface: var(--surface);
   --color-bg: var(--bg);
@@ -28,7 +31,7 @@
   --color-bg-dark: var(--bg-dark);
   --color-surface-dark: var(--surface-dark);
   --color-muted: var(--muted);
-  --color-background: var(--background);
+  --color-surface-blue: var(--surface-blue);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
