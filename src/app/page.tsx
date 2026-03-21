@@ -1,5 +1,9 @@
+import HomeHeroWrapper from "@/features/home/wrapper/home-hero-wrapper";
+
 export default function Home() {
   return (
-    <main className="h-svh w-screen overflow-hidden flex items-center justify-center p-4"></main>
+    <main>
+      <HomeHeroWrapper />
+    </main>
   );
 }

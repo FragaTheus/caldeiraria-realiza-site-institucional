@@ -1,0 +1,18 @@
+{
+  "desktop": {
+    "headline": "Especialistas em metal. Referência em resultado.",
+    "title": "Seu projeto industrial nas mãos de quem entende do que faz",
+    "description": "Caldeiraria, usinagem e soldagem com equipe qualificada, equipamentos próprios e certificação ISO. A Realiza existe para transformar demanda técnica em entrega confiável.",
+    "cta": "Solicitar Orçamento",
+    "img_description": "Vista interna da fábrica com equipamentos industriais em operação, destacando a estrutura técnica e o ambiente de trabalho da Realiza.",
+    "cardDescription": "Serviços industriais com qualidade garantida."
+  },
+  "mobile": {
+    "headline": "Referência industrial desde 2015.",
+    "title": "Quem exige qualidade escolhe a Realiza.",
+    "description": "Certificação ISO 9001, equipe qualificada e estrutura própria.",
+    "cta": "Solicitar Orçamento",
+    "img_description": "Close de soldagem em andamento com faíscas visíveis, transmitindo precisão técnica e execução especializada.",
+    "cardDescription": "Excelência em serviços industriais."
+  }
+}

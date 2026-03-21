@@ -1,0 +1,18 @@
+{
+  "desktop": {
+    "headline": "Cada projeto entregue é uma prova técnica.",
+    "title": "Portfólio de projetos industriais realizados",
+    "description": "Fabricação, soldagem e usinagem aplicadas em projetos reais para indústrias exigentes. Aqui você encontra o histórico concreto do que a Realiza é capaz de entregar.",
+    "cta": "Ver Projetos",
+    "img_description": "Painel de projetos finalizados exibindo estruturas metálicas fabricadas pela Realiza, destacando a variedade e a qualidade técnica das entregas.",
+    "cardDescription": "Veja exemplos reais de projetos entregues."
+  },
+  "mobile": {
+    "headline": "Histórico real. Qualidade comprovada.",
+    "title": "Projetos entregues com padrão técnico.",
+    "description": "Fabricação, soldagem e usinagem aplicadas em projetos industriais reais.",
+    "cta": "Ver Projetos",
+    "img_description": "Estrutura metálica finalizada com acabamento de qualidade, representando uma entrega real da Realiza.",
+    "cardDescription": "Projetos finalizados com excelência."
+  }
+}

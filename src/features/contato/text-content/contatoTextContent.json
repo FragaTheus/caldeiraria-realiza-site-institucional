@@ -1,0 +1,18 @@
+{
+  "desktop": {
+    "headline": "Vamos conversar sobre o seu projeto.",
+    "title": "Entre em contato com a equipe da Realiza",
+    "description": "Se você chegou até aqui, já sabe o que a Realiza entrega. O próximo passo é simples — fale com a nossa equipe e receba um orçamento direto, sem burocracia.",
+    "cta": "Solicitar Orçamento",
+    "img_description": "Ambiente interno da empresa com equipe técnica ao fundo, transmitindo proximidade e disponibilidade para atendimento.",
+    "cardDescription": "Equipe pronta para atendimento imediato."
+  },
+  "mobile": {
+    "headline": "Fale com quem entende do assunto.",
+    "title": "Entre em contato com a Realiza.",
+    "description": "Orçamento direto, sem burocracia. Nossa equipe está pronta para atender.",
+    "cta": "Solicitar Orçamento",
+    "img_description": "Técnico da Realiza em campo, representando disponibilidade e atendimento especializado.",
+    "cardDescription": "Contato rápido e sem burocracia."
+  }
+}

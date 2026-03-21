@@ -14,6 +14,9 @@ importers:
       heroicons:
         specifier: ^2.2.0
         version: 2.2.0
+      iframe:
+        specifier: ^1.0.0
+        version: 1.0.0
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.29.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -1213,6 +1216,9 @@ packages:
 
   heroicons@2.2.0:
     resolution: {integrity: sha512-yOwvztmNiBWqR946t+JdgZmyzEmnRMC2nxvHFC90bF1SUttwB6yJKYeme1JeEcBfobdOs827nCyiWBS2z/brog==}
+
+  iframe@1.0.0:
+    resolution: {integrity: sha512-Gn9nkImXrU8xQLvljaVnHFimYwBehKUcHoPG2YaWlXboA1rMsJ2uBzlN5kihaIbdami6PetBINnKR2rxS6GYig==}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -3235,6 +3241,8 @@ snapshots:
       hermes-estree: 0.25.1
 
   heroicons@2.2.0: {}
+
+  iframe@1.0.0: {}
 
   ignore@5.3.2: {}
 
