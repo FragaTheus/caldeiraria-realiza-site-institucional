@@ -1,16 +1,16 @@
 {
-  "about": {
-    "label": "Sobre a Realiza",
-    "title": "Mais de 10 anos fornecendo soluções industriais com estrutura técnica e qualidade certificada",
-    "description": "A Realiza Caldeiraria, Usinagem e Serviços atua desde 2015 no fornecimento de soluções industriais para empresas que exigem mais do que execução — exigem rastreabilidade, técnica e confiança. Contamos com estrutura própria, equipe especializada e sistema de gestão da qualidade baseado na norma NBR ISO 9001:2015. Nossos inspetores são qualificados Nível II para Ensaio Visual de Solda e Ensaio por Líquido Penetrante. Nossos soldadores são certificados para os processos MIG e TIG conforme a Norma AWS D1.1. Ao final de cada projeto, emitimos um Data Book completo com todos os relatórios e certificados pertinentes ao fornecimento.",
-    "purpose": {
-      "label": "Nosso Propósito",
-      "text": "Ser referência no fornecimento de caldeiraria e peças usinadas, entregando qualidade comprovada em cada projeto."
+  "about_section": {
+    "grid_1": {
+      "label": "Sobre a Realiza",
+      "text": "Atuamos no fornecimento de soluções industriais em caldeiraria, usinagem e soldagem para empresas que exigem técnica, rastreabilidade e qualidade em cada entrega."
     },
-    "quality_policy": {
-      "label": "Política da Qualidade",
-      "text": "Fornecer produtos e serviços que satisfaçam nossos clientes, atuando de forma sustentável, comprometida com o desenvolvimento dos colaboradores e agregando valor à sociedade."
+    "grid_2": {
+      "label": "Nosso\n Propósito",
+      "text": "Ser referência no fornecimento de caldeiraria e usinagem, entregando soluções técnicas que geram valor real para nossos clientes e para a indústria."
     },
-    "img_description": "Técnico da Realiza analisando projeto em ambiente de trabalho industrial, representando o processo técnico e consultivo da empresa."
+    "grid_3": {
+      "label": "Política de Qualidade",
+      "text": "Sistema de gestão certificado NBR ISO 9001:2015, com processos rastreáveis, instrumentos calibrados e emissão de Data Book ao final de cada fornecimento."
+    }
   }
 }
