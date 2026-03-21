@@ -28,7 +28,7 @@ interface AboutContentProps {
 
 const AboutContent = ({ gridContents }: AboutContentProps) => {
   return (
-    <div className="w-full border border-surface grid grid-cols-1 md:grid-cols-3">
+    <div className="w-full border border-muted grid grid-cols-1 md:grid-cols-3">
       {gridContents.map((content, index) => (
         <AboutGridContent key={index} {...content} />
       ))}

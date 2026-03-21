@@ -1,0 +1,34 @@
+{
+  "services_section": {
+    "title_card": {
+      "title": "Áreas de\n Atuação"
+    },
+    "cards": {
+      "caldeiraria": {
+        "headerTitle": "Caldeiraria Leve e Média",
+        "subtitle": "Fabricação em aço carbono e inox",
+        "description": "Movimentação até 6t, fabricação de 20t/mês e calandragem de chapas até 10mm."
+      },
+      "usinagem": {
+        "headerTitle": "Usinagem Leve e Média",
+        "subtitle": "Precisão em tornos CNC e convencionais",
+        "description": "Usinagem de diversos tipos de peças com equipamentos próprios e rastreabilidade."
+      },
+      "soldas": {
+        "headerTitle": "Soldas Especializadas",
+        "subtitle": "TIG, MIG e Eletrodos Revestidos",
+        "description": "Soldadores certificados AWS D1.1 em aço carbono, inox, alumínio e ferro fundido."
+      },
+      "serralheria": {
+        "headerTitle": "Serralheria Industrial",
+        "subtitle": "Fabricação e instalação conforme NR12",
+        "description": "Estruturas metálicas, guarda-corpos e escadas com fornecimento de mão de obra."
+      },
+      "ensaio": {
+        "headerTitle": "Ensaio por Líquido Penetrante",
+        "subtitle": "Inspetores Nível II certificados",
+        "description": "Ensaio visual e líquido penetrante com emissão de relatório no Data Book final."
+      }
+    }
+  }
+}

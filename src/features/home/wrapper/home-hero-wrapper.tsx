@@ -1,10 +1,10 @@
 "use client";
 
 import AppSectionWrapper from "@/shared/wrapper/section-wrapper";
-import { useEffect, useState } from "react";
 import heroImg from "@/shared/assets/hero-img.jpeg";
 import heroTextContent from "@/features/home/text-content/heroTextContent.json";
 import AppHeroCard from "../components/home-hero-card";
+import useIsMobile from "../hooks/useIsMobile";
 
 const MobileHeroWrapper = () => {
   return (
@@ -35,14 +35,7 @@ const DesktopHeroWrapper = () => {
 };
 
 const HomeHeroWrapper = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  const isMobile = useIsMobile();
 
   return isMobile ? <MobileHeroWrapper /> : <DesktopHeroWrapper />;
 };
