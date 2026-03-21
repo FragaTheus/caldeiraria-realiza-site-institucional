@@ -35,7 +35,7 @@ const CtaButton = ({
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
-      className={`bg-muted hover:bg-muted/90 active:scale-99 text-white text-p font-medium p-2 rounded-md cursor-pointer flex items-center ${className} transition-all`}
+      className={`bg-muted hover:bg-green-500 active:bg-green-500 text-white text-p font-medium p-2 rounded-md cursor-pointer flex items-center ${className} transition-all`}
       {...rest}
     >
       {children}
