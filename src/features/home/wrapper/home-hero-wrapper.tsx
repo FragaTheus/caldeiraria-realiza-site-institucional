@@ -1,10 +1,10 @@
 "use client";
 
-import AppHeroCard from "@/shared/components/ui/app-card";
 import AppSectionWrapper from "@/shared/wrapper/section-wrapper";
 import { useEffect, useState } from "react";
 import heroImg from "@/shared/assets/hero-img.jpeg";
 import heroTextContent from "@/features/home/text-content/heroTextContent.json";
+import AppHeroCard from "../components/home-hero-card";
 
 const MobileHeroWrapper = () => {
   return (

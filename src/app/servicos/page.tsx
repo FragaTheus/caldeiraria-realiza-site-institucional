@@ -1,9 +1,8 @@
-import ServicosHeroWrapper from "@/features/servicos/wrapper/servicos-hero-wrapper";
-
 export default function Servicos() {
   return (
-    <main>
-      <ServicosHeroWrapper />
+    <main className="flex items-center justify-center">
+      <h1>Em desenvolvimento</h1>
+      <p>Continue acessando para mais informacoes</p>
     </main>
   );
 }

@@ -1,9 +1,8 @@
-import ContatoHeroWrapper from "@/features/contato/wrapper/contato-hero-wrapper";
-
 export default function Contato() {
   return (
-    <main>
-      <ContatoHeroWrapper />
+    <main className="flex items-center justify-center">
+      <h1>Em desenvolvimento</h1>
+      <p>Continue acessando para mais informacoes</p>
     </main>
   );
 }

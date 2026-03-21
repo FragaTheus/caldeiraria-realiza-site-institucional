@@ -1,9 +1,8 @@
-import ProjetosHeroWrapper from "@/features/projetos/wrapper/projetos-hero-wrapper";
-
 export default function Projetos() {
   return (
-    <main>
-      <ProjetosHeroWrapper />
+    <main className="flex items-center justify-center">
+      <h1>Em desenvolvimento</h1>
+      <p>Continue acessando para mais informacoes</p>
     </main>
   );
 }
