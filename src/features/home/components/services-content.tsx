@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { IconBase } from "react-icons";
 import { BiChevronRight } from "react-icons/bi";
+import { FaHardHat, FaTools } from "react-icons/fa";
 
 export interface ServicesCardProps {
   isTitleCard?: boolean;
@@ -8,6 +10,7 @@ export interface ServicesCardProps {
   HeaderIcon?: React.ElementType;
   subtitle?: string;
   description?: string;
+  isLastCard?: boolean;
 }
 
 const ServicesCard = ({
@@ -17,16 +20,23 @@ const ServicesCard = ({
   HeaderIcon,
   subtitle,
   description,
+  isLastCard,
 }: ServicesCardProps) => {
   return (
     <Link href={"/servicos"}>
       <article
-        className={`min-h-60 bg-surface p-4 md:p-6 flex flex-col hover:scale-101 active:scale-99 transition-transform ${isTitleCard ? "border border-primary" : ""}`}
+        className={`relative min-h-62 bg-surface p-4 md:p-6 flex flex-col hover:scale-101 active:scale-99 transition-transform ${isTitleCard ? "border border-primary bg-transparent" : ""}`}
       >
+        {!isLastCard && (
+          <BiChevronRight
+            className={`absolute size-10 animate-pulse md:animate-none inline md:hidden bottom-1 right-1 ${isTitleCard ? "text-primary" : "text-muted"}`}
+          />
+        )}
+
         {isTitleCard ? (
-          <div className="flex-1 flex items-center justify-between text-primary">
-            <h1 className=" font-bold whitespace-pre-line my-auto">{title}</h1>
-            <BiChevronRight className="size-20 animate-pulse inline md:hidden" />
+          <div className="flex-1 flex items-start relative">
+            <FaTools className="text-primary absolute top-4 right-4 size-10" />
+            <h1 className="font-bold whitespace-pre-line">{title}</h1>
           </div>
         ) : (
           <>

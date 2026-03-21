@@ -72,5 +72,6 @@ export const SERVICES_CARDS: ServicesCardProps[] = [
     HeaderIcon: FaFlask,
     subtitle: cards.ensaio.subtitle,
     description: cards.ensaio.description,
+    isLastCard: true,
   },
 ];
