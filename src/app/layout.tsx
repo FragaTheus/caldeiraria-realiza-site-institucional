@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import AppHeader from "@/shared/components/global/app-header";
+import headerContent from "@/shared/text-content/headerTextContent.json";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -106,7 +107,12 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased max-w-screen overflow-x-hidden bg-background`}
       >
-        <AppHeader />
+        <AppHeader
+          phone={headerContent.header.contactInfo.phone}
+          email={headerContent.header.contactInfo.email}
+          ctaLabel={headerContent.header.headerCta.label}
+          links={headerContent.header.navLinks}
+        />
         {children}
       </body>
     </html>

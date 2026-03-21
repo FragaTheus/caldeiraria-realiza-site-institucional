@@ -4,13 +4,16 @@ import logo from "@/shared/assets/logo.png";
 import { CtaButton } from "../ui/app-button";
 import HeaderNavigation from "./navigation";
 
-const AppHeaderContactInfo = () => {
-  const email = "realiza@caldeiraria.com.br";
-  const phone = "(11) 99999-9999";
-
+const AppHeaderContactInfo = ({
+  email,
+  phone,
+}: {
+  email: string;
+  phone: string;
+}) => {
   return (
     <div className="w-full bg-muted text-white">
-      <div className="w-full max-w-7xl mx-auto flex justify-end gap-4 py-2 px-6">
+      <div className="w-full max-w-7xl mx-auto flex justify-end gap-4 py-2 px-4">
         <div className="flex items-center gap-1">
           <MdEmail />
           <small className="md:text-p">{email}</small>
@@ -29,7 +32,7 @@ const AppHeaderToolbar = ({ children }: { children: React.ReactNode }) => {
     <div className="w-full">
       <div
         id="header-toolbar"
-        className="w-full max-w-7xl h-full mx-auto py-3  grid grid-cols-2 lg:grid-cols-12 items-center px-6"
+        className="w-full max-w-7xl h-full mx-auto py-3  grid grid-cols-2 md:grid-cols-12 items-center px-6"
       >
         {children}
       </div>
@@ -42,29 +45,39 @@ const AppLogo = () => {
     <Image
       alt="Realiza Caldeiraria Logo"
       src={logo}
-      className="max-h-13 lg:max-h-22 w-auto  lg:col-span-2 justify-self-start -ml-5.5 md:-ml-8"
+      className="max-h-13 md:max-h-22 w-auto  md:col-span-2 justify-self-start -ml-5.5 md:-ml-8"
       priority
     />
   );
 };
 
-const HeaderCta = () => {
+const HeaderCta = ({ ctaLabel }: { ctaLabel: string }) => {
   return (
-    <CtaButton className="justify-self-end lg:order-last lg:col-span-2 flex items-center bg-green-500! gap-2">
-      <MdWhatsapp className="size-6" />
-      <small className="md:text-p hidden md:inline">Fale conosco</small>
+    <CtaButton className="justify-self-end md:order-last md:col-span-2 flex items-center gap-2">
+      <MdWhatsapp className="size-5 md:size-6" />
+      <small className="md:text-p inline">{ctaLabel}</small>
     </CtaButton>
   );
 };
 
-const AppHeader = () => {
+const AppHeader = ({
+  email,
+  phone,
+  ctaLabel,
+  links,
+}: {
+  email: string;
+  phone: string;
+  ctaLabel: string;
+  links: { label: string; href: string }[];
+}) => {
   return (
     <header id="header" className="w-full min-h-5 flex flex-col">
-      <AppHeaderContactInfo />
+      <AppHeaderContactInfo email={email} phone={phone} />
       <AppHeaderToolbar>
         <AppLogo />
-        <HeaderNavigation />
-        <HeaderCta />
+        <HeaderNavigation links={links} />
+        <HeaderCta ctaLabel={ctaLabel} />
       </AppHeaderToolbar>
     </header>
   );

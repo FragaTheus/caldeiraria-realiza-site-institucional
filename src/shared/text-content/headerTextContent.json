@@ -1,0 +1,30 @@
+{
+    "header": {
+        "contactInfo":{
+            "email": "realiza@caldeiraria.com.br",
+            "phone": "(11) 4040-5589"
+        },
+        "navLinks": [
+            {
+                "label": "Home",
+                "href": "/"
+            },
+            {
+                "label": "Serviços",
+                "href": "/servicos"
+            },
+            {
+                "label": "Projetos",
+                "href": "/projetos"
+            },
+            {
+                "label": "Contato",
+                "href": "/contato"
+            }
+        ],
+        "headerCta": {
+            "label": "Fale conosco",
+            "href": "/contato"
+        }
+    }
+}

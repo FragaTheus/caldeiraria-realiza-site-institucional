@@ -3,14 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const links = [
-  { label: "Home", href: "/" },
-  { label: "Sobre", href: "/sobre" },
-  { label: "Contato", href: "/contato" },
-  { label: "Serviços", href: "/servicos" },
-];
-
-const HeaderNavigation = () => {
+const HeaderNavigation = ({
+  links,
+}: {
+  links: { label: string; href: string }[];
+}) => {
   const pathname = usePathname();
 
   return (
