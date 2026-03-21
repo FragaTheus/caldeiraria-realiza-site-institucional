@@ -1,8 +1,5 @@
+import Dev from "@/shared/components/dev";
+
 export default function Contato() {
-  return (
-    <main className="flex items-center justify-center flex-col gap-4">
-      <h1>Em desenvolvimento</h1>
-      <p>Continue acessando para mais informações</p>
-    </main>
-  );
+  return <Dev />;
 }
