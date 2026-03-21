@@ -13,7 +13,7 @@ const MobileHeroWrapper = () => {
         headline={heroTextContent.hero.mobile.headline}
         title={heroTextContent.hero.mobile.title}
         description={heroTextContent.hero.mobile.description}
-        cardDescription={heroTextContent.hero.mobile.cta}
+        cardDescription={heroTextContent.hero.mobile.cardDescription}
         imageSrc={heroImg}
       />
     </AppSectionWrapper>
@@ -27,7 +27,7 @@ const DesktopHeroWrapper = () => {
         headline={heroTextContent.hero.desktop.headline}
         title={heroTextContent.hero.desktop.title}
         description={heroTextContent.hero.desktop.description}
-        cardDescription={heroTextContent.hero.desktop.cta}
+        cardDescription={heroTextContent.hero.desktop.cardDescription}
         imageSrc={heroImg}
       />
     </AppSectionWrapper>
