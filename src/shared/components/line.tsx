@@ -12,7 +12,7 @@ const Line = ({ width }: { width: number | string }) => {
       ref={ref}
       initial={{ width: 0 }}
       animate={{ width: inView ? width : 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
       className="h-px bg-primary mt-2"
     />
   );

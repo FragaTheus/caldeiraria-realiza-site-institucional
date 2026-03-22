@@ -1,8 +1,17 @@
 "use client";
 
+import {
+  AnimateCta,
+  AnimateDescription,
+  AnimateHeadline,
+  AnimateImage,
+  AnimateTitle,
+} from "@/features/home/animate/home-hero-animate";
 import Line from "@/shared/components/line";
 import HomeServiceSwiper from "@/shared/components/swiper";
+import { CtaButton } from "@/shared/components/ui/app-button";
 import Image, { StaticImageData } from "next/image";
+import { MdPhone } from "react-icons/md";
 import { SwiperSlide } from "swiper/react";
 
 interface AppHeroCardProps {
@@ -23,31 +32,45 @@ const AppHeroCard = ({
   return (
     <article className="w-full rounded-md grid grid-cols-1 md:grid-cols-2 p-4 md:p-8 bg-surface gap-4">
       <div className="flex flex-col lg:mr-20">
-        <small className="text-primary">{headline}</small>
+        <AnimateHeadline>
+          <small className="text-primary">{headline}</small>
+        </AnimateHeadline>
         <div className="flex flex-col flex-1 items-center justify-evenly">
-          <h1 className="mt-6 md:mt-12">{title}</h1>
+          <AnimateTitle>
+            <h1 className="mt-6 md:mt-12">{title}</h1>
+          </AnimateTitle>
           <Line width={"100%"} />
-          <p className="pr-20 mt-4">{description}</p>
+          <AnimateDescription>
+            <p className="pr-20 mt-4">{description}</p>
+          </AnimateDescription>
         </div>
+        <AnimateCta>
+          <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-4 lg:mt-6">
+            <MdPhone className="size-6" />
+            <span>Entrar em contato</span>
+          </CtaButton>
+        </AnimateCta>
       </div>
 
-      <div className="flex flex-col">
-        <HomeServiceSwiper>
-          {imageSrc.map((src, index) => (
-            <SwiperSlide key={index}>
-              <Image
-                src={src}
-                alt={title}
-                className="max-h-40 md:max-h-80 rounded-sm object-cover object-[50%_40%]"
-                priority
-              />
-            </SwiperSlide>
-          ))}
-        </HomeServiceSwiper>
-        <small className="text-muted-light mt-2 m-auto text-center hidden lg:inline">
-          {cardDescription}
-        </small>
-      </div>
+      <AnimateImage>
+        <div className="flex flex-col order-first lg:order-last">
+          <HomeServiceSwiper>
+            {imageSrc.map((src, index) => (
+              <SwiperSlide key={index}>
+                <Image
+                  src={src}
+                  alt={title}
+                  className="max-h-40 md:max-h-80 rounded-sm object-cover object-[50%_40%]"
+                  priority
+                />
+              </SwiperSlide>
+            ))}
+          </HomeServiceSwiper>
+          <small className="text-muted-light mt-2 m-auto text-center hidden lg:inline">
+            {cardDescription}
+          </small>
+        </div>
+      </AnimateImage>
     </article>
   );
 };
