@@ -1,0 +1,68 @@
+{
+  "process_section": {
+    "desktop": {
+      "step_1": {
+        "step": "01",
+        "title": "Orçamento",
+        "description": "O cliente entra em contato e a equipe técnica da Realiza analisa a demanda, esclarece dúvidas e elabora um orçamento detalhado com especificações de materiais e processos."
+      },
+      "step_2": {
+        "step": "02",
+        "title": "Planejamento",
+        "description": "Com o orçamento aprovado, definimos o plano de fabricação — materiais, processos, equipamentos, responsáveis e cronograma — antes de qualquer execução."
+      },
+      "step_3": {
+        "step": "03",
+        "title": "Fabricação",
+        "description": "Execução realizada com equipe qualificada, equipamentos próprios e controle de qualidade em cada etapa do processo, seguindo os padrões NBR ISO 9001:2015."
+      },
+      "step_4": {
+        "step": "04",
+        "title": "Inspeção",
+        "description": "Inspetores próprios Nível II realizam ensaio visual de solda e ensaio por líquido penetrante, garantindo rastreabilidade e conformidade técnica antes da entrega."
+      },
+      "step_5": {
+        "step": "05",
+        "title": "Entrega com Data Book",
+        "description": "O produto ou serviço é entregue acompanhado de um Data Book completo, contendo todos os relatórios, certificados e registros pertinentes ao fornecimento."
+      },
+      "cta_card": {
+        "title": "Pronto para começar?",
+        "description": "Fale com a equipe da Realiza e receba um orçamento técnico sem burocracia.",
+        "cta": "Fale com a Realiza"
+      }
+    },
+    "mobile": {
+      "step_1": {
+        "step": "01",
+        "title": "Orçamento",
+        "description": "Análise da demanda e proposta técnica."
+      },
+      "step_2": {
+        "step": "02",
+        "title": "Planejamento",
+        "description": "Materiais, processos e cronograma definidos."
+      },
+      "step_3": {
+        "step": "03",
+        "title": "Fabricação",
+        "description": "Execução com equipe e equipamentos próprios."
+      },
+      "step_4": {
+        "step": "04",
+        "title": "Inspeção",
+        "description": "Ensaio visual e líquido penetrante certificados."
+      },
+      "step_5": {
+        "step": "05",
+        "title": "Entrega com Data Book",
+        "description": "Relatórios e certificados entregues com o produto."
+      },
+      "cta_card": {
+        "title": "Pronto para começar?",
+        "description": "Orçamento técnico sem burocracia.",
+        "cta": "Fale com a Realiza"
+      }
+    }
+  }
+}

@@ -11,8 +11,9 @@ import {
 import { SectionLayout } from "@/shared/layouts/section-layout";
 import HomeServiceMobileWrapper from "./home-service-mobile-wrapper.tsx";
 import HomeServiceDesktopWrapper from "./home-service-desktop-wrapper";
-import useIsMobile from "../hooks/useIsMobile";
 import servicesTextContents from "@/features/home/text-content/servicesTextContent.json";
+import { ServicesCardProps } from "../../components/services-cards.js";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const HomeServiceWrapper = () => {
   const isMobile = useIsMobile();
@@ -28,8 +29,6 @@ const HomeServiceWrapper = () => {
 };
 
 export default HomeServiceWrapper;
-
-import { ServicesCardProps } from "../components/services-content.js";
 
 const { title_card, cards } = servicesTextContents.services_section;
 

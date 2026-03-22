@@ -1,11 +1,11 @@
 "use client";
 
 import { SwiperSlide } from "swiper/react";
-import HomeServiceSwiper from "../components/swiper";
 import {
   ServicesCard,
   ServicesCardProps,
-} from "../components/services-content";
+} from "../../components/services-cards";
+import HomeServiceSwiper from "../../components/swiper";
 
 interface HomeServiceMobileWrapperProps {
   cards: ServicesCardProps[];

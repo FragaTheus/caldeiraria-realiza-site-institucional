@@ -2,7 +2,7 @@ import { ContainerLayout } from "@/shared/layouts/section-layout";
 import {
   ServicesCard,
   ServicesCardProps,
-} from "../components/services-content";
+} from "../../components/services-cards";
 
 interface HomeServiceDesktopWrapperProps {
   cards: ServicesCardProps[];
