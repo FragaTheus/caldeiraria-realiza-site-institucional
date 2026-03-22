@@ -6,6 +6,7 @@ import {
   ServicesCardProps,
 } from "../../components/services-cards";
 import HomeServiceSwiper from "@/shared/components/swiper";
+import { ContainerLayout } from "@/shared/layouts/section-layout";
 
 interface HomeServiceMobileWrapperProps {
   cards: ServicesCardProps[];

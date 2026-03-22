@@ -1,42 +1,33 @@
-import { CtaButton } from "@/shared/components/ui/app-button";
+import { ChevronRightIcon } from "@heroicons/react/16/solid";
 
-export interface MainCardProps {
+export interface GridContentProps {
+  step: string;
   title: string;
   description: string;
 }
 
-const MainCard = ({ title, description }: MainCardProps) => {
+const GridContent = ({ step, title, description }: GridContentProps) => {
   return (
-    <article className="bg-muted rounded-sm p-4 lg:p-8 w-full text-white min-h-44 lg:h-full flex flex-col gap-2 justify-between">
-      <div className="flex flex-col items-start">
-        <p className="font-bold mt-2">{title}</p>
-
-        <small className="mt-10 lg:mt-20">{description}</small>
-      </div>
-      <div className="w-full h-px bg-primary" />
-      <div className="flex flex-col items-start justify-between gap-4 lg:gap-11">
-        <p>CTATitle</p>
-        <small>CTADEscription</small>
-        <CtaButton className="bg-primary hover:bg-primary/90">
-          Fale com a Realiza
-        </CtaButton>
-      </div>
-    </article>
+    <div className="flex flex-col relative">
+      <h3 className="font-semibold text-primary">{step}</h3>
+      <p className="font-semibold mt-4">{title}</p>
+      <p className="text-muted-light mt-10">{description}</p>
+    </div>
   );
 };
 
-export interface MiniCardProps {
-  title: string;
-  description: string;
+interface HowWeWorkCardProps {
+  grids: GridContentProps[];
 }
 
-const MiniCard = ({ title, description }: MiniCardProps) => {
+const HowWeWorkCard = ({ grids }: HowWeWorkCardProps) => {
   return (
-    <article className="bg-surface p-4 lg:p-8 flex flex-col min-h-44 lg:min-h-62">
-      <p className="font-bold mt-2 text-primary">{title}</p>
-      <small className="text-muted-light mt-10 lg:mt-20">{description}</small>
+    <article className="bg-surface w-full rounded-sm p-4 lg:p-8 grid grid-cols-4 gap-4">
+      {grids.map((grid, index) => (
+        <GridContent key={index} {...grid} />
+      ))}
     </article>
   );
 };
 
-export { MainCard, MiniCard };
+export default HowWeWorkCard;

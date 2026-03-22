@@ -1,58 +1,25 @@
 {
   "process_section": {
-    "desktop": {
-      "step_1": {
-        "step": "01",
-        "title": "Conversa",
-        "description": "Tudo começa com uma conversa. Entendemos o que sua empresa precisa, tiramos as dúvidas e apresentamos o que podemos fazer."
-      },
-      "step_2": {
-        "step": "02",
-        "title": "Planejamento",
-        "description": "Com a demanda clara, organizamos tudo antes de começar — o que será feito, como será feito e quando será entregue."
-      },
-      "step_3": {
-        "step": "03",
-        "title": "Fabricação",
-        "description": "Cada etapa é acompanhada de perto pela nossa equipe para garantir que o resultado esteja dentro do que foi acordado."
-      },
-      "step_4": {
-        "step": "04",
-        "title": "Entrega",
-        "description": "O produto chega até você revisado, documentado e pronto para uso. Cada fornecimento sai com registro completo."
-      },
-      "cta_card": {
-        "title": "Conta pra gente o que você precisa.",
-        "description": "A Realiza está disponível para entender a demanda da sua empresa e ver se faz sentido trabalharmos juntos.",
-        "cta": "Fale com a Realiza"
-      }
+    "section_title": "Como trabalhamos",
+    "step_1": {
+      "step": "01",
+      "title": "Conversa",
+      "description": "Tudo começa com uma conversa. Entendemos o que sua empresa precisa e apresentamos o que podemos fazer."
     },
-    "mobile": {
-      "step_1": {
-        "step": "01",
-        "title": "Conversa",
-        "description": "Entendemos sua demanda e apresentamos o que podemos fazer."
-      },
-      "step_2": {
-        "step": "02",
-        "title": "Planejamento",
-        "description": "Organizamos o que será feito, como será feito e quando."
-      },
-      "step_3": {
-        "step": "03",
-        "title": "Fabricação",
-        "description": "Execução acompanhada em cada etapa do processo."
-      },
-      "step_4": {
-        "step": "04",
-        "title": "Entrega",
-        "description": "Produto revisado, documentado e pronto para uso."
-      },
-      "cta_card": {
-        "title": "Conta pra gente o que você precisa.",
-        "description": "A Realiza está disponível para entender a demanda da sua empresa.",
-        "cta": "Fale com a Realiza"
-      }
+    "step_2": {
+      "step": "02",
+      "title": "Planejamento",
+      "description": "Com a demanda clara, organizamos o que será feito, como será feito e quando será entregue."
+    },
+    "step_3": {
+      "step": "03",
+      "title": "Fabricação",
+      "description": "Cada etapa é acompanhada de perto para garantir que o resultado esteja dentro do que foi acordado."
+    },
+    "step_4": {
+      "step": "04",
+      "title": "Entrega",
+      "description": "O produto chega revisado, documentado e pronto para uso. Cada fornecimento sai com registro completo."
     }
   }
 }

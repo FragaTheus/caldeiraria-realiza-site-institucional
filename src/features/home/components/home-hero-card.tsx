@@ -1,5 +1,6 @@
 "use client";
 
+import Line from "@/shared/components/line";
 import HomeServiceSwiper from "@/shared/components/swiper";
 import Image, { StaticImageData } from "next/image";
 import { SwiperSlide } from "swiper/react";
@@ -25,7 +26,7 @@ const AppHeroCard = ({
         <small className="text-primary">{headline}</small>
         <div className="flex flex-col flex-1 items-center justify-evenly">
           <h1 className="mt-6 md:mt-12">{title}</h1>
-          <div className="w-full h-px bg-linear-90 bg-primary my-2" />
+          <Line width={"100%"} />
           <p className="pr-20 mt-4">{description}</p>
         </div>
       </div>

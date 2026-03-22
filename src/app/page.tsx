@@ -10,7 +10,6 @@ export default function Home() {
       <HomeHeroWrapper />
       <HomeAboutWrapper />
       <HomeServiceWrapper />
-      <WhyWrapper />
       <HowWeWorkWrapper />
     </main>
   );
