@@ -34,8 +34,8 @@ const DESKTOP_PROCESS_STEPS = [
 ] satisfies MiniCardProps[];
 
 const mainCardImpl = {
-  title: textContent.process_section.desktop.step_5.title,
-  description: textContent.process_section.desktop.step_5.description,
+  title: "Title",
+  description: "Description",
 };
 
 export default HowWeWorkDesktopWrapper;

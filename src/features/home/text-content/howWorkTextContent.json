@@ -3,64 +3,54 @@
     "desktop": {
       "step_1": {
         "step": "01",
-        "title": "Orçamento",
-        "description": "O cliente entra em contato e a equipe técnica da Realiza analisa a demanda, esclarece dúvidas e elabora um orçamento detalhado com especificações de materiais e processos."
+        "title": "Conversa",
+        "description": "Tudo começa com uma conversa. Entendemos o que sua empresa precisa, tiramos as dúvidas e apresentamos o que podemos fazer."
       },
       "step_2": {
         "step": "02",
         "title": "Planejamento",
-        "description": "Com o orçamento aprovado, definimos o plano de fabricação — materiais, processos, equipamentos, responsáveis e cronograma — antes de qualquer execução."
+        "description": "Com a demanda clara, organizamos tudo antes de começar — o que será feito, como será feito e quando será entregue."
       },
       "step_3": {
         "step": "03",
         "title": "Fabricação",
-        "description": "Execução realizada com equipe qualificada, equipamentos próprios e controle de qualidade em cada etapa do processo, seguindo os padrões NBR ISO 9001:2015."
+        "description": "Cada etapa é acompanhada de perto pela nossa equipe para garantir que o resultado esteja dentro do que foi acordado."
       },
       "step_4": {
         "step": "04",
-        "title": "Inspeção",
-        "description": "Inspetores próprios Nível II realizam ensaio visual de solda e ensaio por líquido penetrante, garantindo rastreabilidade e conformidade técnica antes da entrega."
-      },
-      "step_5": {
-        "step": "05",
-        "title": "Entrega com Data Book",
-        "description": "O produto ou serviço é entregue acompanhado de um Data Book completo, contendo todos os relatórios, certificados e registros pertinentes ao fornecimento."
+        "title": "Entrega",
+        "description": "O produto chega até você revisado, documentado e pronto para uso. Cada fornecimento sai com registro completo."
       },
       "cta_card": {
-        "title": "Seu projeto merece atenção técnica.",
-        "description": "Fale com a Realiza e descubra como podemos atender a sua demanda.",
+        "title": "Conta pra gente o que você precisa.",
+        "description": "A Realiza está disponível para entender a demanda da sua empresa e ver se faz sentido trabalharmos juntos.",
         "cta": "Fale com a Realiza"
       }
     },
     "mobile": {
       "step_1": {
         "step": "01",
-        "title": "Orçamento",
-        "description": "Análise da demanda e proposta técnica."
+        "title": "Conversa",
+        "description": "Entendemos sua demanda e apresentamos o que podemos fazer."
       },
       "step_2": {
         "step": "02",
         "title": "Planejamento",
-        "description": "Materiais, processos e cronograma definidos."
+        "description": "Organizamos o que será feito, como será feito e quando."
       },
       "step_3": {
         "step": "03",
         "title": "Fabricação",
-        "description": "Execução com equipe e equipamentos próprios."
+        "description": "Execução acompanhada em cada etapa do processo."
       },
       "step_4": {
         "step": "04",
-        "title": "Inspeção",
-        "description": "Ensaio visual e líquido penetrante certificados."
-      },
-      "step_5": {
-        "step": "05",
-        "title": "Entrega com Data Book",
-        "description": "Relatórios e certificados entregues com o produto."
+        "title": "Entrega",
+        "description": "Produto revisado, documentado e pronto para uso."
       },
       "cta_card": {
-        "title": "Seu projeto merece atenção técnica.",
-        "description": "Fale com a Realiza e veja como podemos ajudar.",
+        "title": "Conta pra gente o que você precisa.",
+        "description": "A Realiza está disponível para entender a demanda da sua empresa.",
         "cta": "Fale com a Realiza"
       }
     }

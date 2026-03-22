@@ -7,7 +7,7 @@ export interface MainCardProps {
 
 const MainCard = ({ title, description }: MainCardProps) => {
   return (
-    <article className="bg-muted rounded-sm p-4 lg:p-6 w-full text-white min-h-44 lg:h-full flex flex-col gap-2 justify-between">
+    <article className="bg-muted rounded-sm p-4 lg:p-8 w-full text-white min-h-44 lg:h-full flex flex-col gap-2 justify-between">
       <div className="flex flex-col items-start">
         <p className="font-bold mt-2">{title}</p>
 
@@ -32,7 +32,7 @@ export interface MiniCardProps {
 
 const MiniCard = ({ title, description }: MiniCardProps) => {
   return (
-    <article className="bg-surface p-4 flex flex-col min-h-44 lg:min-h-62">
+    <article className="bg-surface p-4 lg:p-8 flex flex-col min-h-44 lg:min-h-62">
       <p className="font-bold mt-2 text-primary">{title}</p>
       <small className="text-muted-light mt-10 lg:mt-20">{description}</small>
     </article>
