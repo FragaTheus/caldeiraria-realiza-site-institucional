@@ -63,7 +63,7 @@ const AnimateCta = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const AnimateImage = ({ children }: { children: React.ReactNode }) => {
+const FadeInAnimate = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -84,5 +84,5 @@ export {
   AnimateTitle,
   AnimateDescription,
   AnimateCta,
-  AnimateImage,
+  FadeInAnimate,
 };

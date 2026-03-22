@@ -3,6 +3,7 @@ import {
   ServicesCard,
   ServicesCardProps,
 } from "../../components/services-cards";
+import AnimateCard from "../../animate/home-services-animate";
 
 interface HomeServiceDesktopWrapperProps {
   cards: ServicesCardProps[];
@@ -15,7 +16,9 @@ const HomeServiceDesktopWrapper = ({
     <ContainerLayout>
       <div className="grid grid-cols-3 gap-4">
         {cards.map((c, i) => (
-          <ServicesCard key={i} {...c} />
+          <AnimateCard key={i} index={i}>
+            <ServicesCard {...c} />
+          </AnimateCard>
         ))}
       </div>
     </ContainerLayout>

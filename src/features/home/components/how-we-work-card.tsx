@@ -1,4 +1,8 @@
-import { ChevronRightIcon } from "@heroicons/react/16/solid";
+import {
+  AnimateDescription,
+  AnimateIcon,
+  AnimateTitle,
+} from "../animate/home-about-animate";
 
 export interface GridContentProps {
   step: string;
@@ -9,9 +13,15 @@ export interface GridContentProps {
 const GridContent = ({ step, title, description }: GridContentProps) => {
   return (
     <div className="flex flex-col relative">
-      <h3 className="font-semibold text-primary">{step}</h3>
-      <p className="font-semibold mt-4">{title}</p>
-      <p className="text-muted-light mt-10">{description}</p>
+      <AnimateIcon>
+        <h3 className="font-semibold text-primary">{step}</h3>
+      </AnimateIcon>
+      <AnimateTitle>
+        <p className="font-semibold mt-4">{title}</p>
+      </AnimateTitle>
+      <AnimateDescription>
+        <p className="text-muted-light mt-10">{description}</p>
+      </AnimateDescription>
     </div>
   );
 };

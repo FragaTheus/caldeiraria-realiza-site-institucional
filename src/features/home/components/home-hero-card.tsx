@@ -4,7 +4,7 @@ import {
   AnimateCta,
   AnimateDescription,
   AnimateHeadline,
-  AnimateImage,
+  FadeInAnimate,
   AnimateTitle,
 } from "@/features/home/animate/home-hero-animate";
 import Line from "@/shared/components/line";
@@ -52,7 +52,7 @@ const AppHeroCard = ({
         </AnimateCta>
       </div>
 
-      <AnimateImage>
+      <FadeInAnimate>
         <div className="flex flex-col order-first lg:order-last">
           <HomeServiceSwiper>
             {imageSrc.map((src, index) => (
@@ -70,7 +70,7 @@ const AppHeroCard = ({
             {cardDescription}
           </small>
         </div>
-      </AnimateImage>
+      </FadeInAnimate>
     </article>
   );
 };
