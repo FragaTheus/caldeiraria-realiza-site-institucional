@@ -15,7 +15,7 @@ const HowWeWorkWrapper = () => {
         <HowWeWorkTitleCard title={textContent.process_section.section_title} />
       </ContainerLayout>
 
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto w-full [&::-webkit-scrollbar]:hidden ">
         <ContainerLayout className="w-7xl!">
           <HowWeWorkCard grids={grids} />
         </ContainerLayout>

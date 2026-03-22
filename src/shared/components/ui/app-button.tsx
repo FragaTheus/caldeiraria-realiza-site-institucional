@@ -1,3 +1,7 @@
+"use client";
+
+import { openWhatsApp } from "@/shared/hooks/use-wpp";
+
 const AppButtonSolid = ({
   children,
   className,
@@ -35,7 +39,8 @@ const CtaButton = ({
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
-      className={`bg-muted hover:bg-green-500 active:bg-green-500 text-white text-p font-medium p-2 rounded-md cursor-pointer flex items-center justify-center gap-2 ${className} transition-all`}
+      onClick={() => openWhatsApp()}
+      className={`bg-muted hover:bg-green-500 active:bg-green-500 text-white text-p font-medium p-2 rounded-md cursor-pointer flex items-center justify-center gap-2 transition-all ${className}`}
       {...rest}
     >
       {children}

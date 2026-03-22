@@ -4,22 +4,22 @@
     "step_1": {
       "step": "01",
       "title": "Conversa",
-      "description": "Tudo começa com uma conversa. Entendemos o que sua empresa precisa e apresentamos o que podemos fazer."
+      "description": "Entendemos a demanda da sua empresa e apresentamos o que podemos fazer."
     },
     "step_2": {
       "step": "02",
       "title": "Planejamento",
-      "description": "Com a demanda clara, organizamos o que será feito, como será feito e quando será entregue."
+      "description": "Organizamos materiais, processos e prazos antes de qualquer execução."
     },
     "step_3": {
       "step": "03",
       "title": "Fabricação",
-      "description": "Cada etapa é acompanhada de perto para garantir que o resultado esteja dentro do que foi acordado."
+      "description": "Executamos com acompanhamento em cada etapa até o resultado acordado."
     },
     "step_4": {
       "step": "04",
       "title": "Entrega",
-      "description": "O produto chega revisado, documentado e pronto para uso. Cada fornecimento sai com registro completo."
+      "description": "Produto revisado, documentado e pronto para uso na sua operação."
     }
   }
 }

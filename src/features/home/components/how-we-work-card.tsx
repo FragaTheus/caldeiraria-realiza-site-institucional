@@ -12,7 +12,7 @@ export interface GridContentProps {
 
 const GridContent = ({ step, title, description }: GridContentProps) => {
   return (
-    <div className="flex flex-col relative">
+    <article className="flex flex-col relative bg-surface p-4 lg:p-8">
       <AnimateIcon>
         <h3 className="font-semibold text-primary">{step}</h3>
       </AnimateIcon>
@@ -20,9 +20,9 @@ const GridContent = ({ step, title, description }: GridContentProps) => {
         <p className="font-semibold mt-4">{title}</p>
       </AnimateTitle>
       <AnimateDescription>
-        <p className="text-muted-light mt-10 mr-8">{description}</p>
+        <p className="text-muted-light mt-10">{description}</p>
       </AnimateDescription>
-    </div>
+    </article>
   );
 };
 
@@ -32,7 +32,7 @@ interface HowWeWorkCardProps {
 
 const HowWeWorkCard = ({ grids }: HowWeWorkCardProps) => {
   return (
-    <article className="bg-surface w-full rounded-sm p-4 lg:p-8 grid grid-cols-4 gap-8">
+    <article className="w-full grid grid-cols-4 gap-8">
       {grids.map((grid, index) => (
         <GridContent key={index} {...grid} />
       ))}
