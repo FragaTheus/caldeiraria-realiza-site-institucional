@@ -32,7 +32,7 @@ interface HowWeWorkCardProps {
 
 const HowWeWorkCard = ({ grids }: HowWeWorkCardProps) => {
   return (
-    <article className="w-full grid grid-cols-4 gap-8">
+    <article className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4">
       {grids.map((grid, index) => (
         <GridContent key={index} {...grid} />
       ))}

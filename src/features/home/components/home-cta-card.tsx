@@ -13,7 +13,7 @@ export interface HomeCtaCardProps {
 
 const HomeCtaCard = ({ title, description, ctaText }: HomeCtaCardProps) => {
   return (
-    <article className="w-full text-white flex flex-col items-center justify-center  border border-white p-4 lg:p-8 rounded-sm text-center gap-4 lg:gap-8">
+    <article className="w-full text-white flex flex-col items-center justify-center  border border-white p-4 lg:p-8 rounded-sm text-center gap-8">
       <AnimateTitle>
         <h1 className="whitespace-pre-line">{title}</h1>
       </AnimateTitle>

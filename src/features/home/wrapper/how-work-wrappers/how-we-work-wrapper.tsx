@@ -11,15 +11,10 @@ import HowWeWorkTitleCard from "../../components/how-we-work-title-card";
 const HowWeWorkWrapper = () => {
   return (
     <SectionLayout className="bg-muted">
-      <ContainerLayout>
+      <ContainerLayout className="flex flex-col gap-4">
         <HowWeWorkTitleCard title={textContent.process_section.section_title} />
+        <HowWeWorkCard grids={grids} />
       </ContainerLayout>
-
-      <div className="overflow-x-auto w-full [&::-webkit-scrollbar]:hidden ">
-        <ContainerLayout className="w-7xl!">
-          <HowWeWorkCard grids={grids} />
-        </ContainerLayout>
-      </div>
     </SectionLayout>
   );
 };

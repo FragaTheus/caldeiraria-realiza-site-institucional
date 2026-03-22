@@ -31,7 +31,7 @@ const AppHeroCard = ({
 }: AppHeroCardProps) => {
   return (
     <article className="w-full rounded-md grid grid-cols-1 md:grid-cols-2 p-4 md:p-8 bg-surface gap-4">
-      <div className="flex flex-col lg:mr-20">
+      <div className="flex flex-col lg:mr-20 order-last lg:order-first">
         <AnimateHeadline>
           <small className="text-primary">{headline}</small>
         </AnimateHeadline>
@@ -39,13 +39,13 @@ const AppHeroCard = ({
           <AnimateTitle>
             <h1 className="mt-6 md:mt-12">{title}</h1>
           </AnimateTitle>
-          <Line width={"100%"} />
+          <Line className="mt-2 lg:mt-4" />
           <AnimateDescription>
-            <p className="pr-20 mt-4">{description}</p>
+            <p className="pr-20 mt-6">{description}</p>
           </AnimateDescription>
         </div>
         <AnimateCta>
-          <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-4 lg:mt-6">
+          <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-6 lg:mt-12">
             <MdPhone className="size-6" />
             <span>Entrar em contato</span>
           </CtaButton>

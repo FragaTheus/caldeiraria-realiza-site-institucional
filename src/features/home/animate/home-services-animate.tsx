@@ -14,8 +14,8 @@ const AnimateCard = ({ children, index }: AnimateCardProps) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: -10 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+      initial={{ opacity: 0, x: 10 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
       transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 * index }}
     >
       {children}

@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const Line = ({ width }: { width: number | string }) => {
+const Line = ({ className }: { className?: string }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -11,9 +11,9 @@ const Line = ({ width }: { width: number | string }) => {
     <motion.div
       ref={ref}
       initial={{ width: 0 }}
-      animate={{ width: inView ? width : 0 }}
+      animate={{ width: inView ? "100%" : 0 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="h-px bg-primary mt-2"
+      className={`h-px bg-primary ${className}`}
     />
   );
 };

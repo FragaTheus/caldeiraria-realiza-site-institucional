@@ -1,17 +1,15 @@
-"use client";
-
 import Line from "@/shared/components/line";
-import useIsMobile from "../hooks/useIsMobile";
 import { FadeInAnimate } from "../animate/home-hero-animate";
 
 const HowWeWorkTitleCard = ({ title }: { title: string }) => {
-  const isMobile = useIsMobile();
   return (
     <FadeInAnimate>
-      <article className="w-full max-w-7xl m-auto border border-white p-4 lg:p-8 flex items-center justify-start gap-10">
-        <h1 className="text-white">{title}</h1>
-        {!isMobile && <Line width={"65%"} />}
-      </article>
+      <div className="w-full max-w-7xl m-auto flex items-center justify-center relative py-4 lg:py-8">
+        <h1 className="text-white absolute bg-muted px-2 lg:px-4 lg:text-h1">
+          {title}
+        </h1>
+        <Line />
+      </div>
     </FadeInAnimate>
   );
 };

@@ -6,6 +6,7 @@ import {
   ServicesCardProps,
 } from "../../components/services-cards";
 import HomeServiceSwiper from "@/shared/components/swiper";
+import AnimateCard from "../../animate/home-services-animate";
 
 interface HomeServiceMobileWrapperProps {
   cards: ServicesCardProps[];
@@ -16,7 +17,9 @@ const HomeServiceMobileWrapper = ({ cards }: HomeServiceMobileWrapperProps) => {
     <HomeServiceSwiper>
       {cards.map((c, i) => (
         <SwiperSlide key={i} className="p-4">
-          <ServicesCard {...c} />
+          <AnimateCard index={i}>
+            <ServicesCard {...c} />
+          </AnimateCard>
         </SwiperSlide>
       ))}
     </HomeServiceSwiper>
