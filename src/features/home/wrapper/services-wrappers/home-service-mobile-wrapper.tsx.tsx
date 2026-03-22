@@ -5,7 +5,7 @@ import {
   ServicesCard,
   ServicesCardProps,
 } from "../../components/services-cards";
-import HomeServiceSwiper from "../../components/swiper";
+import HomeServiceSwiper from "@/shared/components/swiper";
 
 interface HomeServiceMobileWrapperProps {
   cards: ServicesCardProps[];

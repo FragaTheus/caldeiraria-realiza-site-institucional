@@ -13,6 +13,7 @@ const HomeServiceSwiper = ({ children }: { children: React.ReactNode }) => {
         slidesPerView={1}
         autoplay={{ delay: 3000 }}
         navigation
+        loop
         pagination={{ clickable: true }}
       >
         {children}

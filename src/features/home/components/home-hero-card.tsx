@@ -1,11 +1,15 @@
+"use client";
+
+import HomeServiceSwiper from "@/shared/components/swiper";
 import Image, { StaticImageData } from "next/image";
+import { SwiperSlide } from "swiper/react";
 
 interface AppHeroCardProps {
   headline: string;
   title: string;
   description: string;
   cardDescription?: string;
-  imageSrc: StaticImageData;
+  imageSrc: StaticImageData[];
 }
 
 const AppHeroCard = ({
@@ -25,12 +29,19 @@ const AppHeroCard = ({
       </div>
 
       <div className="flex flex-col">
-        <Image
-          src={imageSrc}
-          alt={title}
-          className="object-cover max-h-40 md:max-h-full rounded-sm"
-        />
-        <small className="text-muted-light mt-2 m-auto">
+        <HomeServiceSwiper>
+          {imageSrc.map((src, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={src}
+                alt={title}
+                className="max-h-40 md:max-h-110 rounded-sm object-cover object-[50%_40%]"
+                priority
+              />
+            </SwiperSlide>
+          ))}
+        </HomeServiceSwiper>
+        <small className="text-muted-light mt-2 m-auto text-center">
           {cardDescription}
         </small>
       </div>

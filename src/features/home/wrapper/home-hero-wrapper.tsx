@@ -2,6 +2,8 @@
 
 import AppSectionWrapper from "@/shared/wrapper/section-wrapper";
 import heroImg from "@/shared/assets/hero-img.jpeg";
+import heroImg1 from "@/shared/assets/hero-img1.jpeg";
+import heroImg2 from "@/shared/assets/hero-img2.jpeg";
 import heroTextContent from "@/features/home/text-content/heroTextContent.json";
 import AppHeroCard from "../components/home-hero-card";
 import useIsMobile from "../hooks/useIsMobile";
@@ -14,7 +16,7 @@ const MobileHeroWrapper = () => {
         title={heroTextContent.hero.mobile.title}
         description={heroTextContent.hero.mobile.description}
         cardDescription={heroTextContent.hero.mobile.cardDescription}
-        imageSrc={heroImg}
+        imageSrc={imageSrc}
       />
     </AppSectionWrapper>
   );
@@ -28,7 +30,7 @@ const DesktopHeroWrapper = () => {
         title={heroTextContent.hero.desktop.title}
         description={heroTextContent.hero.desktop.description}
         cardDescription={heroTextContent.hero.desktop.cardDescription}
-        imageSrc={heroImg}
+        imageSrc={imageSrc}
       />
     </AppSectionWrapper>
   );
@@ -41,3 +43,5 @@ const HomeHeroWrapper = () => {
 };
 
 export default HomeHeroWrapper;
+
+const imageSrc = [heroImg, heroImg1, heroImg2];

@@ -22,7 +22,7 @@ const ServicesCard = ({
   return (
     <Link href={"/servicos"}>
       <article
-        className={`relative min-h-62 bg-surface p-4 md:p-6 flex flex-col hover:scale-101 active:scale-99 transition-transform ${isTitleCard ? "border border-primary bg-transparent" : ""}`}
+        className={`relative min-h-62 bg-surface p-4 lg:p-6 flex flex-col hover:scale-101 active:scale-99 transition-transform ${isTitleCard ? "border border-primary bg-transparent" : ""}`}
       >
         {isTitleCard ? (
           <div className="flex-1 flex items-start relative">

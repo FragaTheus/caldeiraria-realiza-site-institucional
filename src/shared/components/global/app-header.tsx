@@ -16,7 +16,7 @@ const AppHeaderContactInfo = ({
       <div className="w-full max-w-7xl mx-auto flex justify-end gap-4 py-2 px-4">
         <div className="flex items-center gap-1">
           <MdEmail />
-          <small className="md:text-p">{email}</small>
+          <small className="lg:text-p">{email}</small>
         </div>
         <div className="flex items-center gap-1">
           <MdPhone />
@@ -32,7 +32,7 @@ const AppHeaderToolbar = ({ children }: { children: React.ReactNode }) => {
     <div className="w-full">
       <div
         id="header-toolbar"
-        className="w-full max-w-7xl h-full mx-auto py-3  grid grid-cols-2 md:grid-cols-12 items-center px-6"
+        className="w-full max-w-7xl h-full mx-auto py-3  grid grid-cols-2 lg:grid-cols-12 items-center px-6"
       >
         {children}
       </div>
@@ -45,7 +45,7 @@ const AppLogo = () => {
     <Image
       alt="Realiza Caldeiraria Logo"
       src={logo}
-      className="max-h-13 md:max-h-22 w-auto  md:col-span-2 justify-self-start -ml-5.5 md:-ml-8"
+      className="max-h-13 lg:max-h-22 w-auto  lg:col-span-2 justify-self-start -ml-5.5 lg:-ml-8"
       priority
     />
   );
@@ -53,9 +53,9 @@ const AppLogo = () => {
 
 const HeaderCta = ({ ctaLabel }: { ctaLabel: string }) => {
   return (
-    <CtaButton className="justify-self-end md:order-last md:col-span-2 flex items-center gap-2">
-      <MdWhatsapp className="size-5 md:size-6" />
-      <small className="md:text-p inline">{ctaLabel}</small>
+    <CtaButton className="justify-self-end lg:order-last lg:col-span-2 flex items-center gap-2">
+      <MdWhatsapp className="size-5 lg:size-6" />
+      <small className="lg:text-p inline">{ctaLabel}</small>
     </CtaButton>
   );
 };
