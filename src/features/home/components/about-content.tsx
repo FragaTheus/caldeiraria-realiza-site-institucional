@@ -13,11 +13,11 @@ const AboutGridContent = ({
 }: AboutGridContentProps) => {
   return (
     <div
-      className={`flex flex-col p-4 lg:p-12 gap-4 ${isMuted ? "bg-muted text-white" : ""}`}
+      className={`flex flex-col p-4 lg:p-8 gap-4 ${isMuted ? "bg-muted text-white" : ""}`}
     >
       <Icon className="text-primary size-6" />
       <h1 className="whitespace-pre-line">{label}</h1>
-      <p>{text}</p>
+      <p className="mt-4">{text}</p>
     </div>
   );
 };

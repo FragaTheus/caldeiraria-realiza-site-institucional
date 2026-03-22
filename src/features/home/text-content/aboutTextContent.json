@@ -1,16 +1,32 @@
 {
   "about_section": {
-    "grid_1": {
-      "label": "Sobre a Realiza",
-      "text": "Atuamos no fornecimento de soluções industriais em caldeiraria, usinagem e soldagem para empresas que exigem técnica, rastreabilidade e qualidade em cada entrega."
+    "desktop": {
+      "grid_1": {
+        "label": "Sobre\n a Realiza",
+        "text": "Desde 2015, a Realiza fornece soluções industriais para empresas que não aceitam imprecisão. Uma década construída projeto a projeto, com estrutura própria, equipe consolidada e um histórico que fala por si."
+      },
+      "grid_2": {
+        "label": "Nosso\n Propósito",
+        "text": "Ser a referência que a indústria busca quando o nível de exigência é alto. Entregamos caldeiraria, usinagem e soldagem com o mesmo padrão de qualidade, independente do porte ou complexidade do projeto."
+      },
+      "grid_3": {
+        "label": "Política de Qualidade",
+        "text": "Certificação NBR ISO 9001:2015, soldadores qualificados AWS D1.1, inspetores Nível II para ensaio visual e líquido penetrante, instrumentos calibrados RBC e Data Book ao final de cada fornecimento."
+      }
     },
-    "grid_2": {
-      "label": "Nosso\n Propósito",
-      "text": "Ser referência no fornecimento de caldeiraria e usinagem, entregando soluções técnicas que geram valor real para nossos clientes e para a indústria."
-    },
-    "grid_3": {
-      "label": "Política de Qualidade",
-      "text": "Sistema de gestão certificado NBR ISO 9001:2015, com processos rastreáveis, instrumentos calibrados e emissão de Data Book ao final de cada fornecimento."
+    "mobile": {
+      "grid_1": {
+        "label": "Sobre a Realiza",
+        "text": "Desde 2015 fornecendo soluções industriais com estrutura própria e um histórico construído projeto a projeto."
+      },
+      "grid_2": {
+        "label": "Nosso\n Propósito",
+        "text": "Ser a referência quando o nível de exigência é alto, com o mesmo padrão em todo projeto."
+      },
+      "grid_3": {
+        "label": "Política de Qualidade",
+        "text": "ISO 9001:2015, soldadores AWS D1.1, inspetores Nível II, instrumentos RBC e Data Book por fornecimento."
+      }
     }
   }
 }

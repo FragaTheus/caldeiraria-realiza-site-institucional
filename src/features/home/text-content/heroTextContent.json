@@ -1,15 +1,15 @@
 {
   "hero": {
     "desktop": {
-      "headline": "Especialistas em metal. Referência em resultados industriais",
-      "title": "Soluções industriais em caldeiraria, usinagem e soldagem para quem não abre mão de qualidade",
-      "description": "A Realiza atua com estrutura própria, equipe técnica qualificada e gestão da qualidade baseada na norma NBR ISO 9001:2015. Atendemos indústrias que exigem precisão, rastreabilidade e confiança — do orçamento à entrega, com emissão de Data Book e relatórios aplicáveis.",
+      "headline": "Referência industrial desde 2015",
+      "title": "A empresa que sua indústria escolhe quando qualidade não é opcional.",
+      "description": "Caldeiraria, usinagem e soldagem com estrutura própria e equipe técnica certificada.",
       "cardDescription": "Algumas das peças produzidas e instaladas pela Realiza Caldeiraria"
     },
     "mobile": {
       "headline": "Referência industrial desde 2015",
-      "title": "Metal com padrão certificado",
-      "description": "Estrutura própria, equipe qualificada e certificação NBR ISO 9001:2015. Atendemos projetos industriais com precisão, rastreabilidade e emissão de Data Book ao final de cada entrega.",
+      "title": "Quando qualidade não é opcional, a escolha é a Realiza.",
+      "description": "Caldeiraria, usinagem e soldagem com estrutura própria.",
       "cardDescription": "Algumas das peças produzidas e instaladas pela Realiza Caldeiraria"
     }
   }
