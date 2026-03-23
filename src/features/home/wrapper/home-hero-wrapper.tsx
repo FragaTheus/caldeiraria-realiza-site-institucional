@@ -11,8 +11,8 @@ const HomeHeroWrapper = () => {
       <AppHeroCard
         headline={heroTextContent.hero.desktop.headline}
         title={heroTextContent.hero.desktop.title}
-        cardDescription={heroTextContent.hero.desktop.cardDescription}
-        imageSrc={imageSrc}
+        ctaText={heroTextContent.hero.desktop.ctaText}
+        videoSrc="hero-video.mp4"
       />
     </AppSectionWrapper>
   );

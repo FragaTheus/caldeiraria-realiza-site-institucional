@@ -1,32 +1,16 @@
 {
   "about_section": {
-    "desktop": {
-      "grid_1": {
-        "label": "Sobre\n a Realiza",
-        "text": "Desde 2015, a Realiza fornece soluções industriais para empresas que não aceitam imprecisão. Uma década construída projeto a projeto, com estrutura própria, equipe consolidada e um histórico que fala por si."
-      },
-      "grid_2": {
-        "label": "Nosso\n Propósito",
-        "text": "Ser a referência que a indústria busca quando o nível de exigência é alto. Entregamos caldeiraria, usinagem e soldagem com o mesmo padrão de qualidade, independente do porte ou complexidade do projeto."
-      },
-      "grid_3": {
-        "label": "Política de Qualidade",
-        "text": "Certificação NBR ISO 9001:2015, soldadores qualificados AWS D1.1, inspetores Nível II para ensaio visual e líquido penetrante, instrumentos calibrados RBC e Data Book ao final de cada fornecimento."
-      }
+    "grid_1": {
+      "label": "Sobre\n a Realiza",
+      "text": "Fundada em 2015 na cidade de Itaquaquecetuba, São Paulo, a Realiza Caldeiraria, Usinagem & Serviços nasceu com o propósito de oferecer soluções industriais. Mais que prestar serviços, a Realiza se posiciona como parceira de seus clientes, com compromisso de atender com qualidade e precisão em cada projeto."
     },
-    "mobile": {
-      "grid_1": {
-        "label": "Sobre\n a Realiza",
-        "text": "Desde 2015 fornecendo soluções industriais com estrutura própria e um histórico construído projeto a projeto."
-      },
-      "grid_2": {
-        "label": "Nosso\n Propósito",
-        "text": "Ser a referência quando o nível de exigência é alto, com o mesmo padrão em todo projeto."
-      },
-      "grid_3": {
-        "label": "Política de Qualidade",
-        "text": "ISO 9001:2015, soldadores AWS D1.1, inspetores Nível II, instrumentos RBC e Data Book por fornecimento."
-      }
+    "grid_2": {
+      "label": "Nosso\n Propósito",
+      "text": "Ser referência no fornecimento de caldeiraria e peças usinadas. Atuamos para que cada cliente encontre na Realiza não apenas um fornecedor, mas uma empresa comprometida com a qualidade e a confiança que o setor industrial exige em cada entrega."
+    },
+    "grid_3": {
+      "label": "Política\n de Qualidade",
+      "text": "Fornecer produtos e serviços que satisfaçam nossos clientes, atuando de forma sustentável e comprometida com o desenvolvimento dos colaboradores. Buscamos agregar valor à sociedade e à indústria, mantendo padrões de qualidade certificados em cada fornecimento."
     }
   }
 }

@@ -1,29 +1,24 @@
-"use client";
-
 import {
   AnimateCta,
   AnimateHeadline,
   FadeInAnimate,
   AnimateTitle,
 } from "@/features/home/animate/home-hero-animate";
-import HomeServiceSwiper from "@/shared/components/swiper";
 import { CtaButton } from "@/shared/components/ui/app-button";
-import Image, { StaticImageData } from "next/image";
 import { FaPhone } from "react-icons/fa6";
-import { SwiperSlide } from "swiper/react";
 
 interface AppHeroCardProps {
   headline: string;
   title: string;
-  cardDescription?: string;
-  imageSrc: StaticImageData[];
+  videoSrc: string;
+  ctaText: string;
 }
 
 const AppHeroCard = ({
   headline,
   title,
-  cardDescription,
-  imageSrc,
+  videoSrc,
+  ctaText,
 }: AppHeroCardProps) => {
   return (
     <article className="w-full rounded-md grid grid-cols-1 md:grid-cols-2 p-4 md:p-8 bg-surface gap-4">
@@ -39,28 +34,21 @@ const AppHeroCard = ({
         <AnimateCta>
           <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-4 lg:mt-8">
             <FaPhone className="size-4 lg:size-6" />
-            <span>Entrar em contato</span>
+            <span>{ctaText}</span>
           </CtaButton>
         </AnimateCta>
       </div>
 
       <FadeInAnimate>
         <div className="flex flex-col order-first lg:order-last">
-          <HomeServiceSwiper>
-            {imageSrc.map((src, index) => (
-              <SwiperSlide key={index}>
-                <Image
-                  src={src}
-                  alt={title}
-                  className="max-h-40 md:max-h-80 rounded-sm object-cover object-[50%_40%]"
-                  priority
-                />
-              </SwiperSlide>
-            ))}
-          </HomeServiceSwiper>
-          <small className="text-muted-light mt-2 m-auto text-center hidden lg:inline">
-            {cardDescription}
-          </small>
+          <video
+            className="object-cover w-full max-h-45 lg:max-h-90"
+            autoPlay
+            muted
+            poster="logo-c-fundo.jpg"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
         </div>
       </FadeInAnimate>
     </article>
