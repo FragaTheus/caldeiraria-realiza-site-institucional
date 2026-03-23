@@ -4,6 +4,7 @@ import {
   FadeInAnimate,
   AnimateTitle,
 } from "@/features/home/animate/home-hero-animate";
+import Line from "@/shared/components/line";
 import { CtaButton } from "@/shared/components/ui/app-button";
 import { FaPhone } from "react-icons/fa6";
 
@@ -28,8 +29,9 @@ const AppHeroCard = ({
         </AnimateHeadline>
         <div className="flex flex-col flex-1 items-center justify-evenly">
           <AnimateTitle>
-            <h2 className="mt-4 md:mt-8 lg:text-h1">{title}</h2>
+            <h2 className="mt-4 md:mt-8 lg:text-h1 mb-2">{title}</h2>
           </AnimateTitle>
+          <Line />
         </div>
         <AnimateCta>
           <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-4 lg:mt-8">
