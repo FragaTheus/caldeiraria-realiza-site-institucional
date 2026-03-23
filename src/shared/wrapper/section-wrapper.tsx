@@ -1,8 +1,13 @@
 import { ContainerLayout, SectionLayout } from "../layouts/section-layout";
 
-const AppSectionWrapper = ({ children }: { children: React.ReactNode }) => {
+interface AppSectionWrapperProps {
+  id: string;
+  children: React.ReactNode;
+}
+
+const AppSectionWrapper = ({ id, children }: AppSectionWrapperProps) => {
   return (
-    <SectionLayout>
+    <SectionLayout id={id}>
       <ContainerLayout>{children}</ContainerLayout>
     </SectionLayout>
   );

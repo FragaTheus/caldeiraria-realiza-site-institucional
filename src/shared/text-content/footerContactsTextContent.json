@@ -1,0 +1,25 @@
+{
+    "instagram": {
+        "label": "@realizacaldeiraria",
+        "link": "https://www.instagram.com/realizacaldeiraria"
+    },
+    "facebook": {
+        "label": "Realiza Caldeiraria",
+        "link": "https://www.facebook.com/realizacaldeiraria"
+    },
+    "whatsapp": {
+        "label": "(11) 95331-9812",
+        "link": "https://wa.me/5511953319812"
+    },
+    "phone": {
+        "label": "(11) 4040-5589",
+        "link": "tel:+551140405589"
+    },
+    "email": {
+        "label": "realiza@caldeiraria.com.br",
+        "link": "mailto:realiza@caldeiraria.com.br"
+    },
+    "endereco": " Av. das Monções, Nº 50, 08592-150 Itaquaquecetuba São Paulo - Brasil",
+    "copyright": "© 2025 Realiza Caldeiraria, Usinagem e Serviços. Todos os direitos reservados.",
+    "desenvolvidoPor": "Desenvolvido por Matheus Fraga"
+}

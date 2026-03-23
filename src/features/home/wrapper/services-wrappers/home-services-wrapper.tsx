@@ -14,11 +14,12 @@ import HomeServiceDesktopWrapper from "./home-service-desktop-wrapper";
 import servicesTextContents from "@/features/home/text-content/servicesTextContent.json";
 import { ServicesCardProps } from "../../components/services-cards.js";
 import useIsMobile from "../../hooks/useIsMobile";
+import { FaSmog } from "react-icons/fa6";
 
 const HomeServiceWrapper = () => {
   const isMobile = useIsMobile();
   return (
-    <SectionLayout>
+    <SectionLayout id="atuacao">
       {isMobile ? (
         <HomeServiceMobileWrapper cards={SERVICES_CARDS} />
       ) : (
@@ -40,7 +41,7 @@ export const SERVICES_CARDS: ServicesCardProps[] = [
   {
     isTitleCard: false,
     headerTitle: cards.caldeiraria.headerTitle,
-    HeaderIcon: FaIndustry,
+    HeaderIcon: FaSmog,
     subtitle: cards.caldeiraria.subtitle,
     description: cards.caldeiraria.description,
   },

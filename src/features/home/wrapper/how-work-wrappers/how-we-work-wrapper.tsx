@@ -10,7 +10,7 @@ import HowWeWorkTitleCard from "../../components/how-we-work-title-card";
 
 const HowWeWorkWrapper = () => {
   return (
-    <SectionLayout className="bg-muted">
+    <SectionLayout id="como" className="bg-muted">
       <ContainerLayout className="flex flex-col gap-4">
         <HowWeWorkTitleCard title={textContent.process_section.section_title} />
         <HowWeWorkCard grids={grids} />

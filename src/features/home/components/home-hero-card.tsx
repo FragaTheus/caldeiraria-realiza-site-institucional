@@ -11,7 +11,7 @@ import Line from "@/shared/components/line";
 import HomeServiceSwiper from "@/shared/components/swiper";
 import { CtaButton } from "@/shared/components/ui/app-button";
 import Image, { StaticImageData } from "next/image";
-import { MdPhone } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 import { SwiperSlide } from "swiper/react";
 
 interface AppHeroCardProps {
@@ -46,7 +46,7 @@ const AppHeroCard = ({
         </div>
         <AnimateCta>
           <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-6 lg:mt-12">
-            <MdPhone className="size-6" />
+            <FaPhone className="size-4 lg:size-6" />
             <span>Entrar em contato</span>
           </CtaButton>
         </AnimateCta>

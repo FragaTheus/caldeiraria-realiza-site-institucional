@@ -26,7 +26,7 @@ const ServicesCard = ({
       >
         {isTitleCard ? (
           <div className="flex-1 flex items-start relative">
-            <FaTools className="text-primary absolute top-4 right-4 size-10" />
+            <FaTools className="text-primary absolute top-4 right-4 size-12" />
             <h1 className="font-bold whitespace-pre-line">{title}</h1>
           </div>
         ) : (

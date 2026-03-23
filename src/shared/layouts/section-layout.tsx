@@ -1,12 +1,14 @@
-const SectionLayout = ({
-  children,
-  className,
-}: {
+interface SectionLayoutProps {
+  id: string;
   children: React.ReactNode;
   className?: string;
-}) => {
+}
+
+const SectionLayout = ({ id, children, className }: SectionLayoutProps) => {
   return (
-    <section className={`w-full min-h-min ${className}`}>{children}</section>
+    <section id={id} className={`w-full min-h-min ${className}`}>
+      {children}
+    </section>
   );
 };
 

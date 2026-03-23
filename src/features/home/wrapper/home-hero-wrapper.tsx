@@ -10,7 +10,7 @@ import useIsMobile from "../hooks/useIsMobile";
 
 const MobileHeroWrapper = () => {
   return (
-    <AppSectionWrapper>
+    <AppSectionWrapper id="hero">
       <AppHeroCard
         headline={heroTextContent.hero.mobile.headline}
         title={heroTextContent.hero.mobile.title}
@@ -24,7 +24,7 @@ const MobileHeroWrapper = () => {
 
 const DesktopHeroWrapper = () => {
   return (
-    <AppSectionWrapper>
+    <AppSectionWrapper id="hero">
       <AppHeroCard
         headline={heroTextContent.hero.desktop.headline}
         title={heroTextContent.hero.desktop.title}

@@ -7,7 +7,7 @@ import HomeCtaContent from "../components/home-cta-card";
 
 const HomeCtaWrapper = () => {
   return (
-    <SectionLayout className="bg-muted">
+    <SectionLayout id="cta" className="bg-muted">
       <ContainerLayout>
         <HomeCtaContent
           title={textContent.cta_section.title}

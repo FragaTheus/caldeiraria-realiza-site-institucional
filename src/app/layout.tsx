@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import AppHeader from "@/shared/components/global/app-header";
 import headerContent from "@/shared/text-content/headerTextContent.json";
+import FooterWrapper from "@/shared/wrapper/footer-wrapper";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -114,6 +115,7 @@ export default function RootLayout({
           links={headerContent.header.navLinks}
         />
         {children}
+        <FooterWrapper />
       </body>
     </html>
   );

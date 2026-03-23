@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { MdEmail, MdPhone, MdWhatsapp } from "react-icons/md";
 import logo from "@/shared/assets/logo.png";
 import { CtaButton } from "../ui/app-button";
 import HeaderNavigation from "./navigation";
+import { FaEnvelope, FaPhone, FaW, FaWhatsapp } from "react-icons/fa6";
 
 const AppHeaderContactInfo = ({
   email,
@@ -15,11 +15,11 @@ const AppHeaderContactInfo = ({
     <div className="w-full bg-muted text-white">
       <div className="w-full max-w-7xl mx-auto flex justify-end gap-4 py-2 px-4">
         <div className="flex items-center gap-1">
-          <MdEmail />
+          <FaEnvelope />
           <small className="lg:text-p">{email}</small>
         </div>
         <div className="flex items-center gap-1">
-          <MdPhone />
+          <FaPhone />
           <small>{phone}</small>
         </div>
       </div>
@@ -54,7 +54,7 @@ const AppLogo = () => {
 const HeaderCta = ({ ctaLabel }: { ctaLabel: string }) => {
   return (
     <CtaButton className="justify-self-end lg:order-last lg:col-span-2 flex items-center gap-2">
-      <MdWhatsapp className="size-5 lg:size-6" />
+      <FaWhatsapp className="size-5 lg:size-6" />
       <small className="lg:text-p inline">{ctaLabel}</small>
     </CtaButton>
   );
