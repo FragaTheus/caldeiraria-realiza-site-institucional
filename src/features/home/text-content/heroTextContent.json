@@ -1,15 +1,8 @@
 {
   "hero": {
     "desktop": {
-      "headline": "Referência industrial desde 2015",
-      "title": "A empresa que sua indústria escolhe quando qualidade não é opcional.",
-      "description": "Caldeiraria, usinagem e soldagem com estrutura própria e equipe técnica certificada.",
-      "cardDescription": "Algumas das peças produzidas e instaladas pela Realiza Caldeiraria"
-    },
-    "mobile": {
-      "headline": "Referência industrial desde 2015",
-      "title": "Quando qualidade não é opcional, a escolha é a Realiza.",
-      "description": "Caldeiraria, usinagem e soldagem com estrutura própria.",
+      "headline": "Realiza - Caldeiraria, Usinagem e Serviços LTDA",
+      "title": "Caldeiraria e Usinagem com ampla gama de soluções em produtos e serviços, com estratégias inovadoras",
       "cardDescription": "Algumas das peças produzidas e instaladas pela Realiza Caldeiraria"
     }
   }

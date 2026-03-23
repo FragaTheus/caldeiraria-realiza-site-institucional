@@ -2,12 +2,10 @@
 
 import {
   AnimateCta,
-  AnimateDescription,
   AnimateHeadline,
   FadeInAnimate,
   AnimateTitle,
 } from "@/features/home/animate/home-hero-animate";
-import Line from "@/shared/components/line";
 import HomeServiceSwiper from "@/shared/components/swiper";
 import { CtaButton } from "@/shared/components/ui/app-button";
 import Image, { StaticImageData } from "next/image";
@@ -17,7 +15,6 @@ import { SwiperSlide } from "swiper/react";
 interface AppHeroCardProps {
   headline: string;
   title: string;
-  description: string;
   cardDescription?: string;
   imageSrc: StaticImageData[];
 }
@@ -25,7 +22,6 @@ interface AppHeroCardProps {
 const AppHeroCard = ({
   headline,
   title,
-  description,
   cardDescription,
   imageSrc,
 }: AppHeroCardProps) => {
@@ -37,15 +33,11 @@ const AppHeroCard = ({
         </AnimateHeadline>
         <div className="flex flex-col flex-1 items-center justify-evenly">
           <AnimateTitle>
-            <h1 className="mt-6 md:mt-12">{title}</h1>
+            <h2 className="mt-4 md:mt-8 lg:text-h1">{title}</h2>
           </AnimateTitle>
-          <Line className="mt-2 lg:mt-4" />
-          <AnimateDescription>
-            <p className="pr-20 mt-6">{description}</p>
-          </AnimateDescription>
         </div>
         <AnimateCta>
-          <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-6 lg:mt-12">
+          <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-4 lg:mt-8">
             <FaPhone className="size-4 lg:size-6" />
             <span>Entrar em contato</span>
           </CtaButton>
