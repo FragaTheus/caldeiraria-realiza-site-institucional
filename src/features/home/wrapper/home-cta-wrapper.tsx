@@ -9,11 +9,7 @@ const HomeCtaWrapper = () => {
   return (
     <SectionLayout id="cta" className="bg-muted">
       <ContainerLayout>
-        <HomeCtaContent
-          title={textContent.cta_section.title}
-          description={textContent.cta_section.description}
-          ctaText={textContent.cta_section.primary_cta}
-        />
+        <HomeCtaContent title={textContent.cta_section.title} />
       </ContainerLayout>
     </SectionLayout>
   );
