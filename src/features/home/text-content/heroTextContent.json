@@ -2,7 +2,12 @@
   "hero": {
     "desktop": {
       "headline": "Experiência e confiança desde 2015",
-      "title": "Caldeiraria e Usinagem com ampla gama de soluções em produtos e serviços, com estratégias inovadoras",
+      "title": {
+        "p1": "Caldeiraria e Usinagem com ampla gama de",
+        "span1":" soluções ",
+        "p2": "em produtos e serviços, com",
+        "span2": " estratégias inovadoras"
+      },
       "ctaText": "Solicitar Orçamento"
     }
   }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/shared/assets/logo.png";
+import logo from "@/shared/assets/logo.svg";
 import { CtaButton } from "../ui/app-button";
 import HeaderNavigation from "./navigation";
 import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa6";
@@ -17,7 +17,7 @@ const AppHeaderContactInfo = ({
 }) => {
   return (
     <div className="w-full bg-muted text-white">
-      <div className="w-full max-w-7xl mx-auto flex justify-end gap-4 py-2 px-4">
+      <div className="w-full max-w-7xl mx-auto flex justify-center lg:justify-end gap-4 p-4">
         <div className="flex items-center gap-1">
           <FaEnvelope />
           <small className="lg:text-p">{email}</small>
@@ -50,7 +50,7 @@ const AppLogo = () => {
       <Image
         alt="Realiza Caldeiraria Logo"
         src={logo}
-        className="max-h-13 lg:max-h-22 w-auto  lg:col-span-2 justify-self-start -ml-5.5 lg:-ml-8 "
+        className="max-h-13 lg:max-h-22 w-auto  lg:col-span-2 justify-self-start"
         priority
       />
     </AnimateLogo>
@@ -60,9 +60,9 @@ const AppLogo = () => {
 const HeaderCta = ({ ctaLabel }: { ctaLabel: string }) => {
   return (
     <AnimateCtaHeader>
-      <CtaButton className="flex items-center gap-2 bg-green-500!">
-        <FaWhatsapp className="size-5 lg:size-6" />
-        <small className="lg:text-p hidden lg:inline">{ctaLabel}</small>
+      <CtaButton className="flex items-center gap-2 bg-surface group">
+        <FaWhatsapp className="size-5 lg:size-6 text-muted group-hover:text-green-500 group-active:text-green-500" />
+        <p className="inline text-muted-light font-semibold">{ctaLabel}</p>
       </CtaButton>
     </AnimateCtaHeader>
   );

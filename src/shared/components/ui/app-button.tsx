@@ -42,7 +42,7 @@ const CtaButton = ({
     <button
       onClick={() => openWhatsApp()}
       className={cn(
-        "bg-muted hover:bg-green-500 active:bg-green-500 text-white text-p font-medium p-2 rounded-md cursor-pointer flex items-center justify-center gap-2 transition-all",
+        "bg-surface text-muted-light hover:text-green-500 text-p font-semibold p-2 rounded-md cursor-pointer flex items-center justify-center gap-2 transition-all active:text-green-500",
         className,
       )}
       {...rest}
