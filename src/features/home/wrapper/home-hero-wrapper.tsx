@@ -1,17 +1,23 @@
-import AppSectionWrapper from "@/shared/wrapper/section-wrapper";
-import heroTextContent from "@/features/home/text-content/heroTextContent.json";
-import AppHeroCard from "../components/home-hero-card";
+import {
+  ContainerLayout,
+  SectionLayout,
+} from "@/shared/layouts/section-layout";
+import HomeHeroBackground from "../components/home-hero-background";
+import HeroContent from "../components/home-hero-card";
+import textContent from "@/features/home/text-content/heroTextContent.json";
 
 const HomeHeroWrapper = () => {
   return (
-    <AppSectionWrapper id="hero">
-      <AppHeroCard
-        headline={heroTextContent.hero.desktop.headline}
-        title={heroTextContent.hero.desktop.title}
-        ctaText={heroTextContent.hero.desktop.ctaText}
-        videoSrc="hero-video.mp4"
-      />
-    </AppSectionWrapper>
+    <SectionLayout id="hero" className="h-svh">
+      <HomeHeroBackground />
+      <ContainerLayout className="text-white h-full w-full flex items-center">
+        <HeroContent
+          headline={textContent.hero.desktop.headline}
+          title={textContent.hero.desktop.title}
+          ctaText={textContent.hero.desktop.ctaText}
+        />
+      </ContainerLayout>
+    </SectionLayout>
   );
 };
 

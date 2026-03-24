@@ -11,7 +11,7 @@ import AppFooter, { ContatosProps } from "../components/global/app-footer";
 
 const FooterWrapper = () => {
   return (
-    <SectionLayout className="bg-muted" id="footer">
+    <SectionLayout className="bg-muted bottom-0" id="footer">
       <ContainerLayout>
         <AppFooter pages={footerPages} contatos={footerContatos} />
       </ContainerLayout>

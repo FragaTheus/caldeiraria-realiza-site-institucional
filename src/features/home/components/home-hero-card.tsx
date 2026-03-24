@@ -1,60 +1,37 @@
+import Line from "@/shared/components/line";
+import { CtaButton } from "@/shared/components/ui/app-button";
 import {
   AnimateCta,
   AnimateHeadline,
-  FadeInAnimate,
   AnimateTitle,
-} from "@/features/home/animate/home-hero-animate";
-import Line from "@/shared/components/line";
-import { CtaButton } from "@/shared/components/ui/app-button";
-import { FaPhone } from "react-icons/fa6";
+} from "../animate/home-hero-animate";
+import { FaPaperPlane } from "react-icons/fa6";
 
-interface AppHeroCardProps {
+interface HeroContentProps {
   headline: string;
   title: string;
-  videoSrc: string;
   ctaText: string;
 }
 
-const AppHeroCard = ({
-  headline,
-  title,
-  videoSrc,
-  ctaText,
-}: AppHeroCardProps) => {
+const HeroContent = ({ headline, title, ctaText }: HeroContentProps) => {
   return (
-    <article className="w-full rounded-md grid grid-cols-1 md:grid-cols-2 p-4 md:p-8 bg-surface gap-4">
-      <div className="flex flex-col lg:mr-20 order-last lg:order-first">
-        <AnimateHeadline>
-          <small className="text-primary">{headline}</small>
-        </AnimateHeadline>
-        <div className="flex flex-col flex-1 items-center justify-evenly">
-          <AnimateTitle>
-            <h2 className="mt-4 md:mt-8 lg:text-h1 mb-2">{title}</h2>
-          </AnimateTitle>
-          <Line />
-        </div>
-        <AnimateCta>
-          <CtaButton className="bg-primary lg:w-1/2 hover:bg-primary/80 mt-4 lg:mt-8">
-            <FaPhone className="size-4 lg:size-6" />
-            <span>{ctaText}</span>
-          </CtaButton>
-        </AnimateCta>
-      </div>
-
-      <FadeInAnimate>
-        <div className="flex flex-col order-first lg:order-last">
-          <video
-            className="object-cover w-full max-h-45 lg:max-h-90"
-            autoPlay
-            muted
-            poster="logo-c-fundo.jpg"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-        </div>
-      </FadeInAnimate>
-    </article>
+    <div className="w-full mt-20">
+      <AnimateHeadline>
+        <small className="text-primary bg-surface p-2 rounded-sm">
+          {headline}
+        </small>
+      </AnimateHeadline>
+      <AnimateTitle>
+        <h2 className="mt-6 lg:mt-12 lg:text-h1 lg:max-w-1/2">{title}</h2>
+      </AnimateTitle>
+      <AnimateCta>
+        <CtaButton className="max-w-1/2 w-full mt-6 lg:mt-12 bg-primary hover:bg-primary/90">
+          <FaPaperPlane className="mr-2" />
+          {ctaText}
+        </CtaButton>
+      </AnimateCta>
+    </div>
   );
 };
 
-export default AppHeroCard;
+export default HeroContent;

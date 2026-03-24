@@ -1,5 +1,6 @@
 "use client";
 
+import AnimateCard from "@/features/home/animate/home-services-animate";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,17 +10,19 @@ const HeaderNavigation = ({
   links: { label: string; href: string }[];
 }) => {
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
-    <nav className="col-span-4 lg:col-span-8 items-center justify-items-center text-p font-medium order-last lg:order-2 mt-2 flex justify-between lg:justify-evenly w-full">
-      {links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className={`hover:scale-101 transition-all ${pathname === link.href ? "text-muted scale-101" : "text-muted-light"}`}
-        >
-          {link.label}
-        </Link>
+    <nav className="col-span-4 lg:col-span-8 items-center justify-items-center text-p font-medium order-last lg:order-2 mt-4 lg:mt-2 flex justify-between lg:justify-evenly w-full">
+      {links.map((link, index) => (
+        <AnimateCard key={index} index={index}>
+          <Link
+            href={link.href}
+            className={`hover:scale-101 transition-all text-muted-light ${isHome ? "text-white" : ""} ${pathname === link.href ? "scale-101" : "opacity-50"}`}
+          >
+            {link.label}
+          </Link>
+        </AnimateCard>
       ))}
     </nav>
   );

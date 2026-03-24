@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import logo from "@/shared/assets/logo.png";
 import { CtaButton } from "../ui/app-button";
 import HeaderNavigation from "./navigation";
-import { FaEnvelope, FaPhone, FaW, FaWhatsapp } from "react-icons/fa6";
+import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa6";
+import AnimateLogo from "@/shared/animate/animate-logo";
+import AnimateCtaHeader from "@/shared/animate/animate-cta";
 
 const AppHeaderContactInfo = ({
   email,
@@ -42,21 +46,25 @@ const AppHeaderToolbar = ({ children }: { children: React.ReactNode }) => {
 
 const AppLogo = () => {
   return (
-    <Image
-      alt="Realiza Caldeiraria Logo"
-      src={logo}
-      className="max-h-13 lg:max-h-22 w-auto  lg:col-span-2 justify-self-start -ml-5.5 lg:-ml-8"
-      priority
-    />
+    <AnimateLogo>
+      <Image
+        alt="Realiza Caldeiraria Logo"
+        src={logo}
+        className="max-h-13 lg:max-h-22 w-auto  lg:col-span-2 justify-self-start -ml-5.5 lg:-ml-8 "
+        priority
+      />
+    </AnimateLogo>
   );
 };
 
 const HeaderCta = ({ ctaLabel }: { ctaLabel: string }) => {
   return (
-    <CtaButton className="justify-self-end lg:order-last lg:col-span-2 flex items-center gap-2">
-      <FaWhatsapp className="size-5 lg:size-6" />
-      <small className="lg:text-p inline">{ctaLabel}</small>
-    </CtaButton>
+    <AnimateCtaHeader>
+      <CtaButton className="flex items-center gap-2 bg-green-500!">
+        <FaWhatsapp className="size-5 lg:size-6" />
+        <small className="lg:text-p hidden lg:inline">{ctaLabel}</small>
+      </CtaButton>
+    </AnimateCtaHeader>
   );
 };
 
@@ -72,7 +80,10 @@ const AppHeader = ({
   links: { label: string; href: string }[];
 }) => {
   return (
-    <header id="header" className="w-full min-h-5 flex flex-col">
+    <header
+      id="header"
+      className="w-full min-h-5 flex flex-col absolute top-0 left-0 z-50"
+    >
       <AppHeaderContactInfo email={email} phone={phone} />
       <AppHeaderToolbar>
         <AppLogo />
