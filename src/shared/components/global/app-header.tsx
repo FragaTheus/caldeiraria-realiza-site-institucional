@@ -16,7 +16,7 @@ const AppHeaderContactInfo = ({
   phone: string;
 }) => {
   return (
-    <div className="w-full bg-muted text-white">
+    <div className="w-full bg-muted text-white hidden md:block">
       <div className="w-full max-w-7xl mx-auto flex justify-center lg:justify-end gap-4 p-4">
         <div className="flex items-center gap-1">
           <FaEnvelope />

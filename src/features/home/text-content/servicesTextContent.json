@@ -7,27 +7,27 @@
       "caldeiraria": {
         "headerTitle": "Caldeiraria Leve e Média",
         "subtitle": "Fabricação em aço carbono e inox",
-        "description": "Movimentação até 6t e fabricação de 20t/mês."
+        "description": "Nossa capacidade de movimentação é de 06 toneladas e fabricação de 20 toneladas/mês, nos materiais aço carbono e aço inoxidável. Calandramos chapas com espessura de até 10mm."
       },
       "usinagem": {
         "headerTitle": "Usinagem Leve e Média",
         "subtitle": "Precisão em tornos CNC e convencionais",
-        "description": "Usinagem de peças com equipamentos próprios."
+        "description": "Contamos com máquinas versáteis como tornos CNC, tornos e fresadoras convencionais, além de equipamentos de apoio. Com equipe qualificada, usinamos diversos tipos de peças com precisão."
       },
       "soldas": {
         "headerTitle": "Soldas Especializadas",
         "subtitle": "TIG, MIG e Eletrodos Revestidos",
-        "description": "Soldadores certificados AWS D1.1."
+        "description": "Contamos com equipe de soldadores qualificados para execução de soldas em aço carbono, aço inox, alumínio e ferro fundido nos processos TIG, MIG e Eletrodos Revestidos."
       },
       "serralheria": {
         "headerTitle": "Serralheria Industrial",
         "subtitle": "Fabricação e instalação conforme NR12",
-        "description": "Estruturas metálicas com fornecimento de mão de obra."
+        "description": "Fabricamos estruturas metálicas, proteções de máquinas, guarda-corpos, prateleiras e escadas, com o diferencial do fornecimento de mão de obra para instalação em conformidade com NR12."
       },
-      "ensaio": {
-        "headerTitle": "Ensaio por Líquido Penetrante",
-        "subtitle": "Inspetores Nível II certificados",
-        "description": "Relatório incluso no Data Book final."
+      "engenharia": {
+        "headerTitle": "Engenharia e Projetos",
+        "subtitle": "Do dimensionamento à entrega final",
+        "description": "Atuamos no desenvolvimento e acompanhamento de projetos de engenharia, desde o dimensionamento técnico até a entrega final, garantindo qualidade e conformidade com as normas vigentes."
       }
     }
   }

@@ -13,19 +13,13 @@ const HomeHeroWrapper = () => {
       <ContainerLayout className="text-white h-full w-full flex items-center">
         <HeroContent
           headline={textContent.hero.desktop.headline}
-          title={title}
+          title={textContent.hero.desktop.title}
           ctaText={textContent.hero.desktop.ctaText}
+          whatsappText={textContent.hero.desktop.whatsappText}
         />
       </ContainerLayout>
     </SectionLayout>
   );
-};
-
-const title = {
-  p1: textContent.hero.desktop.title.p1,
-  span1: textContent.hero.desktop.title.span1,
-  p2: textContent.hero.desktop.title.p2,
-  span2: textContent.hero.desktop.title.span2,
 };
 
 export default HomeHeroWrapper;

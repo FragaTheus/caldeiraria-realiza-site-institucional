@@ -4,41 +4,45 @@ import {
   AnimateHeadline,
   AnimateTitle,
 } from "../animate/home-hero-animate";
-import { FaPaperPlane } from "react-icons/fa6";
-
-type TitleType = {
-  p1: string;
-  span1: string;
-  p2: string;
-  span2: string;
-};
+import { FaPaperPlane, FaWhatsapp } from "react-icons/fa6";
+import Link from "next/link";
+import Line from "@/shared/components/line";
 
 interface HeroContentProps {
   headline: string;
-  title: TitleType;
+  title: string;
   ctaText: string;
+  whatsappText: string;
 }
 
-const HeroContent = ({ headline, title, ctaText }: HeroContentProps) => {
+const HeroContent = ({
+  headline,
+  title,
+  ctaText,
+  whatsappText,
+}: HeroContentProps) => {
   return (
-    <div className="w-full mt-20">
+    <div className="w-full">
       <AnimateHeadline>
-        <small className="text-muted bg-surface p-2 rounded-sm font-semibold">
-          {headline}
-        </small>
+        <small className="text-white font-black">{headline}</small>
       </AnimateHeadline>
       <AnimateTitle>
-        <h2 className="mt-6 lg:mt-12 lg:text-h1 lg:max-w-1/2 font-black">
-          {title.p1}
-          <span className="text-primary">{title.span1}</span>
-          {title.p2}
-          <span className="text-primary">{title.span2}</span>
+        <h2 className="mt-6 lg:mt-12 text-3xl lg:text-7xl font-black tracking-tighter md:whitespace-pre-line">
+          {title}
         </h2>
       </AnimateTitle>
       <AnimateCta>
-        <CtaButton className="max-w-2/3 lg:max-w-1/2 w-full mt-6 lg:mt-12 group">
-          <FaPaperPlane className="text-muted group-hover:text-primary" />
-          <p className="text-muted-light font-semibold">{ctaText}</p>
+        <Link href={"#cta"}>
+          <button className="lg:max-w-1/2 w-full mt-6 lg:mt-12 group flex items-center justify-center gap-2 bg-primary text-white p-2 rounded-sm hover:bg-primary/90 cursor-pointer">
+            <FaPaperPlane className="text-white" />
+            <p className="text-white font-semibold">{ctaText}</p>
+          </button>
+        </Link>
+      </AnimateCta>
+      <AnimateCta>
+        <CtaButton className="w-full border border-white text-white rounded-sm mt-2 p-2 bg-surface/30 font-semibold flex items-center justify-center lg:max-w-1/2 cursor-pointer hover:bg-surface/20 hover:text-white active:text-white">
+          <FaWhatsapp className="size-5 lg:size-6" />
+          <span className="ml-2">{whatsappText}</span>
         </CtaButton>
       </AnimateCta>
     </div>

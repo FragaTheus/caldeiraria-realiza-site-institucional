@@ -4,12 +4,12 @@ import Image from "next/image";
 const HomeHeroBackground = () => {
   return (
     <div className="h-svh w-full -z-50 absolute top-0 left-0">
-      <div className="absolute inset-0 z-10 -bg-linear-200 from-black via-black/90 to-black/50" />
+      <div className="absolute inset-0 z-10 bg-linear-170 from-black via-muted/50 to-transparent" />
       <Image
         src={heroBg}
         alt="Imagem de soldador"
         fill
-        className="object-cover object-[70%_50%]"
+        className="object-cover object-[68%_50%]"
       />
     </div>
   );

@@ -1,14 +1,10 @@
 {
   "hero": {
     "desktop": {
-      "headline": "Realiza - Caldeiraria, Usinagem e Serviços LTDA",
-      "title": {
-        "p1": "Caldeiraria e Usinagem com ampla gama de",
-        "span1":" soluções ",
-        "p2": "em produtos e serviços, com",
-        "span2": " estratégias inovadoras"
-      },
-      "ctaText": "Solicitar Orçamento"
+      "headline": "Experiência e confiança desde 2015",
+      "title": "Caldeiraria e Usinagem\n com ampla gama de soluções\n em produtos e serviços,\n com estratégias inovadoras",
+      "ctaText": "Solicitar Orçamento",
+      "whatsappText": "Iniciar conversa"
     }
   }
 }

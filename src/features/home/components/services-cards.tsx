@@ -6,7 +6,6 @@ export interface ServicesCardProps {
   title?: string;
   headerTitle?: string;
   HeaderIcon?: React.ElementType;
-  subtitle?: string;
   description?: string;
   isLastCard?: boolean;
 }
@@ -16,7 +15,6 @@ const ServicesCard = ({
   title,
   headerTitle,
   HeaderIcon,
-  subtitle,
   description,
 }: ServicesCardProps) => {
   return (
@@ -35,11 +33,10 @@ const ServicesCard = ({
               {headerTitle && <p className="font-semibold">{headerTitle}</p>}
               {HeaderIcon && <HeaderIcon className="size-6" />}
             </div>
-            <div className="flex-col flex mt-20 text-muted-light gap-2">
-              {subtitle && <p>{subtitle}</p>}
-              <div className="h-px w-full bg-muted-light/10" />
-              {description && <p>{description}</p>}
-            </div>
+            <div className="h-px w-full bg-muted-light/10 mt-2" />
+            {description && (
+              <p className="mt-8 text-muted-light">{description}</p>
+            )}
           </>
         )}
       </article>
