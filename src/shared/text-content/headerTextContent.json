@@ -10,17 +10,18 @@
                 "href": "/"
             },
             {
+                "label": "Engenharia",
+                "href": "/engenharia"
+            },
+            {
                 "label": "Serviços",
                 "href": "/servicos"
             },
             {
                 "label": "Projetos",
                 "href": "/projetos"
-            },
-            {
-                "label": "Contato",
-                "href": "/contato"
             }
+            
         ],
         "headerCta": {
             "label": "Fale conosco",

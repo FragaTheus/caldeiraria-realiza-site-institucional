@@ -1,0 +1,14 @@
+{
+  "engenharia": {
+    "intro": {
+      "eyebrow": "Engenharia",
+      "titulo": "Do projeto\n à fabricação",
+      "descricao": "Quando o desafio exige mais do que uma peça, exige um projeto,\n a Realiza oferece o ciclo completo: levantamento técnico, modelagem,\n simulação e fabricação.\n Tudo documentado, tudo rastreável.",
+      "cta": {
+        "label": "Ver Projetos",
+        "href": "#projetos",
+        "icon": "FaArrowRight"
+      }
+    }
+  }
+}
