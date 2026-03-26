@@ -1,0 +1,25 @@
+{
+  "engenharia": {
+    "capacidades": {
+      "titulo": "Nossas Capacidades de Engenharia",
+      "cards": [
+        {
+          "titulo": "Modelagem 3D em SolidWorks e Inventor",
+          "imagem": "carrinho-tombador.png"
+        },
+        {
+          "titulo": "Desenhos Técnicos 2D em AutoCAD",
+          "imagem": "comportas.png"
+        },
+        {
+          "titulo": "Simulação Estrutural e Análise FEA",
+          "imagem": "travessao-fea.png"
+        },
+        {
+          "titulo": "Gestão e Documentação de Projetos",
+          "imagem": "cronograma.png"
+        }
+      ]
+    }
+  }
+}

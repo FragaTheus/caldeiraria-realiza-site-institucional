@@ -58,7 +58,7 @@ const EngIntroContent = ({
   ctaHref,
 }: EngIntroContentProps) => {
   return (
-    <article className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mt-20">
+    <article className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mt-20 bg-surface rounded-sm p-4 border border-muted/20">
       <ImgGrid hrefImg1={img1} />
       <ContentGrid
         eyebrow={eyebrow}
