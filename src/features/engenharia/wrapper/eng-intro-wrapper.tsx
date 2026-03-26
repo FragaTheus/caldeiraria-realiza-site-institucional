@@ -3,7 +3,7 @@ import {
   ContainerLayout,
   SectionLayout,
 } from "@/shared/layouts/section-layout";
-import engIntroImg from "@/shared/assets/enginner-intro.svg";
+import engIntroImg from "@/shared/assets/eng-intro.png";
 import textContent from "@/features/engenharia/text-content/engIntroTextContent.json";
 
 const EngIntroWrapper = () => {

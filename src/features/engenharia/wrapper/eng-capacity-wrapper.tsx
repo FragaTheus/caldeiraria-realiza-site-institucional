@@ -5,7 +5,7 @@ import travessaoImg from "@/shared/assets/travessao.png";
 import carrinhoImg from "@/shared/assets/carrinho.png";
 import comportaImg from "@/shared/assets/comporta.png";
 import cronogramaImg from "@/shared/assets/cronograma.png";
-import { EngCapacityCardProps } from "../compoenents/eng-capacities-card";
+import { EngCapacityCardsProps } from "../compoenents/eng-capacities-card";
 
 const EngCapacityWrapper = () => {
   return (
@@ -13,6 +13,7 @@ const EngCapacityWrapper = () => {
       <EngCapacityLayout
         title={textContent.engenharia.capacidades.titulo}
         cards={cards}
+        lastCard={cronogramaCard}
       />
     </AppSectionWrapper>
   );
@@ -31,6 +32,12 @@ const cards = [
     title: textContent.engenharia.capacidades.cards[1].titulo,
     imageSrc: comportaImg,
   },
-] satisfies EngCapacityCardProps[];
+] satisfies EngCapacityCardsProps[];
+
+const cronogramaCard = {
+  title: textContent.engenharia.capacidades.cards[3].titulo,
+  description: textContent.engenharia.capacidades.descricao,
+  imageSrc: cronogramaImg,
+} satisfies EngCapacityCardsProps;
 
 export default EngCapacityWrapper;

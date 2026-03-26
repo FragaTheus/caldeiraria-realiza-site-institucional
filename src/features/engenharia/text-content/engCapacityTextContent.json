@@ -1,23 +1,20 @@
 {
   "engenharia": {
     "capacidades": {
-      "titulo": "Nossas Capacidades de Engenharia",
+      "titulo": "Nossas Capacidades\n de Engenharia",
+      "descricao": "Nossa equipe combina ferramentas modernas de projeto com experiência industrial para entregar soluções completas — do primeiro esboço ao produto fabricado.",
       "cards": [
         {
-          "titulo": "Modelagem 3D em SolidWorks e Inventor",
-          "imagem": "carrinho-tombador.png"
+          "titulo": "Modelagem 3D em\n SolidWorks e Inventor"
         },
         {
-          "titulo": "Desenhos Técnicos 2D em AutoCAD",
-          "imagem": "comportas.png"
+          "titulo": "Desenhos Técnicos\n 2D em AutoCAD"
         },
         {
-          "titulo": "Simulação Estrutural e Análise FEA",
-          "imagem": "travessao-fea.png"
+          "titulo": "Simulação Estrutural\n e Análise FEA"
         },
         {
-          "titulo": "Gestão e Documentação de Projetos",
-          "imagem": "cronograma.png"
+          "titulo": "Gestão\n e Documentação\n de Projetos"
         }
       ]
     }
