@@ -1,9 +1,9 @@
 import AppSectionWrapper from "@/shared/wrapper/section-wrapper";
 import EngCapacityLayout from "../layout/eng-capacity-layout";
 import textContent from "@/features/engenharia/text-content/engCapacityTextContent.json";
-import travessaoImg from "@/shared/assets/travessao.png";
-import carrinhoImg from "@/shared/assets/carrinho.png";
-import comportaImg from "@/shared/assets/comporta.png";
+import simulation3D from "@/shared/assets/simulation-3D.png";
+import carImg from "@/shared/assets/car-3D.png";
+import project2D from "@/shared/assets/project-2D.png";
 import cronogramaImg from "@/shared/assets/cronograma.png";
 import { EngCapacityCardsProps } from "../compoenents/eng-capacities-card";
 
@@ -22,15 +22,15 @@ const EngCapacityWrapper = () => {
 const cards = [
   {
     title: textContent.engenharia.capacidades.cards[0].titulo,
-    imageSrc: carrinhoImg,
+    imageSrc: carImg,
   },
   {
     title: textContent.engenharia.capacidades.cards[2].titulo,
-    imageSrc: travessaoImg,
+    imageSrc: simulation3D,
   },
   {
     title: textContent.engenharia.capacidades.cards[1].titulo,
-    imageSrc: comportaImg,
+    imageSrc: project2D,
   },
 ] satisfies EngCapacityCardsProps[];
 

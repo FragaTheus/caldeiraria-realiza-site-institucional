@@ -1,0 +1,29 @@
+{
+  "engenharia": {
+    "galeria": {
+      "titulo": "Projetos de Engenharia Realizados",
+      "itens": [
+        {
+          "titulo": "Moinho\n de Alta Capacidade",
+          "subtitulo": "Modelagem completa em SolidWorks\ncom detalhamento de conjuntos e lista de materiais"
+        },
+        {
+          "titulo": "Travessão\n com Roldana",
+          "subtitulo": "Projeto estrutural com capacidade de 45t\ne validação por simulação de carga FEA"
+        },
+        {
+          "titulo": "Estação\n de Trabalho Automatizada",
+          "subtitulo": "Célula industrial com robô integrado\ne painel de controle desenvolvido em 3D"
+        },
+        {
+          "titulo": "Comportas\n Industriais",
+          "subtitulo": "Render 3D e prancha técnica 2D completa\ncom seções, cotas e detalhes de vedação"
+        },
+        {
+          "titulo": "Carrinho\n Tombador",
+          "subtitulo": "Dispositivo motorizado para movimentação\nde grandes componentes rotativos industriais"
+        }
+      ]
+    }
+  }
+}

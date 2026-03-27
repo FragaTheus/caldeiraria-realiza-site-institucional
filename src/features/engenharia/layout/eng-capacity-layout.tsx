@@ -16,7 +16,7 @@ const EngCapacityLayout = ({
   title,
 }: EngCapacityLayoutProps) => {
   return (
-    <div>
+    <div className="relative">
       <h1 className="tracking-tighter font-bold whitespace-pre-line">
         {title}
       </h1>

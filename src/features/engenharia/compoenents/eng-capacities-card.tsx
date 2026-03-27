@@ -29,7 +29,7 @@ const EngDescriptionCard = ({
   description,
 }: EngCapacityCardsProps) => {
   return (
-    <article className="rounded-sm border border-muted/20 p-4 lg:p-8 lg:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <article className="rounded-sm border border-muted/20 p-4 lg:p-8 lg:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-4 bg-linear-320">
       <div className="text-left flex flex-col items-start justify-between whitespace-pre-line">
         <h3>{title}</h3>
         <Line className="max-w-2/3 lg:max-w-1/2 mt-2" />
