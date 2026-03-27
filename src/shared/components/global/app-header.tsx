@@ -7,6 +7,7 @@ import HeaderNavigation from "./navigation";
 import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa6";
 import AnimateLogo from "@/shared/animate/animate-logo";
 import AnimateCtaHeader from "@/shared/animate/animate-cta";
+import { usePathname } from "next/navigation";
 
 const AppHeaderContactInfo = ({
   email,
@@ -17,7 +18,7 @@ const AppHeaderContactInfo = ({
 }) => {
   return (
     <div className="w-full bg-muted text-white hidden md:block">
-      <div className="w-full max-w-7xl mx-auto flex justify-center lg:justify-end gap-4 p-4">
+      <div className="w-full max-w-7xl mx-auto flex justify-center lg:justify-end gap-4 px-6 py-2">
         <div className="flex items-center gap-1">
           <FaEnvelope />
           <small className="lg:text-p">{email}</small>
@@ -58,11 +59,21 @@ const AppLogo = () => {
 };
 
 const HeaderCta = ({ ctaLabel }: { ctaLabel: string }) => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   return (
     <AnimateCtaHeader>
-      <CtaButton className="flex items-center gap-2 bg-surface group">
-        <FaWhatsapp className="size-5 lg:size-6 text-muted group-hover:text-green-500 group-active:text-green-500" />
-        <p className="inline text-muted-light font-semibold">{ctaLabel}</p>
+      <CtaButton
+        className={`flex items-center gap-2 bg-surface group ${isHome ? "" : "bg-muted! text-white"} group`}
+      >
+        <FaWhatsapp
+          className={`size-5 lg:size-6 text-muted group-hover:text-green-500 group-active:text-green-500 ${isHome ? "" : "text-white"}`}
+        />
+        <p
+          className={`inline text-muted-light font-semibold ${isHome ? "" : "text-white"}`}
+        >
+          {ctaLabel}
+        </p>
       </CtaButton>
     </AnimateCtaHeader>
   );

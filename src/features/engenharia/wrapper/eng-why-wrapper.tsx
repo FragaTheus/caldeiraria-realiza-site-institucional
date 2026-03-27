@@ -10,7 +10,7 @@ import { FaFileAlt } from "react-icons/fa";
 
 const EngWhyWrapper = () => {
   return (
-    <SectionLayout id="eng-why" className="bg-muted">
+    <SectionLayout id="eng-why">
       <ContainerLayout>
         <EngWhyLayout
           title={textContent.engenharia.diferenciais.titulo}

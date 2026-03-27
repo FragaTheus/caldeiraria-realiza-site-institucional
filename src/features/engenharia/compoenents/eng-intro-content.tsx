@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 
 const ImgGrid = ({ hrefImg1 }: { hrefImg1: StaticImageData }) => {
   return (
@@ -13,17 +12,9 @@ interface ContentGridProps {
   eyebrow?: string;
   title: string;
   description: string;
-  ctaLabel: string;
-  ctaHref: string;
 }
 
-const ContentGrid = ({
-  eyebrow,
-  title,
-  description,
-  ctaLabel,
-  ctaHref,
-}: ContentGridProps) => {
+const ContentGrid = ({ eyebrow, title, description }: ContentGridProps) => {
   return (
     <div className="order-last lg:order-first flex flex-col m-auto">
       <small className="text-primary font-semibold">{eyebrow}</small>
@@ -31,11 +22,6 @@ const ContentGrid = ({
         {title}
       </h1>
       <p className="mt-4 lg:whitespace-pre-line">{description}</p>
-      <Link href={ctaHref} className="mt-4 lg:mt-8 lg:max-w-2/3">
-        <button className=" border w-full bg-primary/5 text-primary hover:bg-primary/10 p-2 rounded-sm gap-2 cursor-pointer">
-          <span>{ctaLabel}</span>
-        </button>
-      </Link>
     </div>
   );
 };
@@ -45,8 +31,6 @@ interface EngIntroContentProps {
   eyebrow: string;
   title: string;
   description: string;
-  ctaLabel: string;
-  ctaHref: string;
 }
 
 const EngIntroContent = ({
@@ -54,19 +38,11 @@ const EngIntroContent = ({
   eyebrow,
   title,
   description,
-  ctaLabel,
-  ctaHref,
 }: EngIntroContentProps) => {
   return (
-    <article className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mt-20 rounded-sm p-4 border border-muted/20 bg-linear-180 lg:bg-linear-240 from-primary/5 to-transparent">
+    <article className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mt-20 rounded-sm border border-muted/20 p-4 lg:p-8">
       <ImgGrid hrefImg1={img1} />
-      <ContentGrid
-        eyebrow={eyebrow}
-        title={title}
-        description={description}
-        ctaLabel={ctaLabel}
-        ctaHref={ctaHref}
-      />
+      <ContentGrid eyebrow={eyebrow} title={title} description={description} />
     </article>
   );
 };

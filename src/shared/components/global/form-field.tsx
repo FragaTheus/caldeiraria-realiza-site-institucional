@@ -1,3 +1,4 @@
+import { usePathname } from "next/navigation";
 import {
   InputHTMLAttributes,
   TextareaHTMLAttributes,
@@ -17,10 +18,13 @@ export interface FormFieldProps extends Omit<
 }
 
 const FormField = ({ error, value, ...props }: FormFieldProps) => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   return (
     <div className="flex flex-col items-start gap-2 w-full">
       <input
-        className="rounded-sm px-2 py-1 bg-muted-light/50 outline-none focus:scale-101 focus:bg-muted-light transition-colors w-full"
+        className={`rounded-sm px-2 py-1  focus:scale-101 w-full transition-all outline-none
+          ${isHome ? "bg-muted-light/50" : "ring"}`}
         value={
           props.type === "file"
             ? undefined
@@ -42,10 +46,13 @@ export interface FormTextAreaProps extends Omit<
 }
 
 export const FormTextArea = ({ error, ...props }: FormTextAreaProps) => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   return (
     <div className="flex flex-col items-start gap-2">
       <textarea
-        className="rounded-sm px-2 py-1 bg-muted-light/50 outline-none focus:scale-101 focus:bg-muted-light transition-colors resize-none w-full"
+        className={`rounded-sm px-2 py-1  focus:scale-101 w-full transition-all outline-none
+          ${isHome ? "bg-muted-light/50" : "ring"}`}
         {...props}
       />
       {error && <small className="text-red-500">{error}</small>}
@@ -72,6 +79,9 @@ export const FormFileField = forwardRef<HTMLInputElement, FormFileFieldProps>(
       onChange?.(files);
     };
 
+    const pathname = usePathname();
+    const isHome = pathname === "/";
+
     return (
       <div className="flex flex-col items-start gap-2">
         <input
@@ -88,7 +98,8 @@ export const FormFileField = forwardRef<HTMLInputElement, FormFileFieldProps>(
         <button
           type="button"
           onClick={() => inputRef.current?.click()}
-          className="rounded-full px-2 py-1 transition-colors text-small cursor-pointer flex items-center gap-2 text-muted-light hover:text-white"
+          className={`rounded-full px-2 py-1 transition-colors text-small cursor-pointer flex items-center gap-2  
+            ${isHome ? "text-muted-light hover:text-white" : "text-muted-light hover:text-muted"}`}
         >
           <FaPaperclip />
           {fileName ?? "Anexar projeto"}

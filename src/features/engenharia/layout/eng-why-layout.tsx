@@ -8,10 +8,10 @@ interface EngWhyLayoutProps {
 const EngWhyLayout = ({ title, cards }: EngWhyLayoutProps) => {
   return (
     <div>
-      <h1 className="text-left tracking-tighter text-white bg-muted whitespace-pre-line">
+      <h1 className="text-left tracking-tighter whitespace-pre-line">
         {title}
       </h1>
-      <article className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 border rounded-sm bg-surface">
+      <article className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 border border-muted/20 rounded-sm">
         {cards.map((card, index) => (
           <EngWhyCard key={index} {...card} />
         ))}

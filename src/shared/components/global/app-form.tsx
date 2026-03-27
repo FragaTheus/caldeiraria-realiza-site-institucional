@@ -11,9 +11,11 @@ import FormField, {
   FormFileField,
   FormFieldProps,
 } from "./form-field";
-import { FaCircleNotch, FaFileArrowUp } from "react-icons/fa6";
+import { FaCircleNotch } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
 
-const ContactForm = () => {
+const ContactForm = ({ ctaText }: { ctaText: string }) => {
+  const pathname = usePathname();
   const {
     register,
     control,
@@ -47,7 +49,7 @@ const ContactForm = () => {
       ))}
 
       <FormTextArea
-        placeholder="Descreva seu projeto... (máx. 300 caracteres)"
+        placeholder="Envie uma mensagem breve sobre seu projeto ou dúvida"
         rows={4}
         error={errors.mensagem?.message}
         {...register("mensagem")}
@@ -69,17 +71,18 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="p-2 w-full bg-surface rounded-sm text-muted-light font-semibold hover:bg-muted-surface/95 group cursor-pointer"
+        className={`p-2 w-full rounded-sm font-semibold hover:bg-muted-surface/95 group cursor-pointer ${pathname !== "/" ? "bg-primary text-white hover:bg-primary/80" : "bg-surface text-muted-light"}`}
       >
         {isSubmitting ? (
           <div className="flex gap-2 justify-center">
-            <FaCircleNotch className="animate-spin text-muted size-5" />
+            <FaCircleNotch
+              className={`animate-spin size-5 ${pathname !== "/" ? "text-white" : "text-muted"}`}
+            />
             <span className="text-sm">Enviando...</span>
           </div>
         ) : (
           <div className="flex gap-2 justify-center">
-            <FaFileArrowUp className="text-muted group-hover:text-primary size-5  " />
-            <span className="text-sm">Enviar projeto</span>
+            <span className="text-sm">{ctaText}</span>
           </div>
         )}
       </button>

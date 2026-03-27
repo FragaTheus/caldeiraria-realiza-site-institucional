@@ -23,11 +23,18 @@ const footerPages = [
   {
     title: "Home",
     links: [
-      { href: "#header", label: "Início" },
-      { href: "#hero", label: "Introdução" },
-      { href: "#sobre", label: "Sobre" },
-      { href: "#atuacao", label: "Atuação" },
-      { href: "#como", label: "Como trabalhamos" },
+      { href: "/#hero", label: "Início" },
+      { href: "/#sobre", label: "Sobre" },
+      { href: "/#atuacao", label: "Atuação" },
+      { href: "/#como", label: "Como trabalhamos" },
+    ],
+  },
+  {
+    title: "Engenharia",
+    links: [
+      { href: "/engenharia#eng-intro", label: "Início" },
+      { href: "/engenharia#capacity", label: "Capacidades" },
+      { href: "/engenharia#eng-why", label: "Diferenciais" },
     ],
   },
 ];

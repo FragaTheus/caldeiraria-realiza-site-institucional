@@ -18,7 +18,7 @@ const HeaderNavigation = ({
         <AnimateCard key={index} index={index}>
           <Link
             href={link.href}
-            className={`hover:scale-101 transition-all text-muted-light ${isHome ? "text-white" : ""} ${pathname === link.href ? "scale-101" : "opacity-50"}`}
+            className={`hover:scale-101 transition-all text-muted ${isHome ? "text-white" : ""} ${pathname === link.href ? "scale-101" : "opacity-50"}`}
           >
             {link.label}
           </Link>
