@@ -11,7 +11,7 @@ const EngWhyLayout = ({ title, cards }: EngWhyLayoutProps) => {
       <h1 className="text-left tracking-tighter whitespace-pre-line">
         {title}
       </h1>
-      <article className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 border border-muted/20 rounded-sm">
+      <article className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 border border-muted/20">
         {cards.map((card, index) => (
           <EngWhyCard key={index} {...card} />
         ))}

@@ -8,8 +8,7 @@ import textContent from "@/features/engenharia/text-content/engIntroTextContent.
 
 const EngIntroWrapper = () => {
   return (
-    <SectionLayout id="eng-intro" className="relative">
-      <div className="absolute inset-0 bg-linear-180 from-primary/10 to-transparent" />
+    <SectionLayout id="eng-intro">
       <ContainerLayout className="min-h-svh lg:min-h-[80svh] flex items-center justify-center">
         <EngIntroContent
           img1={engIntroImg}

@@ -34,6 +34,7 @@ const footerPages = [
     links: [
       { href: "/engenharia#eng-intro", label: "Início" },
       { href: "/engenharia#capacity", label: "Capacidades" },
+      { href: "/engenharia#eng-gallery", label: "Galeria" },
       { href: "/engenharia#eng-why", label: "Diferenciais" },
     ],
   },

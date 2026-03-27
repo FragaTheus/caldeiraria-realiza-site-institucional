@@ -1,27 +1,28 @@
 {
   "engenharia": {
     "galeria": {
-      "titulo": "Projetos de Engenharia Realizados",
+      "titulo": "Projetos de\n Engenharia Realizados",
+      "descricao": "Cada projeto desenvolvido com modelagem 3D,\nsimulação estrutural e documentação técnica completa.",
       "itens": [
         {
-          "titulo": "Moinho\n de Alta Capacidade",
-          "subtitulo": "Modelagem completa em SolidWorks\ncom detalhamento de conjuntos e lista de materiais"
+          "titulo": "Moinho de\n Alta Capacidade",
+          "subtitulo": "Modelagem completa\n em SolidWorks\n com detalhamento de conjuntos\n e lista de materiais"
         },
         {
           "titulo": "Travessão\n com Roldana",
-          "subtitulo": "Projeto estrutural com capacidade de 45t\ne validação por simulação de carga FEA"
+          "subtitulo": "Projeto estrutural\n com capacidade de 45t\n e validação por simulação\n de carga FEA"
         },
         {
-          "titulo": "Estação\n de Trabalho Automatizada",
-          "subtitulo": "Célula industrial com robô integrado\ne painel de controle desenvolvido em 3D"
+          "titulo": "Estação de\n Trabalho Automatizada",
+          "subtitulo": "Célula industrial\n com robô integrado\ne painel de controle\n desenvolvido em 3D"
         },
         {
           "titulo": "Comportas\n Industriais",
-          "subtitulo": "Render 3D e prancha técnica 2D completa\ncom seções, cotas e detalhes de vedação"
+          "subtitulo": "Render 3D e prancha\n técnica 2D completa\ncom seções, cotas\n e detalhes de vedação"
         },
         {
           "titulo": "Carrinho\n Tombador",
-          "subtitulo": "Dispositivo motorizado para movimentação\nde grandes componentes rotativos industriais"
+          "subtitulo": "Dispositivo motorizado\n para movimentação\nde grandes componentes\n rotativos industriais"
         }
       ]
     }
