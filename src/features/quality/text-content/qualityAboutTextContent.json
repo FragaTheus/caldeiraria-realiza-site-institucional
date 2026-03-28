@@ -1,0 +1,19 @@
+{
+  "certifications_section": {
+    "headline": "Padrões\n que certificam\n cada entrega.",
+    "badges": {
+      "iso": {
+        "label": "NBR ISO 9001:2015",
+        "description": "Certificação que garante processos padronizados e rastreáveis, com foco na qualidade e na satisfação do cliente em cada fornecimento."
+      },
+      "aws": {
+        "label": "AWS D1.1",
+        "description": "Norma americana que certifica nossos soldadores para execução de soldas estruturais em aço carbono, inox, alumínio e ferro fundido."
+      },
+      "asnt": {
+        "label": "ASNT SNT-TC-1A",
+        "description": "Prática que qualifica nossos inspetores Nível II para realização de ensaios visuais e por líquido penetrante com rastreabilidade comprovada."
+      }
+    }
+  }
+}

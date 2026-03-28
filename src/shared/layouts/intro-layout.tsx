@@ -4,12 +4,21 @@ import Line from "../components/line";
 
 interface IntroLayoutProps {
   id: string;
+  small: string;
   title: string;
   description: string;
   imgSrc: StaticImageData;
+  imgClassname?: string;
 }
 
-const IntroLayout = ({ id, title, description, imgSrc }: IntroLayoutProps) => {
+const IntroLayout = ({
+  id,
+  small,
+  title,
+  description,
+  imgSrc,
+  imgClassname,
+}: IntroLayoutProps) => {
   return (
     <SectionLayout
       id={id}
@@ -19,11 +28,12 @@ const IntroLayout = ({ id, title, description, imgSrc }: IntroLayoutProps) => {
       <Image
         src={imgSrc}
         alt={title}
-        className="bottom-0 left-0 absolute object-cover max-h-1/6 bg-primary -z-10"
+        className={`bottom-0 left-0 absolute object-cover max-h-1/6 bg-primary -z-10 ${imgClassname}`}
       />
       <ContainerLayout>
         <div className="flex flex-col items-start">
-          <h1 className="font-black tracking-tighter whitespace-pre-line text-5xl lg:text-7xl">
+          <small className="text-sm font-bold text-primary">{small}</small>
+          <h1 className="font-black tracking-tighter whitespace-pre-line text-5xl lg:text-7xl mt-4">
             {title}
           </h1>
           <Line className="max-w-1/3 lg:max-w-1/6 my-4" />

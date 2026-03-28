@@ -8,6 +8,7 @@ const EngIntroWrapper = () => {
     <SectionLayout id="eng-intro">
       <IntroLayout
         id="eng-intro"
+        small={textContent.engenharia.intro.eyebrow}
         title={textContent.engenharia.intro.titulo}
         description={textContent.engenharia.intro.descricao}
         imgSrc={enginnerImg}

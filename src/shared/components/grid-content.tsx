@@ -2,7 +2,7 @@ import {
   AnimateDescription,
   AnimateIcon,
   AnimateTitle,
-} from "../animate/home-about-animate";
+} from "../../features/home/animate/home-about-animate";
 
 export interface AboutGridContentProps {
   label: string;
@@ -11,7 +11,7 @@ export interface AboutGridContentProps {
   isMuted?: boolean;
 }
 
-const AboutGridContent = ({
+const AppGridContent = ({
   label,
   text,
   Icon,
@@ -38,14 +38,14 @@ interface AboutContentProps {
   gridContents: AboutGridContentProps[];
 }
 
-const AboutContent = ({ gridContents }: AboutContentProps) => {
+const AppGrid = ({ gridContents }: AboutContentProps) => {
   return (
     <div className="w-full border border-muted grid grid-cols-1 lg:grid-cols-3">
       {gridContents.map((content, index) => (
-        <AboutGridContent key={index} {...content} />
+        <AppGridContent key={index} {...content} />
       ))}
     </div>
   );
 };
 
-export default AboutContent;
+export default AppGrid;

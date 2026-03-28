@@ -1,10 +1,9 @@
 import AppSectionWrapper from "@/shared/wrapper/section-wrapper";
-import AboutContent, {
-  AboutGridContentProps,
-} from "../components/about-content";
+import { AboutGridContentProps } from "../../../shared/components/grid-content";
 import textContent from "@/features/home/text-content/aboutTextContent.json";
 import { FaIndustry } from "react-icons/fa";
 import { FaAward, FaCheck } from "react-icons/fa6";
+import AppGrid from "../../../shared/components/grid-content";
 
 const aboutGridContents = [
   {
@@ -30,7 +29,7 @@ const aboutGridContents = [
 const HomeAboutWrapper = () => {
   return (
     <AppSectionWrapper id="sobre">
-      <AboutContent gridContents={aboutGridContents} />
+      <AppGrid gridContents={aboutGridContents} />
     </AppSectionWrapper>
   );
 };
