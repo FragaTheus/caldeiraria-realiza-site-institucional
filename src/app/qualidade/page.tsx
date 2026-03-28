@@ -1,5 +1,5 @@
-import Dev from "@/shared/components/dev";
+import QualityIntroWrapper from "@/features/qualidade/wrapper/quality-intro-wrapper";
 
-export default function Servicos() {
-  return <Dev />;
+export default function Quality() {
+  return <QualityIntroWrapper />;
 }

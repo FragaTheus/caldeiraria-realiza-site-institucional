@@ -27,9 +27,9 @@ const HeroContent = ({
         <small className="text-white font-black">{headline}</small>
       </AnimateHeadline>
       <AnimateTitle>
-        <h2 className="mt-6 lg:mt-12 text-3xl lg:text-7xl font-black tracking-tighter md:whitespace-pre-line">
+        <h1 className="mt-6 lg:mt-12 text-3xl lg:text-7xl font-black tracking-tighter md:whitespace-pre-line">
           {title}
-        </h2>
+        </h1>
       </AnimateTitle>
       <AnimateCta>
         <Link href={"#cta"}>
