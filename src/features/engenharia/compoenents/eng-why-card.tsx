@@ -11,7 +11,7 @@ const EngWhyCard = ({ Icon, title, desc }: EngWhyCardProps) => {
       <h3 className="font-semibold mt-4 lg:mt-8 whitespace-pre-line">
         {title}
       </h3>
-      <p className="text-muted-light font-light mt-4 lg:mt-8 whitespace-pre-line lg:whitespace-normal">
+      <p className="font-light mt-4 lg:mt-8 whitespace-pre-line lg:whitespace-normal">
         {desc}
       </p>
     </div>

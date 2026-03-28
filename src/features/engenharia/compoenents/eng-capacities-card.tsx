@@ -9,7 +9,7 @@ export interface EngCapacityCardsProps {
 
 const EngCapacityCard = ({ title, imageSrc }: EngCapacityCardsProps) => {
   return (
-    <article className=" border border-muted/20 p-4 lg:p-8">
+    <article className=" border p-4 lg:p-8">
       <div className="flex flex-col text-left">
         <h3 className="whitespace-pre-line">{title}</h3>
         <Line className="max-w-2/3 mt-2" />
@@ -29,7 +29,7 @@ const EngDescriptionCard = ({
   description,
 }: EngCapacityCardsProps) => {
   return (
-    <article className=" border border-muted/20 p-4 lg:p-8 lg:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-4 bg-linear-320">
+    <article className="border p-4 lg:p-8 lg:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-4 bg-linear-320 bg-muted text-white">
       <div className="text-left flex flex-col items-start justify-between whitespace-pre-line">
         <h3>{title}</h3>
         <Line className="max-w-2/3 lg:max-w-1/2 mt-2" />

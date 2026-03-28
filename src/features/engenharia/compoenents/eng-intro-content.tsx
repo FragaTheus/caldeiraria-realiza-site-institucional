@@ -21,7 +21,7 @@ const ContentGrid = ({ eyebrow, title, description }: ContentGridProps) => {
       <h1 className="text-3xl lg:text-7xl font-black tracking-tighter lg:whitespace-pre-line mt-2 lg:mt-4">
         {title}
       </h1>
-      <p className="mt-4 lg:whitespace-pre-line lg:text-h3 font-light text-muted-light">
+      <p className="mt-4 lg:whitespace-pre-line font-light text-muted-light">
         {description}
       </p>
     </div>
@@ -42,7 +42,7 @@ const EngIntroContent = ({
   description,
 }: EngIntroContentProps) => {
   return (
-    <article className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mt-20 border border-muted/20 p-4 lg:p-8 bg-linear-0 lg:bg-linear-90 from-transparent via-transparent to-primary/10">
+    <article className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mt-20 p-4 lg:p-8 bg-surface">
       <ImgGrid hrefImg1={img1} />
       <ContentGrid eyebrow={eyebrow} title={title} description={description} />
     </article>

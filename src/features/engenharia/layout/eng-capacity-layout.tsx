@@ -17,7 +17,7 @@ const EngCapacityLayout = ({
 }: EngCapacityLayoutProps) => {
   return (
     <div className="relative">
-      <h1 className="tracking-tighter font-bold whitespace-pre-line">
+      <h1 className="tracking-tighter font-black whitespace-pre-line">
         {title}
       </h1>
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 items-center mt-4">

@@ -7,7 +7,7 @@ export interface EngGalleryCardsProps {
 
 const EngGalleryCards = ({ description, imageUrl }: EngGalleryCardsProps) => {
   return (
-    <article className="border border-muted/20 p-4 w-full h-full flex flex-col justify-between">
+    <article className="p-4 w-full h-full flex flex-col justify-between bg-surface">
       <p className="font-semibold whitespace-pre-line">{description}</p>
       <Image
         src={imageUrl}
