@@ -1,0 +1,13 @@
+{
+  "certificates_section": {
+    "headline": "Documentos\n que comprovam\n o que entregamos.",
+    "certificate_1": {
+      "title": "EPS — Especificação\n de Procedimento\n de Soldagem",
+      "description": "Documento que define os parâmetros técnicos de cada procedimento de soldagem executado pela Realiza — materiais, processos, dimensões e condições de execução. Garante que cada solda seja reproduzível e rastreável."
+    },
+    "certificate_2": {
+      "title": "Certificado\n de Qualificação\n Inspetor Nível II",
+      "description": "Certifica que nossos inspetores são qualificados Nível II para Ensaio Visual de Solda e Ensaio por Líquido Penetrante, conforme os requisitos da prática recomendada ASNT SNT-TC-1A."
+    }
+  }
+}
