@@ -24,18 +24,22 @@ const ServicesCard = ({
       >
         {isTitleCard ? (
           <div className="flex-1 flex items-start relative">
-            <FaTools className="text-primary absolute top-4 right-4 size-12" />
-            <h1 className="font-bold whitespace-pre-line">{title}</h1>
+            <FaTools className="text-primary absolute top-4 right-4 size-8" />
+            <h3 className="font-bold whitespace-pre-line text-2xl">{title}</h3>
           </div>
         ) : (
           <>
             <div className="flex w-full items-center justify-between">
-              {headerTitle && <p className="font-semibold">{headerTitle}</p>}
-              {HeaderIcon && <HeaderIcon className="size-6" />}
+              {headerTitle && (
+                <p className="font-semibold text-base">{headerTitle}</p>
+              )}
+              {HeaderIcon && <HeaderIcon className="size-4" />}
             </div>
             <div className="h-px w-full bg-muted-light/10 mt-2" />
             {description && (
-              <p className="mt-8 text-muted-light">{description}</p>
+              <p className="mt-8 text-muted-light text-base font-light">
+                {description}
+              </p>
             )}
           </>
         )}

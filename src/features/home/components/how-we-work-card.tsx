@@ -14,13 +14,13 @@ const GridContent = ({ step, title, description }: GridContentProps) => {
   return (
     <article className="flex flex-col relative bg-surface p-4 lg:p-8">
       <AnimateIcon>
-        <h3 className="font-semibold text-primary">{step}</h3>
+        <h3 className="font-semibold text-primary text-2xl">{step}</h3>
       </AnimateIcon>
       <AnimateTitle>
-        <p className="font-semibold mt-4">{title}</p>
+        <p className="font-semibold mt-4 text-2xl">{title}</p>
       </AnimateTitle>
       <AnimateDescription>
-        <p className="text-muted-light mt-10">{description}</p>
+        <p className="text-muted-light mt-10 text-base">{description}</p>
       </AnimateDescription>
     </article>
   );

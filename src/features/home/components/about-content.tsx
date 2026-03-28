@@ -22,13 +22,13 @@ const AboutGridContent = ({
       className={`flex flex-col p-4 lg:p-8 gap-4 ${isMuted ? "bg-muted text-white" : ""}`}
     >
       <AnimateIcon>
-        <Icon className="text-primary size-6" />
+        <Icon className="text-primary size-8" />
       </AnimateIcon>
       <AnimateTitle>
-        <h1 className="whitespace-pre-line">{label}</h1>
+        <h1 className="whitespace-pre-line text-3xl">{label}</h1>
       </AnimateTitle>
       <AnimateDescription>
-        <p className="mt-4">{text}</p>
+        <p className="mt-4 text-base">{text}</p>
       </AnimateDescription>
     </div>
   );
