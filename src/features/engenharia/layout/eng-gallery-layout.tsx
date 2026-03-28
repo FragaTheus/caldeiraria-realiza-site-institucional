@@ -17,12 +17,12 @@ const EngGalleryLayout = ({
   return (
     <div className="w-full min-h-10 grid grid-cols-1 lg:grid-cols-2 relative">
       <div className="mb-4">
-        <h1 className="font-black tracking-tighter whitespace-pre-line">
+        <h2 className="font-black tracking-tighter whitespace-pre-line text-4xl">
           {title}
-        </h1>
-        <h2 className="font-light text-muted-light hidden lg:block whitespace-pre-line mt-8 max-w-3/4">
-          {description}
         </h2>
+        <h3 className="font-light text-muted-light hidden lg:block whitespace-pre-line mt-8 max-w-3/4 text-xl">
+          {description}
+        </h3>
         <Link href={"#eng-cta"} className="hidden lg:block mt-8 w-1/2">
           <button className="bg-primary/10 border border-primary p-2 rounded-sm text-primary w-full cursor-pointer hover:bg-primary/20 transition-colors">
             Fazer orçamento

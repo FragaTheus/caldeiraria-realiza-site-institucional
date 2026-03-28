@@ -17,9 +17,9 @@ const EngCapacityLayout = ({
 }: EngCapacityLayoutProps) => {
   return (
     <div className="relative">
-      <h1 className="tracking-tighter font-black whitespace-pre-line">
+      <h2 className="tracking-tighter font-black whitespace-pre-line text-4xl">
         {title}
-      </h1>
+      </h2>
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 items-center mt-4">
         {cards.map((card, index) => (
           <EngCapacityCard key={index} {...card} />

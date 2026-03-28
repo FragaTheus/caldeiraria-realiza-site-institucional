@@ -8,7 +8,7 @@ export interface EngGalleryCardsProps {
 const EngGalleryCards = ({ description, imageUrl }: EngGalleryCardsProps) => {
   return (
     <article className="p-4 w-full h-full flex flex-col justify-between bg-surface">
-      <p className="font-semibold whitespace-pre-line">{description}</p>
+      <p className="font-semibold whitespace-pre-line text-sm">{description}</p>
       <Image
         src={imageUrl}
         alt={description}
