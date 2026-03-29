@@ -6,7 +6,7 @@ import {
   ServicesCardProps,
 } from "../../components/services-cards";
 import HomeServiceSwiper from "@/shared/components/swiper";
-import AnimateCard from "../../animate/home-services-animate";
+import { FadeInWithIndex } from "@/shared/components/animate";
 
 interface HomeServiceMobileWrapperProps {
   cards: ServicesCardProps[];
@@ -17,9 +17,9 @@ const HomeServiceMobileWrapper = ({ cards }: HomeServiceMobileWrapperProps) => {
     <HomeServiceSwiper>
       {cards.map((c, i) => (
         <SwiperSlide key={i} className="p-4">
-          <AnimateCard index={i}>
+          <FadeInWithIndex index={i}>
             <ServicesCard {...c} />
-          </AnimateCard>
+          </FadeInWithIndex>
         </SwiperSlide>
       ))}
     </HomeServiceSwiper>

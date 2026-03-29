@@ -1,39 +1,76 @@
+import { AppH3 } from "@/shared/components/ui/app-h3";
+import { AppP } from "@/shared/components/ui/app-p";
+import { AppCard } from "@/shared/components/ui/app-card";
+import { FadeInWithIndex } from "@/shared/components/animate";
+
 export interface QualityDataBookCardProps {
   Icon: React.ElementType;
   description: string;
+  index: number;
 }
 
-const QualityDataBookTitleCard = ({ title }: { title: string }) => {
+const QualityDataBookTitleCard = ({
+  title,
+  index,
+}: {
+  title: string;
+  index: number;
+}) => {
   return (
-    <article className="border-white border bg-muted text-white p-4 lg:p-8 min-h-42 w-full max-w-2xs lg:max-w-full flex items-center justify-center ">
-      <h3 className="text-3xl font-bold whitespace-pre-line">{title}</h3>
-    </article>
+    <FadeInWithIndex
+      index={index}
+      className="min-h-42 w-full max-w-2xs lg:max-w-full"
+    >
+      <AppCard
+        variant="outlined"
+        className="border-white bg-muted text-white flex items-center justify-center w-full h-full"
+      >
+        <AppH3 className="text-3xl font-bold">{title}</AppH3>
+      </AppCard>
+    </FadeInWithIndex>
   );
 };
 
 const QualityDataBookDescriptionCard = ({
   description,
+  index,
 }: {
+  index: number;
   description: string;
 }) => {
   return (
-    <article className="border-white border bg-muted text-white p-4 lg:p-8 min-h-42 w-full max-w-2xs lg:max-w-full flex items-center justify-center ">
-      <p className="text-base font-semibold whitespace-pre-line">
-        {description}
-      </p>
-    </article>
+    <FadeInWithIndex
+      index={index}
+      className=" min-h-42 w-full max-w-2xs lg:max-w-full "
+    >
+      <AppCard
+        variant="outlined"
+        className="border-white bg-muted text-white flex items-center justify-center w-full h-full"
+      >
+        <AppP className="font-semibold whitespace-pre-line">{description}</AppP>
+      </AppCard>
+    </FadeInWithIndex>
   );
 };
 
 const QualityDataBookCard = ({
   Icon,
   description,
+  index,
 }: QualityDataBookCardProps) => {
   return (
-    <article className="min-h-42 w-full max-w-2xs lg:max-w-full p-4 lg:p-8 flex flex-col justify-between border border-white bg-muted text-white">
-      <Icon className="text-primary size-8" />
-      <p className="text-base font-light mt-4 lg:mt-8">{description}</p>
-    </article>
+    <FadeInWithIndex
+      index={index}
+      className="min-h-42 w-full max-w-2xs lg:max-w-full"
+    >
+      <AppCard
+        variant="outlined"
+        className="border-white bg-muted text-white flex flex-col justify-between w-full h-full"
+      >
+        <Icon className="text-primary size-8" />
+        <AppP className="font-light mt-4 lg:mt-8">{description}</AppP>
+      </AppCard>
+    </FadeInWithIndex>
   );
 };
 

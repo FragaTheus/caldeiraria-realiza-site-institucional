@@ -3,7 +3,7 @@ import {
   SectionLayout,
 } from "@/shared/layouts/section-layout";
 import textContent from "@/features/home/text-content/ctaTextContent.json";
-import HomeCtaContent from "../../../shared/components/home-cta-card";
+import HomeCtaContent from "../../../shared/components/app-cta-card";
 
 const HomeCtaWrapper = () => {
   return (

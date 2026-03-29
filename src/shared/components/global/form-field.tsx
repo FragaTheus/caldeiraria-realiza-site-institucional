@@ -8,6 +8,7 @@ import {
   useState,
 } from "react";
 import { FaPaperclip } from "react-icons/fa6";
+import { AppSmall } from "../ui/app-small";
 
 export interface FormFieldProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -32,7 +33,7 @@ const FormField = ({ error, value, ...props }: FormFieldProps) => {
         }
         {...props}
       />
-      {error && <small className="text-red-500">{error}</small>}
+      {error && <AppSmall className="text-red-500">{error}</AppSmall>}
     </div>
   );
 };
@@ -55,7 +56,7 @@ export const FormTextArea = ({ error, ...props }: FormTextAreaProps) => {
           ${isHome ? "bg-muted-light/50" : "ring"}`}
         {...props}
       />
-      {error && <small className="text-red-500">{error}</small>}
+      {error && <AppSmall className="text-red-500">{error}</AppSmall>}
     </div>
   );
 };
@@ -104,7 +105,7 @@ export const FormFileField = forwardRef<HTMLInputElement, FormFileFieldProps>(
           <FaPaperclip />
           {fileName ?? "Anexar projeto"}
         </button>
-        {error && <small className="text-red-500">{error}</small>}
+        {error && <AppSmall className="text-red-500">{error}</AppSmall>}
       </div>
     );
   },

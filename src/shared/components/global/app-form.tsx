@@ -13,6 +13,7 @@ import FormField, {
 } from "./form-field";
 import { FaCircleNotch } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import { FadeInUp, FadeInWithIndex } from "../animate";
 
 const ContactForm = ({ ctaText }: { ctaText: string }) => {
   const pathname = usePathname();
@@ -37,55 +38,61 @@ const ContactForm = ({ ctaText }: { ctaText: string }) => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col gap-4 max-w-sm w-full"
     >
-      {CONTACT_FIELDS.map((field) => (
-        <FormField
-          key={field.name}
-          {...field}
-          {...register(
-            field.name as keyof Omit<ContactFormData, "anexo" | "mensagem">,
-          )}
-          error={errors[field.name as keyof ContactFormData]?.message}
-        />
+      {CONTACT_FIELDS.map((field, index) => (
+        <FadeInWithIndex key={field.name} index={index}>
+          <FormField
+            {...field}
+            {...register(
+              field.name as keyof Omit<ContactFormData, "anexo" | "mensagem">,
+            )}
+            error={errors[field.name as keyof ContactFormData]?.message}
+          />
+        </FadeInWithIndex>
       ))}
 
-      <FormTextArea
-        placeholder="Envie uma mensagem breve sobre seu projeto ou dúvida"
-        rows={4}
-        error={errors.mensagem?.message}
-        {...register("mensagem")}
-      />
+      <FadeInWithIndex index={CONTACT_FIELDS.length}>
+        <FormTextArea
+          placeholder="Envie uma mensagem breve sobre seu projeto ou dúvida"
+          rows={4}
+          error={errors.mensagem?.message}
+          {...register("mensagem")}
+        />
+      </FadeInWithIndex>
 
       <Controller
         name="anexo"
         control={control}
         render={({ field: { onChange, ref } }) => (
-          <FormFileField
-            ref={ref}
-            accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf"
-            onChange={onChange}
-            error={errors.anexo?.message}
-          />
+          <FadeInWithIndex index={CONTACT_FIELDS.length + 1}>
+            <FormFileField
+              ref={ref}
+              accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf"
+              onChange={onChange}
+              error={errors.anexo?.message}
+            />
+          </FadeInWithIndex>
         )}
       />
-
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className={`p-2 w-full rounded-sm font-semibold hover:bg-muted-surface/95 group cursor-pointer ${pathname !== "/" ? "bg-primary text-white hover:bg-primary/80" : "bg-surface text-muted-light"}`}
-      >
-        {isSubmitting ? (
-          <div className="flex gap-2 justify-center">
-            <FaCircleNotch
-              className={`animate-spin size-5 ${pathname !== "/" ? "text-white" : "text-muted"}`}
-            />
-            <span className="text-sm">Enviando...</span>
-          </div>
-        ) : (
-          <div className="flex gap-2 justify-center">
-            <span className="text-sm">{ctaText}</span>
-          </div>
-        )}
-      </button>
+      <FadeInUp>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={`p-2 w-full rounded-sm font-semibold hover:bg-muted-surface/95 group cursor-pointer ${pathname !== "/" ? "bg-primary text-white hover:bg-primary/80" : "bg-surface text-muted-light"}`}
+        >
+          {isSubmitting ? (
+            <div className="flex gap-2 justify-center">
+              <FaCircleNotch
+                className={`animate-spin size-5 ${pathname !== "/" ? "text-white" : "text-muted"}`}
+              />
+              <span className="text-sm">Enviando...</span>
+            </div>
+          ) : (
+            <div className="flex gap-2 justify-center">
+              <span className="text-sm">{ctaText}</span>
+            </div>
+          )}
+        </button>
+      </FadeInUp>
     </form>
   );
 };

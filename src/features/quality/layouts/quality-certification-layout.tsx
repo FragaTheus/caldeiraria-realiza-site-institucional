@@ -1,6 +1,8 @@
+import { AppH2 } from "@/shared/components/ui/app-h2";
 import QualityCertificationCard, {
   QualityCertificationCardProps,
 } from "../components/quality-certification-card";
+import { FadeInDown, FadeInWithIndex } from "@/shared/components/animate";
 
 interface QualityCertificationLayoutProps {
   title: string;
@@ -13,18 +15,20 @@ const QualityCertificationLayout = ({
 }: QualityCertificationLayoutProps) => {
   return (
     <div className="w-full">
-      <h3 className="text-4xl font-bold tracking-tighter whitespace-pre-line mb-4">
-        {title}
-      </h3>
+      <FadeInDown>
+        <AppH2 className="font-bold mb-4">{title}</AppH2>
+      </FadeInDown>
       <div className="flex flex-col gap-4">
         {certifications.map((certification, index) => (
-          <QualityCertificationCard
-            key={index}
-            Icon={certification.Icon}
-            title={certification.title}
-            description={certification.description}
-            imageSrc={certification.imageSrc}
-          />
+          <FadeInWithIndex key={index} index={index}>
+            <QualityCertificationCard
+              key={index}
+              Icon={certification.Icon}
+              title={certification.title}
+              description={certification.description}
+              imageSrc={certification.imageSrc}
+            />
+          </FadeInWithIndex>
         ))}
       </div>
     </div>

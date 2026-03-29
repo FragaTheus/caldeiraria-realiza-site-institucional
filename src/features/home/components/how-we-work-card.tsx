@@ -1,8 +1,7 @@
-import {
-  AnimateDescription,
-  AnimateIcon,
-  AnimateTitle,
-} from "../animate/home-about-animate";
+import { AppH3 } from "@/shared/components/ui/app-h3";
+import { AppP } from "@/shared/components/ui/app-p";
+import { AppCard } from "@/shared/components/ui/app-card";
+import { FadeInUp } from "@/shared/components/animate";
 
 export interface GridContentProps {
   step: string;
@@ -10,19 +9,26 @@ export interface GridContentProps {
   description: string;
 }
 
-const GridContent = ({ step, title, description }: GridContentProps) => {
+const GridContent = ({
+  step,
+  title,
+  description,
+  index,
+}: GridContentProps & { index: number }) => {
   return (
-    <article className="flex flex-col relative bg-surface p-4 lg:p-8">
-      <AnimateIcon>
-        <h3 className="font-semibold text-primary text-2xl">{step}</h3>
-      </AnimateIcon>
-      <AnimateTitle>
-        <p className="font-semibold mt-4 text-2xl">{title}</p>
-      </AnimateTitle>
-      <AnimateDescription>
-        <p className="text-muted-light mt-10 text-base">{description}</p>
-      </AnimateDescription>
-    </article>
+    <FadeInUp delay={0.1 * index}>
+      <AppCard className="relative flex flex-col bg-surface">
+        <div>
+          <AppH3 className="text-primary">{step}</AppH3>
+        </div>
+        <div>
+          <AppH3 className="mt-4">{title}</AppH3>
+        </div>
+        <div>
+          <AppP className="text-muted-light mt-10">{description}</AppP>
+        </div>
+      </AppCard>
+    </FadeInUp>
   );
 };
 
@@ -32,11 +38,11 @@ interface HowWeWorkCardProps {
 
 const HowWeWorkCard = ({ grids }: HowWeWorkCardProps) => {
   return (
-    <article className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-4">
       {grids.map((grid, index) => (
-        <GridContent key={index} {...grid} />
+        <GridContent key={index} {...grid} index={index} />
       ))}
-    </article>
+    </div>
   );
 };
 

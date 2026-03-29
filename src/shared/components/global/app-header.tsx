@@ -5,8 +5,9 @@ import logo from "@/shared/assets/logo.svg";
 import { CtaButton } from "../ui/app-button";
 import HeaderNavigation from "./navigation";
 import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa6";
-import AnimateLogo from "@/shared/animate/animate-logo";
-import AnimateCtaHeader from "@/shared/animate/animate-cta";
+import { FadeInLeft, FadeInRight } from "@/shared/components/animate";
+import { AppP } from "../ui/app-p";
+import { AppSmall } from "../ui/app-small";
 import { usePathname } from "next/navigation";
 
 const AppHeaderContactInfo = ({
@@ -21,11 +22,11 @@ const AppHeaderContactInfo = ({
       <div className="w-full max-w-7xl mx-auto flex justify-center lg:justify-end gap-4 px-6 py-2">
         <div className="flex items-center gap-1">
           <FaEnvelope />
-          <small className="lg:text-p">{email}</small>
+          <AppSmall className="lg:text-p">{email}</AppSmall>
         </div>
         <div className="flex items-center gap-1">
           <FaPhone />
-          <small>{phone}</small>
+          <AppSmall>{phone}</AppSmall>
         </div>
       </div>
     </div>
@@ -37,7 +38,7 @@ const AppHeaderToolbar = ({ children }: { children: React.ReactNode }) => {
     <div className="w-full">
       <div
         id="header-toolbar"
-        className="w-full max-w-7xl h-full mx-auto py-3  grid grid-cols-2 lg:grid-cols-12 items-center px-6"
+        className="w-full max-w-7xl h-full mx-auto py-3 grid grid-cols-2 lg:grid-cols-12 items-center px-6 m-auto "
       >
         {children}
       </div>
@@ -47,14 +48,14 @@ const AppHeaderToolbar = ({ children }: { children: React.ReactNode }) => {
 
 const AppLogo = () => {
   return (
-    <AnimateLogo>
+    <FadeInLeft className="order-1 lg:col-span-2 lg:order-first">
       <Image
         alt="Realiza Caldeiraria Logo"
         src={logo}
-        className="max-h-13 lg:max-h-22 w-auto  lg:col-span-2 justify-self-start"
+        className="max-h-13 lg:max-h-22 w-auto justify-self-start"
         priority
       />
-    </AnimateLogo>
+    </FadeInLeft>
   );
 };
 
@@ -62,20 +63,20 @@ const HeaderCta = ({ ctaLabel }: { ctaLabel: string }) => {
   const pathname = usePathname();
   const isHome = pathname === "/";
   return (
-    <AnimateCtaHeader>
+    <FadeInRight className="order-2 lg:col-span-2 lg:order-last ">
       <CtaButton
-        className={`flex items-center gap-2 bg-surface group ${isHome ? "" : "bg-muted! text-white"} group`}
+        className={`flex items-center gap-2 bg-surface group justify-self-end ${isHome ? "" : "bg-muted! text-white"} group`}
       >
         <FaWhatsapp
           className={`size-5 lg:size-6 text-muted group-hover:text-green-500 group-active:text-green-500 ${isHome ? "" : "text-white"}`}
         />
-        <p
+        <AppP
           className={`inline text-muted-light font-semibold ${isHome ? "" : "text-white"}`}
         >
           {ctaLabel}
-        </p>
+        </AppP>
       </CtaButton>
-    </AnimateCtaHeader>
+    </FadeInRight>
   );
 };
 
@@ -93,7 +94,7 @@ const AppHeader = ({
   return (
     <header
       id="header"
-      className="w-full min-h-5 flex flex-col absolute top-0 left-0 z-50"
+      className="w-full min-h-5 flex flex-col absolute top-0 left-0 z-50 "
     >
       <AppHeaderContactInfo email={email} phone={phone} />
       <AppHeaderToolbar>

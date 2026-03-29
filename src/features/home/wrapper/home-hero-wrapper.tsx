@@ -3,7 +3,7 @@ import {
   SectionLayout,
 } from "@/shared/layouts/section-layout";
 import HomeHeroBackground from "../components/home-hero-background";
-import HeroContent from "../components/home-hero-card";
+import HeroContent from "../components/home-hero-content";
 import textContent from "@/features/home/text-content/heroTextContent.json";
 
 const HomeHeroWrapper = () => {

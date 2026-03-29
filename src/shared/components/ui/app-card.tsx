@@ -1,2 +1,27 @@
-import Image, { StaticImageData } from "next/image";
-import { CtaButton } from "./app-button";
+import { cn } from "@/shared/lib/utils";
+import { ComponentPropsWithoutRef } from "react";
+
+type AppCardProps = ComponentPropsWithoutRef<"article"> & {
+  variant?: "default" | "outlined";
+};
+
+export const AppCard = ({
+  className,
+  variant = "default",
+  children,
+  ...props
+}: AppCardProps) => {
+  const variantStyles = {
+    default: "bg-surface",
+    outlined: "bg-transparent border",
+  };
+
+  return (
+    <article
+      className={cn("p-4 lg:p-8", variantStyles[variant], className)}
+      {...props}
+    >
+      {children}
+    </article>
+  );
+};

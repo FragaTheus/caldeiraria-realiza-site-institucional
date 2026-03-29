@@ -1,4 +1,4 @@
-import CtaForm from "@/shared/components/home-cta-card";
+import CtaForm from "@/shared/components/app-cta-card";
 import {
   ContainerLayout,
   SectionLayout,

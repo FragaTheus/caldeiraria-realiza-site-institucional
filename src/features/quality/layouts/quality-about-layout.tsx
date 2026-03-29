@@ -1,6 +1,8 @@
+import { FadeInDown } from "@/shared/components/animate";
 import AppGrid, {
   AboutGridContentProps,
 } from "@/shared/components/grid-content";
+import { AppH2 } from "@/shared/components/ui/app-h2";
 
 interface QualityAboutLayoutProps {
   title: string;
@@ -13,9 +15,9 @@ const QualityAboutLayout = ({
 }: QualityAboutLayoutProps) => {
   return (
     <div className="w-full">
-      <h2 className="text-4xl font-bold tracking-tighter mb-4 whitespace-pre-line">
-        {title}
-      </h2>
+      <FadeInDown>
+        <AppH2 className="font-bold mb-4">{title}</AppH2>
+      </FadeInDown>
       <AppGrid gridContents={gridContents} />
     </div>
   );

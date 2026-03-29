@@ -1,3 +1,6 @@
+import { AppH3 } from "@/shared/components/ui/app-h3";
+import { AppP } from "@/shared/components/ui/app-p";
+import { AppCard } from "@/shared/components/ui/app-card";
 import Image, { StaticImageData } from "next/image";
 import { FaIndent } from "react-icons/fa6";
 
@@ -15,14 +18,14 @@ const QualityCertificationCard = ({
   imageSrc,
 }: QualityCertificationCardProps) => {
   return (
-    <article className="bg-surface grid grid-cols-1 lg:grid-cols-2 p-4 lg:p-8 gap-2">
+    <AppCard className="grid grid-cols-1 lg:grid-cols-2 gap-2">
       <div className="w-full h-full flex flex-col justify-evenly gap-4">
         <Icon className="text-primary size-8" />
-        <h3 className="text-2xl font-semibold whitespace-pre-line">{title}</h3>
-        <p className="font-light text-base lg:max-w-3/4">{description}</p>
+        <AppH3>{title}</AppH3>
+        <AppP className="font-light lg:max-w-3/4">{description}</AppP>
       </div>
       <Image src={imageSrc} alt={title} className="w-full max-h-80" />
-    </article>
+    </AppCard>
   );
 };
 

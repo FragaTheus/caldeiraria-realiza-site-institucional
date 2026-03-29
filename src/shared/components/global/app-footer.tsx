@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { AppP } from "../ui/app-p";
+import { AppSmall } from "../ui/app-small";
 
 interface FooterLinkProps {
   href: string;
@@ -21,7 +23,7 @@ interface FooterGridProps {
 const FooterGrid = ({ title, links }: FooterGridProps) => {
   return (
     <div className="flex flex-col">
-      <p className="font-semibold text-white">{title}</p>
+      <AppP className="font-semibold text-white">{title}</AppP>
       <div className="flex flex-col gap-2 mt-2">
         {links.map((link) => (
           <FooterLink key={link.href} {...link} />
@@ -44,7 +46,7 @@ const ContatoItem = ({ href, label, Icon }: ContatoItemProps) => {
       className="flex items-center text-muted-light gap-2 hover:text-muted-light/90"
     >
       {Icon && <Icon className="size-4 lg:size-6 text-white" />}
-      <p className="whitespace-pre-line">{label}</p>
+      <AppP className="whitespace-pre-line">{label}</AppP>
     </Link>
   );
 };
@@ -59,13 +61,15 @@ export interface ContatosProps {
 const Contatos = ({ title, copy, dev, items }: ContatosProps) => {
   return (
     <div className="flex flex-col order-last">
-      <p className="font-semibold text-white">{title}</p>
+      <AppP className="font-semibold text-white">{title}</AppP>
       <div className="flex flex-col gap-2 mt-2">
         {items.map((item) => (
           <ContatoItem key={item.href} {...item} />
         ))}
-        <p className="whitespace-pre-line text-muted-light">{copy}</p>
-        <small className="whitespace-pre-line text-muted-light">{dev}</small>
+        <AppP className="whitespace-pre-line text-muted-light">{copy}</AppP>
+        <AppSmall className="whitespace-pre-line text-muted-light">
+          {dev}
+        </AppSmall>
       </div>
     </div>
   );
