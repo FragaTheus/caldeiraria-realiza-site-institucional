@@ -1,0 +1,13 @@
+{
+  "serralheria": {
+    "title": "Serralheria\n Industrial",
+    "description": "Fabricamos estruturas metálicas sob medida para ambientes industriais, com fornecimento de mão de obra para instalação. Atendemos exigências de normas de segurança do trabalho, entregando soluções que combinam funcionalidade e conformidade técnica.",
+    "capacidades": {
+      "item_1": "Fabricação de estruturas metálicas",
+      "item_2": "Proteções de máquinas e guarda-corpos",
+      "item_3": "Prateleiras, escadas e plataformas",
+      "item_4": "Instalação conforme NR12"
+    },
+    "img_description": "Estrutura metálica de serralheria industrial fabricada e instalada pela Realiza."
+  }
+}

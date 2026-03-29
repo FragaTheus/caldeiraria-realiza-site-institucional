@@ -47,6 +47,16 @@ const footerPages = [
       { href: "/qualidade#quality-databook", label: "Databook" },
     ],
   },
+  {
+    title: "Serviços",
+    links: [
+      { href: "/servicos#services-intro", label: "Início" },
+      { href: "/servicos#services-usinagem", label: "Usinagem" },
+      { href: "/servicos#services-caldeiraria", label: "Caldeiraria" },
+      { href: "/servicos#services-serralheria", label: "Serralheria" },
+      { href: "/servicos#services-soldagem", label: "Soldagem" },
+    ],
+  },
 ];
 
 const footerContatos = {

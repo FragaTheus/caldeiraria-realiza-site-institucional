@@ -1,0 +1,13 @@
+{
+  "soldagem": {
+    "title": "Soldagem\n Especializada",
+    "description": "Nossa equipe de soldagem é qualificada conforme a norma AWS D1.1, atuando em múltiplos materiais e processos. Cada solda executada é rastreável e pode ser submetida a ensaios de inspeção realizados pelos nossos próprios inspetores Nível II.",
+    "capacidades": {
+      "item_1": "TIG, MIG e Eletrodos Revestidos",
+      "item_2": "Aço carbono, inox, alumínio e ferro fundido",
+      "item_3": "Soldadores certificados conforme AWS D1.1",
+      "item_4": "Inspeção por ensaio visual e líquido penetrante"
+    },
+    "img_description": "Soldador qualificado da Realiza executando soldagem em estrutura metálica industrial."
+  }
+}
