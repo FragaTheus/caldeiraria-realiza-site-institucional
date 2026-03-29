@@ -7,6 +7,8 @@ const HomeHeroBackground = () => {
         autoPlay
         loop
         muted
+        playsInline
+        webkit-playsinline="true"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
