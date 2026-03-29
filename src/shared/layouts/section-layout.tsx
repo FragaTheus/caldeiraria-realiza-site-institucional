@@ -1,3 +1,5 @@
+import { cn } from "../lib/utils";
+
 interface SectionLayoutProps {
   id: string;
   children: React.ReactNode;
@@ -6,7 +8,7 @@ interface SectionLayoutProps {
 
 const SectionLayout = ({ id, children, className }: SectionLayoutProps) => {
   return (
-    <section id={id} className={`w-full min-h-min ${className}`}>
+    <section id={id} className={cn("w-full min-h-min", className)}>
       {children}
     </section>
   );
@@ -20,7 +22,7 @@ const ContainerLayout = ({
   className?: string;
 }) => {
   return (
-    <div className={`w-full max-w-7xl mx-auto p-4 ${className}`}>
+    <div className={cn("w-full max-w-7xl mx-auto p-4", className)}>
       {children}
     </div>
   );

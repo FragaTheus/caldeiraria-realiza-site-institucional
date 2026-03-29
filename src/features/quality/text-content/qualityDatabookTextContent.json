@@ -1,0 +1,14 @@
+{
+  "databook_section": {
+    "headline": "Cada entrega\n documentada\n do início ao fim.",
+    "description": "Ao final de cada fornecimento, sua empresa recebe um Data Book com tudo que foi executado, inspecionado e aprovado.",
+    "items": {
+      "item_1": "Relatórios de inspeção visual de solda",
+      "item_2": "Relatórios de ensaio por líquido penetrante",
+      "item_3": "Certificados de qualificação dos soldadores",
+      "item_4": "Especificações de procedimento de soldagem",
+      "item_5": "Registros de instrumentos de medição calibrados",
+      "item_6": "Certificados de materiais utilizados"
+    }
+  }
+}

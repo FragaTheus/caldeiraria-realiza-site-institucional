@@ -38,6 +38,15 @@ const footerPages = [
       { href: "/engenharia#eng-why", label: "Diferenciais" },
     ],
   },
+  {
+    title: "Qualidade",
+    links: [
+      { href: "/qualidade#quality-intro", label: "Início" },
+      { href: "/qualidade#quality-about", label: "Sobre" },
+      { href: "/qualidade#quality-certification", label: "Certificações" },
+      { href: "/qualidade#quality-databook", label: "Databook" },
+    ],
+  },
 ];
 
 const footerContatos = {
