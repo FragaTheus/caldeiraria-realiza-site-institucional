@@ -25,7 +25,7 @@ const AppButtonSoft = ({
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
-      className={`p-2 rounded-md bg-primary/10 text-primary text-p font-medium hover:bg-primary/20 active:bg-primary/30 transition-colors ${className}`}
+      className={`p-2 rounded-md bg-primary/10 text-primary text-sm md:text-base lg:text-lg font-medium hover:bg-primary/20 active:bg-primary/30 transition-colors ${className}`}
       {...rest}
     >
       {children}
@@ -42,7 +42,7 @@ const CtaButton = ({
     <button
       onClick={() => openWhatsApp()}
       className={cn(
-        "bg-surface text-muted-light hover:text-green-500 text-p font-semibold p-2 rounded-md cursor-pointer flex items-center justify-center gap-2 transition-all active:text-green-500",
+        "bg-surface text-muted-light hover:text-green-500 text-sm md:text-base lg:text-lg font-semibold p-2 rounded-md cursor-pointer flex items-center justify-center gap-2 transition-all active:text-green-500",
         className,
       )}
       {...rest}

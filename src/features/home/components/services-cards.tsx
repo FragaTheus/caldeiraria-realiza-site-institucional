@@ -24,7 +24,7 @@ const ServicesCard = ({
     <Link href={"/servicos"}>
       <AppCard
         variant={isTitleCard ? "outlined" : "default"}
-        className={`relative min-h-60 lg:min-h-66 flex flex-col hover:scale-101 active:scale-99 transition-transform`}
+        className={`relative min-h-70 lg:min-h-90 flex flex-col hover:scale-101 active:scale-99 transition-transform`}
       >
         {isTitleCard ? (
           <div className="flex-1 flex items-start relative">

@@ -5,7 +5,7 @@ type AppPProps = ComponentPropsWithoutRef<"p">;
 
 export const AppP = ({ className, children, ...props }: AppPProps) => {
   return (
-    <p className={cn("text-sm md:text-base font-light", className)} {...props}>
+    <p className={cn("text-base md:text-lg font-light", className)} {...props}>
       {children}
     </p>
   );

@@ -5,14 +5,14 @@
     },
     "cards": {
       "caldeiraria": {
-        "headerTitle": "Caldeiraria Leve e Média",
+        "headerTitle": "Caldeiraria",
         "subtitle": "Fabricação em aço carbono e inox",
-        "description": "Nossa capacidade de movimentação é de 06 toneladas e fabricação de 20 toneladas/mês, nos materiais aço carbono e aço inoxidável. Calandramos chapas com espessura de até 10mm."
+        "description": "Nosso diferencial está na entrega de soluções completas e integradas. Atuamos lado a lado com o cliente desde a concepção do projeto, passando pela engenharia e detalhamento técnico, até a fabricação, montagem e instalação."
       },
       "usinagem": {
-        "headerTitle": "Usinagem Leve e Média",
+        "headerTitle": "Usinagem Leve",
         "subtitle": "Precisão em tornos CNC e convencionais",
-        "description": "Contamos com máquinas versáteis como tornos CNC, tornos e fresadoras convencionais, além de equipamentos de apoio. Com equipe qualificada, usinamos diversos tipos de peças com precisão."
+        "description": "A usinagem atua de forma integrada à caldeiraria, ampliando a capacidade de conjuntos completos. A estrutura operacional atende demandas de fabricação e manutenção, assegurando agilidade nos prazos, precisão nos processos e confiabilidade dimensional."
       },
       "soldas": {
         "headerTitle": "Soldas Especializadas",
@@ -20,9 +20,9 @@
         "description": "Contamos com equipe de soldadores qualificados para execução de soldas em aço carbono, aço inox, alumínio e ferro fundido nos processos TIG, MIG e Eletrodos Revestidos."
       },
       "serralheria": {
-        "headerTitle": "Serralheria Industrial",
+        "headerTitle": "Montagem Elétrica",
         "subtitle": "Fabricação e instalação conforme NR12",
-        "description": "Fabricamos estruturas metálicas, proteções de máquinas, guarda-corpos, prateleiras e escadas, com o diferencial do fornecimento de mão de obra para instalação em conformidade com NR12."
+        "description": "Como parte dos nossos serviços de caldeiraria, disponibilizamos equipe especializada para instalação e montagem de painéis elétricos, assegurando conformidade, segurança operacional e desempenho do sistema."
       },
       "engenharia": {
         "headerTitle": "Engenharia e Projetos",

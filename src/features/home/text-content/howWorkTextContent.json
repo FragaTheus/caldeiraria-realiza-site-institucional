@@ -4,22 +4,22 @@
     "step_1": {
       "step": "01",
       "title": "Conversa",
-      "description": "Entendemos a demanda da sua empresa e apresentamos o que podemos fazer."
+      "description": "Entendemos a demanda da sua empresa e apresentamos as soluções técnicas mais adequadas."
     },
     "step_2": {
       "step": "02",
       "title": "Planejamento",
-      "description": "Organizamos materiais, processos e prazos antes de qualquer execução."
+      "description": "Organizamos materiais e processos para garantir o atendimento dos prazos de entrega."
     },
     "step_3": {
       "step": "03",
       "title": "Fabricação",
-      "description": "Executamos com acompanhamento em cada etapa até o resultado acordado."
+      "description": "Executamos com acompanhamento em cada etapa do processo até o resultado acordado."
     },
     "step_4": {
       "step": "04",
       "title": "Entrega",
-      "description": "Produto revisado, documentado e pronto para uso na sua operação."
+      "description": "Produtos inspecionados conforme normas e especificações do cliente, liberados com data book após aprovação do departamento de qualidade."
     }
   }
 }

@@ -17,7 +17,7 @@ const GridContent = ({
 }: GridContentProps & { index: number }) => {
   return (
     <FadeInUp delay={0.1 * index}>
-      <AppCard className="relative flex flex-col bg-surface">
+      <AppCard className="relative flex flex-col bg-surface min-h-80 lg:min-h-90">
         <div>
           <AppH3 className="text-primary">{step}</AppH3>
         </div>

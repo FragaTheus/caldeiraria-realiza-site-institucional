@@ -18,7 +18,7 @@ export const AppCard = ({
 
   return (
     <article
-      className={cn("p-4 lg:p-8", variantStyles[variant], className)}
+      className={cn("p-4 lg:p-6", variantStyles[variant], className)}
       {...props}
     >
       {children}
