@@ -4,7 +4,12 @@ import Line from "../components/line";
 import { AppH1 } from "../components/ui/app-h1";
 import { AppP } from "../components/ui/app-p";
 import { AppSmall } from "../components/ui/app-small";
-import { FadeIn, FadeInDown, FadeInLeft, FadeInUp } from "../components/animate";
+import {
+  FadeIn,
+  FadeInDown,
+  FadeInLeft,
+  FadeInUp,
+} from "../components/animate";
 
 interface IntroLayoutProps {
   id: string;
@@ -26,7 +31,7 @@ const IntroLayout = ({
   return (
     <SectionLayout
       id={id}
-      className="w-full flex items-center justify-center relative h-svh lg:max-h-[80svh]"
+      className="w-full flex items-center justify-center relative h-svh lg:max-h-[90svh]"
     >
       <FadeIn>
         <div className="absolute bottom-0 left-0 bg-primary/10 z-10 h-full w-full max-h-1/6" />

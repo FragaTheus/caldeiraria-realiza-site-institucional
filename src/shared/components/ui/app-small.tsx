@@ -5,7 +5,10 @@ type AppSmallProps = ComponentPropsWithoutRef<"small">;
 
 export const AppSmall = ({ className, children, ...props }: AppSmallProps) => {
   return (
-    <small className={cn("text-sm font-light", className)} {...props}>
+    <small
+      className={cn("text-xs md:text-sm font-light", className)}
+      {...props}
+    >
       {children}
     </small>
   );
