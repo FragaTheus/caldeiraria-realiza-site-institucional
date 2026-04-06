@@ -27,11 +27,11 @@ const HeroContent = ({
         </AppSmall>
       </FadeInDown>
       <FadeInUp delay={0.2}>
-        <AppH1 className="mt-6 lg:mt-12">{title}</AppH1>
+        <AppH1 className="mt-4 md:mt-6 lg:mt-8">{title}</AppH1>
       </FadeInUp>
       <FadeInUp delay={0.4}>
         <Link href={"#cta"}>
-          <button className="md:max-w-2/3 lg:max-w-1/2 w-full mt-6 lg:mt-12 group flex items-center justify-center gap-2 bg-primary text-white p-2 rounded-sm hover:bg-primary/90 cursor-pointer">
+          <button className="md:max-w-2/3 lg:max-w-1/2 w-full mt-6 md:mt-8 lg:mt-10 group flex items-center justify-center gap-2 bg-primary text-white p-2 rounded-sm hover:bg-primary/90 cursor-pointer">
             <FaPaperPlane className="text-white" />
             <AppP className="text-white font-semibold">{ctaText}</AppP>
           </button>

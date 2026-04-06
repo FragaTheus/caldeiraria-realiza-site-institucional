@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AppP } from "../ui/app-p";
 import { AppSmall } from "../ui/app-small";
 
 interface FooterLinkProps {
@@ -23,7 +22,7 @@ interface FooterGridProps {
 const FooterGrid = ({ title, links }: FooterGridProps) => {
   return (
     <div className="flex flex-col">
-      <AppP className="font-semibold text-white">{title}</AppP>
+      <AppSmall className="font-semibold text-white">{title}</AppSmall>
       <div className="flex flex-col gap-2 mt-2">
         {links.map((link) => (
           <FooterLink key={link.href} {...link} />
@@ -45,31 +44,25 @@ const ContatoItem = ({ href, label, Icon }: ContatoItemProps) => {
       href={href}
       className="flex items-center text-muted-light gap-2 hover:text-muted-light/90"
     >
-      {Icon && <Icon className="size-4 lg:size-6 text-white" />}
-      <AppP className="whitespace-pre-line">{label}</AppP>
+      {Icon && <Icon className="text-lg text-white" />}
+      <AppSmall className="whitespace-pre-line">{label}</AppSmall>
     </Link>
   );
 };
 
 export interface ContatosProps {
   title: string;
-  copy: string;
-  dev: string;
   items: ContatoItemProps[];
 }
 
-const Contatos = ({ title, copy, dev, items }: ContatosProps) => {
+const Contatos = ({ title, items }: ContatosProps) => {
   return (
     <div className="flex flex-col order-last">
-      <AppP className="font-semibold text-white">{title}</AppP>
+      <AppSmall className="font-semibold text-white">{title}</AppSmall>
       <div className="flex flex-col gap-2 mt-2">
         {items.map((item) => (
           <ContatoItem key={item.href} {...item} />
         ))}
-        <AppP className="whitespace-pre-line text-muted-light">{copy}</AppP>
-        <AppSmall className="whitespace-pre-line text-muted-light">
-          {dev}
-        </AppSmall>
       </div>
     </div>
   );
@@ -78,15 +71,25 @@ const Contatos = ({ title, copy, dev, items }: ContatosProps) => {
 interface AppFooterProps {
   pages: FooterGridProps[];
   contatos: ContatosProps;
+  copy: string;
+  dev: string;
 }
 
-const AppFooter = ({ pages, contatos }: AppFooterProps) => {
+const AppFooter = ({ pages, contatos, copy, dev }: AppFooterProps) => {
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-8">
-      {pages.map((sections) => (
-        <FooterGrid key={sections.title} {...sections} />
-      ))}
-      <Contatos {...contatos} />
+    <div className="w-full flex flex-col items-center justify-center gap-4 md:gap-5 lg:gap-6">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-8">
+        {pages.map((sections) => (
+          <FooterGrid key={sections.title} {...sections} />
+        ))}
+        <Contatos {...contatos} />
+      </div>
+      <AppSmall className="whitespace-pre-line text-muted-light">
+        {copy}
+      </AppSmall>
+      <AppSmall className="whitespace-pre-line text-muted-light/50">
+        {dev}
+      </AppSmall>
     </div>
   );
 };

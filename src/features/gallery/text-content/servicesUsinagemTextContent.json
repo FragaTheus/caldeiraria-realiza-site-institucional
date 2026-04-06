@@ -1,0 +1,13 @@
+{
+  "usinagem": {
+    "title": "Usinagem\n Leve e Média",
+    "description": "Contamos com máquinas versáteis para usinagem de peças de diferentes geometrias e materiais. Nossos equipamentos permitem atender tanto produções unitárias quanto séries, sempre com controle dimensional e rastreabilidade.",
+    "capacidades": {
+      "item_1": "Tornos CNC",
+      "item_2": "Tornos e fresadoras convencionais",
+      "item_3": "Equipamentos de apoio para usinagem",
+      "item_4": "Peças unitárias e em série"
+    },
+    "img_description": "Operador realizando usinagem em torno CNC na Realiza Caldeiraria."
+  }
+}

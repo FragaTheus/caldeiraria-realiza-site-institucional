@@ -21,7 +21,7 @@ const ServicesCard = ({
   description,
 }: ServicesCardProps) => {
   return (
-    <Link href={"/servicos"}>
+    <Link href={"/galeria"}>
       <AppCard
         variant={isTitleCard ? "outlined" : "default"}
         className={`relative min-h-70 lg:min-h-90 flex flex-col hover:scale-101 active:scale-99 transition-transform`}

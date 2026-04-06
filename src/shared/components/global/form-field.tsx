@@ -99,8 +99,8 @@ export const FormFileField = forwardRef<HTMLInputElement, FormFileFieldProps>(
         <button
           type="button"
           onClick={() => inputRef.current?.click()}
-          className={`rounded-full px-2 py-1 transition-colors text-small cursor-pointer flex items-center gap-2  
-            ${isHome ? "text-muted-light hover:text-white" : "text-muted-light hover:text-muted"}`}
+          className={`rounded-full px-2 py-1 transition-colors text-small cursor-pointer flex items-center gap-2  hover:bg-surface
+            ${isHome ? "text-muted-light " : "text-muted-light "}`}
         >
           <FaPaperclip />
           {fileName ?? "Anexar projeto"}

@@ -13,7 +13,12 @@ const FooterWrapper = () => {
   return (
     <SectionLayout className="bg-muted bottom-0" id="footer">
       <ContainerLayout>
-        <AppFooter pages={footerPages} contatos={footerContatos} />
+        <AppFooter
+          pages={footerPages}
+          contatos={footerContatos}
+          copy={contacts.copyright}
+          dev={contacts.desenvolvidoPor}
+        />
       </ContainerLayout>
     </SectionLayout>
   );
@@ -48,21 +53,16 @@ const footerPages = [
     ],
   },
   {
-    title: "Serviços",
+    title: "Galeria",
     links: [
-      { href: "/servicos#services-intro", label: "Início" },
-      { href: "/servicos#services-usinagem", label: "Usinagem" },
-      { href: "/servicos#services-caldeiraria", label: "Caldeiraria" },
-      { href: "/servicos#services-serralheria", label: "Serralheria" },
-      { href: "/servicos#services-soldagem", label: "Soldagem" },
+      { href: "/galeria#gallery-intro", label: "Início" },
+      { href: "/galeria#gallery-gallery", label: "Galeria" },
     ],
   },
 ];
 
 const footerContatos = {
   title: "Contatos",
-  copy: contacts.copyright,
-  dev: contacts.desenvolvidoPor,
   items: [
     {
       Icon: FaPhone,
