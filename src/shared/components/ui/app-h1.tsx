@@ -7,7 +7,7 @@ export const AppH1 = ({ className, children, ...props }: AppH1Props) => {
   return (
     <h1
       className={cn(
-        "font-black text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter whitespace-pre-line",
+        "font-black text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tighter whitespace-pre-line",
         className,
       )}
       {...props}

@@ -19,7 +19,7 @@ const AppHeaderContactInfo = ({
 }) => {
   return (
     <div className="w-full bg-muted text-white hidden md:block">
-      <div className="w-full max-w-7xl mx-auto flex justify-center lg:justify-end gap-4 px-6 py-2">
+      <div className="w-full max-w-7xl mx-auto flex justify-end gap-4 px-6 py-2">
         <div className="flex items-center gap-1">
           <FaEnvelope />
           <AppSmall className="lg:text-p">{email}</AppSmall>
