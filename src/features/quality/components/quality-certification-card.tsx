@@ -2,7 +2,6 @@ import { AppH3 } from "@/shared/components/ui/app-h3";
 import { AppP } from "@/shared/components/ui/app-p";
 import { AppCard } from "@/shared/components/ui/app-card";
 import Image, { StaticImageData } from "next/image";
-import { FaIndent } from "react-icons/fa6";
 
 export interface QualityCertificationCardProps {
   Icon: React.ElementType;
@@ -24,7 +23,14 @@ const QualityCertificationCard = ({
         <AppH3>{title}</AppH3>
         <AppP className="font-light lg:max-w-3/4">{description}</AppP>
       </div>
-      <Image src={imageSrc} alt={title} className="w-full max-h-80" />
+      <Image
+        src={imageSrc}
+        alt={title}
+        className="w-full max-h-80"
+        loading="lazy"
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        quality={70}
+      />
     </AppCard>
   );
 };

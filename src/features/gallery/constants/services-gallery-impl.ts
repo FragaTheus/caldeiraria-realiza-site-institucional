@@ -18,7 +18,7 @@ export const galleryItems = [
   },
   {
     title: "Serviço 11",
-    videoSrc: "servico11.mp4",
+    videoSrc: "/servico11.mp4",
   },
   {
     title: "Serviço 2",
@@ -26,7 +26,7 @@ export const galleryItems = [
   },
   {
     title: "Serviço 12",
-    videoSrc: "servico12.mp4",
+    videoSrc: "/servico12.mp4",
   },
   {
     title: "Serviço 3",
@@ -34,7 +34,7 @@ export const galleryItems = [
   },
   {
     title: "Serviço 13",
-    videoSrc: "servico13.mp4",
+    videoSrc: "/servico13.mp4",
   },
   {
     title: "Serviço 4",
@@ -42,7 +42,7 @@ export const galleryItems = [
   },
   {
     title: "Serviço 14",
-    videoSrc: "servico14.mp4",
+    videoSrc: "/servico14.mp4",
   },
   {
     title: "Serviço 5",
@@ -50,7 +50,7 @@ export const galleryItems = [
   },
   {
     title: "Serviço 15",
-    videoSrc: "servico15.mp4",
+    videoSrc: "/servico15.mp4",
   },
   {
     title: "Serviço 6",
@@ -58,7 +58,7 @@ export const galleryItems = [
   },
   {
     title: "Serviço 16",
-    videoSrc: "servico16.mp4",
+    videoSrc: "/servico16.mp4",
   },
   {
     title: "Serviço 7",
@@ -66,7 +66,7 @@ export const galleryItems = [
   },
   {
     title: "Serviço 17",
-    videoSrc: "servico17.mp4",
+    videoSrc: "/servico17.mp4",
   },
   {
     title: "Serviço 8",

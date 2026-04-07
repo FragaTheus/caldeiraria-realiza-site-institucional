@@ -54,6 +54,7 @@ const AppLogo = () => {
         src={logo}
         className="max-h-13 lg:max-h-22 w-auto justify-self-start"
         priority
+        sizes="(max-width: 1024px) 160px, 220px"
       />
     </FadeInLeft>
   );

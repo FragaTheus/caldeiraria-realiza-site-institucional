@@ -6,7 +6,6 @@ import { MdEngineering } from "react-icons/md";
 import {
   FadeIn,
   FadeInDown,
-  FadeInRight,
   FadeInWithIndex,
 } from "@/shared/components/animate";
 
@@ -26,6 +25,9 @@ const EngCapacityCard = ({ title, imageSrc }: EngCapacityCardsProps) => {
           src={imageSrc}
           alt={title}
           className="w-auto m-auto h-65 mt-8 pointer-events-none"
+          loading="lazy"
+          sizes="(max-width: 768px) 80vw, 420px"
+          quality={70}
         />
       </div>
     </AppCard>
@@ -57,6 +59,9 @@ const EngDescriptionCard = ({
           src={imageSrc}
           alt={title}
           className="w-full m-auto h-auto pointer-events-none"
+          loading="lazy"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          quality={70}
         />
       </FadeIn>
     </AppCard>

@@ -1,28 +1,19 @@
-import { FaCogs, FaFire, FaWarehouse, FaFlask } from "react-icons/fa";
+"use client";
 
-import { SectionLayout } from "@/shared/layouts/section-layout";
-import HomeServiceDesktopWrapper from "./home-service-desktop-wrapper";
-import HomeServiceMobileShell from "./home-service-mobile-shell";
+import dynamic from "next/dynamic";
+import { ServicesCardProps } from "../../components/services-cards";
 import servicesTextContents from "@/features/home/text-content/servicesTextContent.json";
-import { ServicesCardProps } from "../../components/services-cards.js";
 import { FaSmog } from "react-icons/fa6";
+import { FaCogs, FaFire, FaFlask, FaWarehouse } from "react-icons/fa";
 
-const HomeServiceWrapper = () => {
-  return (
-    <SectionLayout id="atuacao">
-      <HomeServiceMobileShell />
-      <div className="hidden lg:block">
-        <HomeServiceDesktopWrapper cards={SERVICES_CARDS} />
-      </div>
-    </SectionLayout>
-  );
-};
-
-export default HomeServiceWrapper;
+const HomeServiceMobileWrapper = dynamic(
+  () => import("./home-service-mobile-wrapper.tsx"),
+  { ssr: false },
+);
 
 const { title_card, cards } = servicesTextContents.services_section;
 
-export const SERVICES_CARDS: ServicesCardProps[] = [
+const MOBILE_SERVICES_CARDS: ServicesCardProps[] = [
   {
     isTitleCard: true,
     title: title_card.title,
@@ -58,3 +49,13 @@ export const SERVICES_CARDS: ServicesCardProps[] = [
     description: cards.engenharia.description,
   },
 ];
+
+const HomeServiceMobileShell = () => {
+  return (
+    <div className="block lg:hidden">
+      <HomeServiceMobileWrapper cards={MOBILE_SERVICES_CARDS} />
+    </div>
+  );
+};
+
+export default HomeServiceMobileShell;

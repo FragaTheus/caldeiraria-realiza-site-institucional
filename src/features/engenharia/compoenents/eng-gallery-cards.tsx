@@ -17,6 +17,9 @@ const EngGalleryCards = ({ description, imageUrl }: EngGalleryCardsProps) => {
         src={imageUrl}
         alt={description}
         className="mt-8 w-auto max-h-40 m-auto"
+        loading="lazy"
+        sizes="(max-width: 768px) 80vw, 320px"
+        quality={70}
       />
     </AppCard>
   );

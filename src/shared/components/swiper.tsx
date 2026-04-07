@@ -1,7 +1,6 @@
 "use client";
 
 import { Swiper } from "swiper/react";
-import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
 const HomeServiceSwiper = ({ children }: { children: React.ReactNode }) => {

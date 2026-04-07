@@ -41,6 +41,8 @@ const IntroLayout = ({
           src={imgSrc}
           alt={title}
           className={`bottom-0 left-0 absolute object-cover max-h-1/6 bg-primary -z-10 ${imgClassname}`}
+          sizes="100vw"
+          quality={70}
         />
       </FadeIn>
       <ContainerLayout>

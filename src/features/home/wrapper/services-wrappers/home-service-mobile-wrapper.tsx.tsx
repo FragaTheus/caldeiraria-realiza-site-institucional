@@ -1,5 +1,6 @@
 "use client";
 
+import "swiper/css";
 import { SwiperSlide } from "swiper/react";
 import {
   ServicesCard,
