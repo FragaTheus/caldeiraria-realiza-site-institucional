@@ -20,7 +20,7 @@ const HeroContent = ({
   whatsappText,
 }: HeroContentProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full mt-20">
       <FadeInDown delay={0}>
         <AppSmall className="text-white font-black text-base">
           {headline}
