@@ -8,7 +8,6 @@ const ServicesIntroWrapper = () => {
       id="gallery-intro"
       small={textContent.services_intro.eyebrow}
       title={textContent.services_intro.headline}
-      description={textContent.services_intro.description}
       imgSrc={serviceIntroImg}
       imgClassname="object-[90%_50%]!"
     />

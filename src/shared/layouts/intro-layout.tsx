@@ -15,7 +15,7 @@ interface IntroLayoutProps {
   id: string;
   small: string;
   title: string;
-  description: string;
+  description?: string;
   imgSrc: StaticImageData;
   imgClassname?: string;
 }
@@ -56,11 +56,13 @@ const IntroLayout = ({
           <FadeInLeft delay={0.3}>
             <Line className="max-w-1/3 lg:max-w-1/6 my-4" />
           </FadeInLeft>
-          <FadeInUp delay={0.4}>
-            <AppP className="font-light lg:whitespace-pre-line text-muted-light max-w-3/4 text-sm lg:text-base">
-              {description}
-            </AppP>
-          </FadeInUp>
+          {description && (
+            <FadeInUp delay={0.4}>
+              <AppP className="font-light lg:whitespace-pre-line text-muted-light max-w-3/4 text-sm lg:text-base">
+                {description}
+              </AppP>
+            </FadeInUp>
+          )}
         </div>
       </ContainerLayout>
     </SectionLayout>
