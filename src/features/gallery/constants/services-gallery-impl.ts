@@ -9,6 +9,11 @@ import s7Img from "@/shared/assets/services/servico7.jpeg";
 import s8Img from "@/shared/assets/services/servico8.jpeg";
 import s9Img from "@/shared/assets/services/servico9.jpeg";
 import s10Img from "@/shared/assets/services/servico10.jpeg";
+import fabTampa from "@/shared/assets/services/fab-tampa.png";
+import montTampa from "@/shared/assets/services/mont-tampa.jpeg";
+import fabTub from "@/shared/assets/services/fab-tub.jpeg";
+import insTub from "@/shared/assets/services/ins-tub.jpeg";
+import calandragem from "@/shared/assets/services/calandragem.jpeg";
 
 
 export const galleryItems = [
@@ -79,5 +84,25 @@ export const galleryItems = [
   {
     title: "Serviço 10",
     imageSrc: s10Img,
+  },
+  {
+    title: "Fabricação de Tampa de Silo de Areia",
+    imageSrc: fabTampa,
+  },
+  {
+    title: "Montagem da Tampa do Silo de Areia",
+    imageSrc: montTampa,
+  },
+  {
+    title: "Fabricação -  tubulação de Exaustão.",
+    imageSrc: fabTub,
+  },
+  {
+    title: "Instalação -  Tubulação de Exaustão",
+    imageSrc: insTub,
+  },
+  {
+    title: "Calandragem de peças cilíndricas e cônicas - Capacidade até 10 mm de espessura.",
+    imageSrc: calandragem
   }
 ] satisfies ServiceCardProps[];
