@@ -14,7 +14,10 @@ import montTampa from "@/shared/assets/services/mont-tampa.jpeg";
 import fabTub from "@/shared/assets/services/fab-tub.jpeg";
 import insTub from "@/shared/assets/services/ins-tub.jpeg";
 import calandragem from "@/shared/assets/services/calandragem.jpeg";
-
+import calandragem2 from "@/shared/assets/services/calandragem2.jpeg";
+import fabDuto from "@/shared/assets/services/fab-duto.jpeg";
+import fabPlataforma from "@/shared/assets/services/fab-plataforma.jpeg";
+import fabAlimentador from "@/shared/assets/services/fab-alimentador.jpeg";
 
 export const galleryItems = [
   {
@@ -88,6 +91,7 @@ export const galleryItems = [
   {
     title: "Fabricação de Tampa de Silo de Areia",
     imageSrc: fabTampa,
+    imgClassName: "object-[30%_50%] scale-100!"
   },
   {
     title: "Montagem da Tampa do Silo de Areia",
@@ -96,6 +100,7 @@ export const galleryItems = [
   {
     title: "Fabricação -  tubulação de Exaustão.",
     imageSrc: fabTub,
+    imgClassName: "object-[55%_50%]!"
   },
   {
     title: "Instalação -  Tubulação de Exaustão",
@@ -104,5 +109,21 @@ export const galleryItems = [
   {
     title: "Calandragem de peças cilíndricas e cônicas - Capacidade até 10 mm de espessura.",
     imageSrc: calandragem
+  },
+  {
+    title: "Calandragem de cilindro e cone - Diâmetro 3 metros x espessura 3 mm",
+    imageSrc: calandragem2
+  },
+  {
+    title: "Fabricação - Duto de Ventilação",
+    imageSrc: fabDuto,
+  },
+  {
+    title: "Fabricação - plataforma de trabalho.",
+    imageSrc: fabPlataforma,
+  },
+  {
+    title: "Fabricação - alimentador com rosca transportadora.",
+    imageSrc: fabAlimentador,
   }
 ] satisfies ServiceCardProps[];

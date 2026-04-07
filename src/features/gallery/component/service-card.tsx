@@ -11,9 +11,16 @@ export interface ServiceCardProps {
   title: string;
   imageSrc?: StaticImageData;
   videoSrc?: string;
+  className?: string;
+  imgClassName?: string;
 }
 
-const ServiceCard = ({ title, imageSrc, videoSrc }: ServiceCardProps) => {
+const ServiceCard = ({
+  title,
+  imageSrc,
+  videoSrc,
+  imgClassName,
+}: ServiceCardProps) => {
   return (
     <AppCard>
       <AppP className="font-semibold! mb-4">{title}</AppP>
@@ -23,7 +30,7 @@ const ServiceCard = ({ title, imageSrc, videoSrc }: ServiceCardProps) => {
             src={imageSrc}
             alt={title}
             fill
-            className="object-cover object-[30%_50%]"
+            className={`object-cover object-[30%_50%] ${imgClassName}`}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             quality={70}
