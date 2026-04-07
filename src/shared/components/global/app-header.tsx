@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/shared/assets/logo.svg";
+import logo from "@/shared/assets/logo.webp";
 import { CtaButton } from "../ui/app-button";
 import HeaderNavigation from "./navigation";
 import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa6";
