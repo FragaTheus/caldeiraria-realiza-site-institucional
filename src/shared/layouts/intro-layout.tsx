@@ -31,7 +31,7 @@ const IntroLayout = ({
   return (
     <SectionLayout
       id={id}
-      className="w-full flex items-center justify-center relative h-svh lg:max-h-[90svh]"
+      className="w-full flex items-center justify-center relative h-svh "
     >
       <FadeIn>
         <div className="absolute bottom-0 left-0 bg-primary/10 z-10 h-full w-full max-h-1/6" />
