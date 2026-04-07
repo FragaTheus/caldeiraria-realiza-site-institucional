@@ -106,7 +106,7 @@ export default function RootLayout({
         <meta name="ICBM" content="-23.486389, -46.348611" />
       </head>
       <body
-        className={`${poppins.variable} antialiased max-w-screen overflow-x-hidden bg-background`}
+        className={`${poppins.className} antialiased max-w-screen overflow-x-hidden bg-background`}
       >
         <AppHeader
           phone={headerContent.header.contactInfo.phone}
