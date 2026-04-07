@@ -1,7 +1,9 @@
+import dynamic from "next/dynamic";
 import { FadeInDown } from "./animate";
-import AppForm from "@/shared/components/global/app-form";
 import { AppH2 } from "@/shared/components/ui/app-h2";
 import { AppCard } from "@/shared/components/ui/app-card";
+
+const AppForm = dynamic(() => import("@/shared/components/global/app-form"));
 
 export interface CtaFormProps {
   title: string;

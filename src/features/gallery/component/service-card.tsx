@@ -1,7 +1,11 @@
+import dynamic from "next/dynamic";
 import { AppCard } from "@/shared/components/ui/app-card";
 import { AppP } from "@/shared/components/ui/app-p";
 import { StaticImageData } from "next/image";
-import AppOptimizedImage from "@/shared/components/ui/app-optimized-image";
+
+const AppOptimizedImage = dynamic(
+  () => import("@/shared/components/ui/app-optimized-image"),
+);
 
 export interface ServiceCardProps {
   title: string;

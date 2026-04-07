@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import AppHeader from "@/shared/components/global/app-header";
+import dynamic from "next/dynamic";
 import headerContent from "@/shared/text-content/headerTextContent.json";
 import FooterWrapper from "@/shared/wrapper/footer-wrapper";
+
+const AppHeader = dynamic(
+  () => import("@/shared/components/global/app-header"),
+);
 
 const poppins = Poppins({
   variable: "--font-poppins",

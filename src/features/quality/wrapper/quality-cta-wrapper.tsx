@@ -1,8 +1,10 @@
-import CtaForm from "@/shared/components/app-cta-card";
+import dynamic from "next/dynamic";
 import {
   ContainerLayout,
   SectionLayout,
 } from "@/shared/layouts/section-layout";
+
+const CtaForm = dynamic(() => import("@/shared/components/app-cta-card"));
 import textContent from "@/features/quality/text-content/qualityCtaTextContent.json";
 
 const CtaQualityWrapper = () => {
