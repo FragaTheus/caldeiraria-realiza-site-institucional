@@ -11,14 +11,14 @@ const ServiceGalleryLayout = ({
   galleryItems,
 }: ServiceGalleryLayoutProps) => {
   return (
-    <>
+    <div>
       <AppH2 className="mb-4">{title}</AppH2>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 items-stretch justify-items-center">
         {galleryItems.map((item, index) => (
           <ServiceCard key={index} {...item} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
