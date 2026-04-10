@@ -12,6 +12,7 @@ import fabCesto from "@/shared/assets/services/fab-cesto.jpeg";
 import projFabVentoinha from "@/shared/assets/services/proj-fab-ventoinha.jpeg";
 import projFabEsteira from "@/shared/assets/services/proj-fab-esteira.jpeg";
 import fabTanque from "@/shared/assets/services/fab-tanque.jpeg";
+import fabCiclone from "@/shared/assets/services/fab-ciclone.jpeg"
 
 
 export const galleryItemsMobile = [
@@ -79,6 +80,11 @@ export const galleryItemsMobile = [
     title: "Fabricação",
     description: "Tanque de Fundo Autolimpante",
     imageSrc: fabTanque,
+  },
+  {
+    title: "Fabricação e Montagem",
+    description: "Ciclone e tubulação para recuperador de Areia.",
+    imageSrc: fabCiclone
   }
 ] satisfies ServiceCardProps[];
 
