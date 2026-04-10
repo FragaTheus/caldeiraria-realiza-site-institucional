@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AppSmall } from "../ui/app-small";
+import { AppP } from "../ui/app-p";
 
 interface FooterLinkProps {
   href: string;
@@ -42,10 +43,9 @@ const ContatoItem = ({ href, label, Icon }: ContatoItemProps) => {
   return (
     <Link
       href={href}
-      className="flex items-center text-muted-light gap-2 hover:text-muted-light/90"
+      className="flex items-center text-muted-light gap-2 hover:text-muted-light/90 justify-center"
     >
-      {Icon && <Icon className="text-lg text-white" />}
-      <AppSmall className="whitespace-pre-line">{label}</AppSmall>
+      <AppP className="whitespace-pre-line">{label}</AppP>
     </Link>
   );
 };
@@ -57,8 +57,8 @@ export interface ContatosProps {
 
 const Contatos = ({ title, items }: ContatosProps) => {
   return (
-    <div className="flex flex-col order-last">
-      <AppSmall className="font-semibold text-white">{title}</AppSmall>
+    <div className="flex flex-col items-center justify-between">
+      <AppP className="font-semibold text-white">{title}</AppP>
       <div className="flex flex-col gap-2 mt-2">
         {items.map((item) => (
           <ContatoItem key={item.href} {...item} />
@@ -77,13 +77,14 @@ interface AppFooterProps {
 
 const AppFooter = ({ pages, contatos, copy, dev }: AppFooterProps) => {
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-4 md:gap-5 lg:gap-6">
-      <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <div className="w-full flex flex-col items-center justify-center gap-4 md:gap-5 lg:gap-8">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
         {pages.map((sections) => (
           <FooterGrid key={sections.title} {...sections} />
         ))}
-        <Contatos {...contatos} />
       </div>
+      <Contatos {...contatos} />
+
       <AppSmall className="whitespace-pre-line text-muted-light">
         {copy}
       </AppSmall>

@@ -85,8 +85,13 @@ const footerContatos = {
       label: contacts.facebook.label,
     },
     {
+      Icon: FaEnvelope,
       href: contacts.email.link,
       label: contacts.email.label,
+    },
+    {
+      href: contacts.endereco.link,
+      label: contacts.endereco.label,
     },
   ],
 } satisfies ContatosProps;

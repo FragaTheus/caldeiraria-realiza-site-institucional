@@ -15,16 +15,14 @@ import fabTanque from "@/shared/assets/services/fab-tanque.jpeg";
 import fabCiclone from "@/shared/assets/services/fab-ciclone.jpeg";
 import fabConexao from "@/shared/assets/services/fab-conexao.jpeg";
 import projFabCiclone from "@/shared/assets/services/proj-fab-ciclone.jpeg";
-import ensaio from "@/shared/assets/services/ensaio.jpeg";
-import ensaio2 from "@/shared/assets/services/ensaio2.jpeg";
+import ensaio from "@/shared/assets/services/ensaio.png";
 import fabSuporte from "@/shared/assets/services/fab-suporte.jpeg";
 import fabProjEstrutura from "@/shared/assets/services/proj-fab-estrutura.jpeg";
 import fabTerca from "@/shared/assets/services/fab-terca.jpeg";
 import montCaminho from "@/shared/assets/services/mont-caminho.jpeg";
 import fabGuarda from "@/shared/assets/services/fab-guarda.jpeg";
 import fabPainel from "@/shared/assets/services/fab-painel.jpeg";
-import montPainel from "@/shared/assets/services/mont-painel.jpeg";
-import montPainel2 from "@/shared/assets/services/mont-painel2.jpeg";
+import montPainel from "@/shared/assets/services/painel.png";
 
 export const galleryItemsMobile = [
   {
@@ -128,11 +126,6 @@ export const galleryItemsMobile = [
     imageSrc: ensaio,
   },
   {
-    title: "Ensaio de Líquido Penetrante",
-    description: "Inspetor ASNT próprio da Realiza.",
-    imageSrc: ensaio2,
-  },
-  {
     title: "Fabricação",
     description: "Suporte para conjunto de ventiladores.",
     imageSrc: fabSuporte,
@@ -181,11 +174,6 @@ export const galleryItemsMobile = [
     title: "Montagem",
     description: "Painel Elétrico.",
     imageSrc: montPainel,
-  },
-  {
-    title: "Montagem",
-    description: "Painel Elétrico.",
-    imageSrc: montPainel2,
   }
 ] satisfies ServiceCardProps[];
 

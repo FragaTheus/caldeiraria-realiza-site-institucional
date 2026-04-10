@@ -19,7 +19,10 @@
         "label": "contato@caldeirariarealiza.com.br",
         "link": "mailto:contato@caldeirariarealiza.com.br"
     },
-    "endereco": " Av. das Monções, Nº 50, 08592-150 Itaquaquecetuba São Paulo - Brasil",
+    "endereco": {
+            "link": "https://www.google.com/maps/search/?api=1&query=Av.+das+Monções,+Nº+50,+08592-150+Itaquaquecetuba+São+Paulo+Brasil",
+            "label": "Av. das Monções, Nº 50, 08592-150 Itaquaquecetuba São Paulo - Brasil"
+    },
     "copyright": "© 2026 Realiza Caldeiraria, Usinagem e Serviços. Todos os direitos reservados.",
     "desenvolvidoPor": "Desenvolvido por Matheus Fraga"
 }
