@@ -19,7 +19,7 @@ const AppGridContent = ({
   return (
     <FadeInUp delay={0.1 * index}>
       <div
-        className={`flex flex-col p-4 lg:p-8 gap-4 ${isMuted ? "bg-muted text-white" : ""}`}
+        className={`flex flex-col p-4 lg:p-8 gap-4 h-full ${isMuted ? "bg-muted text-white" : ""}`}
       >
         <div>
           <Icon className="text-primary size-8" />
