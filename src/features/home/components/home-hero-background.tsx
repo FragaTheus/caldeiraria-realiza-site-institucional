@@ -10,7 +10,7 @@ const HomeHeroBackground = () => {
         playsInline
         webkit-playsinline="true"
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/home-hero.mp4" type="video/mp4" />
       </video>
     </div>
   );
