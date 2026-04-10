@@ -12,8 +12,19 @@ import fabCesto from "@/shared/assets/services/fab-cesto.jpeg";
 import projFabVentoinha from "@/shared/assets/services/proj-fab-ventoinha.jpeg";
 import projFabEsteira from "@/shared/assets/services/proj-fab-esteira.jpeg";
 import fabTanque from "@/shared/assets/services/fab-tanque.jpeg";
-import fabCiclone from "@/shared/assets/services/fab-ciclone.jpeg"
-
+import fabCiclone from "@/shared/assets/services/fab-ciclone.jpeg";
+import fabConexao from "@/shared/assets/services/fab-conexao.jpeg";
+import projFabCiclone from "@/shared/assets/services/proj-fab-ciclone.jpeg";
+import ensaio from "@/shared/assets/services/ensaio.jpeg";
+import ensaio2 from "@/shared/assets/services/ensaio2.jpeg";
+import fabSuporte from "@/shared/assets/services/fab-suporte.jpeg";
+import fabProjEstrutura from "@/shared/assets/services/proj-fab-estrutura.jpeg";
+import fabTerca from "@/shared/assets/services/fab-terca.jpeg";
+import montCaminho from "@/shared/assets/services/mont-caminho.jpeg";
+import fabGuarda from "@/shared/assets/services/fab-guarda.jpeg";
+import fabPainel from "@/shared/assets/services/fab-painel.jpeg";
+import montPainel from "@/shared/assets/services/mont-painel.jpeg";
+import montPainel2 from "@/shared/assets/services/mont-painel2.jpeg";
 
 export const galleryItemsMobile = [
   {
@@ -82,9 +93,99 @@ export const galleryItemsMobile = [
     imageSrc: fabTanque,
   },
   {
+    title: "Fabricação",
+    description: "Ciclone Separador de Areia",
+    imageSrc: fabCiclone
+  },
+  {
     title: "Fabricação e Montagem",
     description: "Ciclone e tubulação para recuperador de Areia.",
-    imageSrc: fabCiclone
+    videoSrc: "/fab-ciclone.mp4",
+  },
+  {
+    title: "Fabricação",
+    description: "Escada Marinheiro",
+    videoSrc: "/fab-escada.mp4",
+  },
+  {
+    title: "Fabricação",
+    description: "Conexão TÊ em aço inox 304.",
+    videoSrc: "/fab-conexao.mp4",
+  },
+  {
+    title: "Fabricação",
+    description: "Conexão TÊ em aço inox 304.",
+    imageSrc: fabConexao,
+  },
+  {
+    title: "Projeto e Fabricação",
+    description: "Ciclone Separador de PVC",
+    imageSrc: projFabCiclone,
+  },
+  {
+    title: "Ensaio de Líquido Penetrante",
+    description: "Inspetor ASNT próprio da Realiza.",
+    imageSrc: ensaio,
+  },
+  {
+    title: "Ensaio de Líquido Penetrante",
+    description: "Inspetor ASNT próprio da Realiza.",
+    imageSrc: ensaio2,
+  },
+  {
+    title: "Fabricação",
+    description: "Suporte para conjunto de ventiladores.",
+    imageSrc: fabSuporte,
+  },
+  {
+    title: "Fabricação",
+    description: "Rosca Transportadora.",
+    videoSrc: "/fab-rosca.mp4",
+  },
+  {
+    title: "Projeto, Fabricação e Montagem",
+    description: "Estrutura Metálica",
+    imageSrc: fabProjEstrutura,
+  },
+  {
+    title: "Fabricação",
+    description: "Terça Metálica",
+    imageSrc: fabTerca,
+  },
+  {
+    title: "Montagem",
+    description: "Nivelamento e Alinhamento de caminho  rolamento para ponte rolante",
+    imageSrc: montCaminho,
+  },
+  {
+    title: "Fabricação",
+    description: "Guarda Corpo Circular",
+    imageSrc: fabGuarda,
+  },
+  {
+    title: "Usinagem",
+    description: "Suporte da Faca para Moinho",
+    videoSrc: "/fab-suporte.mp4",
+  },
+  {
+    title: "Usinagem",
+    description: "Eixo e ponteiras.",
+    videoSrc: "/usinagem-eixo.mp4",
+  },
+  {
+    title: "Montagem",
+    description: "Painel Elétrico.",
+    imageSrc: fabPainel,
+  },
+  {
+    title: "Montagem",
+    description: "Painel Elétrico.",
+    imageSrc: montPainel,
+  },
+  {
+    title: "Montagem",
+    description: "Painel Elétrico.",
+    imageSrc: montPainel2,
   }
 ] satisfies ServiceCardProps[];
 
