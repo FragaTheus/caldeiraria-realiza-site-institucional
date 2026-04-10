@@ -45,7 +45,7 @@ const ServiceCard = ({
               className="relative rounded-sm w-full max-w-xs h-72 max-h-80 sm:max-w-sm sm:h-80 md:max-w-md md:h-96 overflow-hidden cursor-zoom-in"
               aria-label={`Abrir mídia em tela cheia: ${title}`}
             >
-              <div className="absolute bg-muted text-white shadow-sm rounded-sm bottom-1 left-1/2 -translate-x-1/2 p-1 text-xs z-40">
+              <div className="absolute bg-white borders border-muted shadow-md rounded-sm bottom-1 left-1/2 -translate-x-1/2 p-2 text-xs z-40">
                 Clique para ver mais
               </div>
               {imageSrc && (
@@ -83,7 +83,7 @@ const ServiceCard = ({
         >
           <button
             type="button"
-            className="absolute right-4 top-4 rounded-sm bg-white/15 px-3 py-2 text-sm text-white hover:bg-white/25"
+            className="absolute right-4 top-4 rounded-sm bg-white/15 px-3 py-2 text-sm text-white hover:bg-white/25 z-50"
             onClick={() => setIsFullscreenOpen(false)}
             aria-label="Fechar mídia em tela cheia"
           >
