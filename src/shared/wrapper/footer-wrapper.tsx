@@ -4,6 +4,7 @@ import {
   FaEnvelope,
   FaFacebook,
   FaInstagram,
+  FaLocationPin,
   FaPhone,
   FaWhatsapp,
 } from "react-icons/fa6";

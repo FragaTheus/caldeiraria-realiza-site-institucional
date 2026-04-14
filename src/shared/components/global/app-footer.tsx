@@ -23,7 +23,7 @@ interface FooterGridProps {
 const FooterGrid = ({ title, links }: FooterGridProps) => {
   return (
     <div className="flex flex-col">
-      <AppSmall className="font-semibold text-white">{title}</AppSmall>
+      <AppP className="font-semibold text-white">{title}</AppP>
       <div className="flex flex-col gap-2 mt-2">
         {links.map((link) => (
           <FooterLink key={link.href} {...link} />
@@ -45,6 +45,7 @@ const ContatoItem = ({ href, label, Icon }: ContatoItemProps) => {
       href={href}
       className="flex items-center text-muted-light gap-2 hover:text-muted-light/90 justify-center"
     >
+      {Icon && <Icon className="text-white text-lg" />}
       <AppP className="whitespace-pre-line">{label}</AppP>
     </Link>
   );
@@ -57,9 +58,9 @@ export interface ContatosProps {
 
 const Contatos = ({ title, items }: ContatosProps) => {
   return (
-    <div className="flex flex-col items-center justify-between">
+    <div className="flex flex-col items-start lg:items-center justify-between">
       <AppP className="font-semibold text-white">{title}</AppP>
-      <div className="flex flex-col gap-2 mt-2">
+      <div className="flex flex-col gap-2 mt-2 items-start lg:items-center">
         {items.map((item) => (
           <ContatoItem key={item.href} {...item} />
         ))}

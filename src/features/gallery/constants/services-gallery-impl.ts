@@ -174,6 +174,16 @@ export const galleryItemsMobile = [
     title: "Montagem",
     description: "Painel Elétrico.",
     imageSrc: montPainel,
+  },
+  {
+    title: "Redução",
+    description: "Redução do comprimento da Ponte Rolante.",
+    videoSrc: "/reducao.mp4",
+  },
+  {
+    title: "Projeto, Fabricação e Montagem",
+    description: "Conjunto de Esteira Transportadora",
+    videoSrc: "/projeto-escada.mp4",
   }
 ] satisfies ServiceCardProps[];
 
