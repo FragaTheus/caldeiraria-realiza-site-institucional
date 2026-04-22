@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://caldeirariarealiza.com.br',
+  siteUrl: 'https://www.caldeirariarealiza.com.br',
   generateRobotsTxt: true,
 }
