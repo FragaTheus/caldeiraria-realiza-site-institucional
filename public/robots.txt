@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://SEU-DOMINIO.com
+Host: https://www.caldeirariarealiza.com.br
 
 # Sitemaps
-Sitemap: https://SEU-DOMINIO.com/sitemap.xml
+Sitemap: https://www.caldeirariarealiza.com.br/sitemap.xml
