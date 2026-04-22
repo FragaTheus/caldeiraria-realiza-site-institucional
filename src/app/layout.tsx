@@ -108,6 +108,10 @@ export default function RootLayout({
         <meta name="geo.placename" content="Itaquaquecetuba" />
         <meta name="geo.position" content="-23.486389;-46.348611" />
         <meta name="ICBM" content="-23.486389, -46.348611" />
+        <meta
+          name="google-site-verification"
+          content="4EkKZZQmoTdrJEJdjp5J4WlTGhtTNImVi2HfVWxlgao"
+        />
       </head>
       <body
         className={`${poppins.className} antialiased max-w-screen overflow-x-hidden bg-background`}
