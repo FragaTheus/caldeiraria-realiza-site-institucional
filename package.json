@@ -20,6 +20,7 @@
     "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.2.2",
+    "axios": "^1.15.2",
     "framer-motion": "^12.38.0",
     "heroicons": "^2.2.0",
     "iframe": "^1.0.0",

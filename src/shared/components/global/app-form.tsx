@@ -14,6 +14,7 @@ import FormField, {
 import { FaCircleNotch } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { FadeInUp, FadeInWithIndex } from "../animate";
+import { sendEmail } from "@/shared/api/api";
 
 const ContactForm = ({ ctaText }: { ctaText: string }) => {
   const pathname = usePathname();
@@ -29,8 +30,25 @@ const ContactForm = ({ ctaText }: { ctaText: string }) => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log(data);
-    reset();
+    try {
+      const formData = new FormData();
+
+      formData.append("name", data.nome);
+      formData.append("company", data.empresa ?? "");
+      formData.append("phone", data.telefone ?? "");
+      formData.append("email", data.email);
+      formData.append("message", data.mensagem);
+
+      const file = data.anexo instanceof FileList ? data.anexo[0] : data.anexo;
+
+      if (file) {
+        formData.append("attachment", file);
+      }
+      reset();
+      sendEmail(formData);
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+    }
   };
 
   return (
