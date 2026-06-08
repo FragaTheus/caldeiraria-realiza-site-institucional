@@ -98,7 +98,7 @@ O servidor de produção está configurado com **Nginx** como proxy reverso, res
 
 Por ora, o e-mail de destino da empresa está configurado com **caixa de spam automática**, filtrando submissões indesejadas enquanto não há rate limiting implementado na aplicação.
 
-> 🔜 **Próxima atualização:** implementação de **Rate Limit** por identificador de cliente, usando **Redis** como backend de contagem, para proteção contra abuso do endpoint.
+> 🔜 **Próxima atualização:** implementação de **Rate Limit** por ip de cliente, usando **Redis** como backend de contagem, para proteção contra abuso do endpoint.
 
 ---
 
@@ -108,16 +108,24 @@ Por ora, o e-mail de destino da empresa está configurado com **caixa de spam au
 
 - [Docker](https://docs.docker.com/get-docker/) e [Docker Compose](https://docs.docker.com/compose/) instalados
 - Java 21 (apenas para rodar localmente sem Docker)
+- Configurar servidor SMTP e ter um email de recebimento e passar as variáveis de ambiente necessárias para o application-demo.properties
 
 ---
 
 ### ▶️ Com Docker Compose (recomendado)
 
-```bash
-# 1. Gere o JAR
-./gradlew bootJar
+A imagem do serviço está disponível no repositório. Para utilizá-la, você só precisa criar um arquivo `.env` na raiz do projeto com as variáveis abaixo — basta copiar, colar e preencher os valores:
 
-# 2. Suba o container
+```env
+MAIL_USERNAME=
+MAIL_APP_PASSWORD=
+MAIL_TO=
+```
+
+Com o arquivo `.env` criado, suba o container:
+
+```bash
+# Suba o container
 docker compose up --build
 
 # Para rodar em background
