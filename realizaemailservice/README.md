@@ -74,7 +74,9 @@ curl -X POST http://localhost:8080/api/v1/mail \
 
 ---
 
-## 🔒 CORS
+## 🔒 Segurança
+
+### CORS
 
 Origens permitidas configuradas em `CorsConfig.java`:
 
@@ -83,6 +85,20 @@ Origens permitidas configuradas em `CorsConfig.java`:
 - `http://localhost:3000`
 
 Métodos permitidos: `POST`, `OPTIONS`.
+
+### Validação de Dados
+
+Todos os campos do formulário passam por validação via **Jakarta Validation** antes de qualquer processamento. Campos obrigatórios, limites de tamanho e formato de e-mail são verificados server-side, garantindo que dados malformados ou incompletos sejam rejeitados com `400 Bad Request`.
+
+### SSL / HTTPS
+
+O servidor de produção está configurado com **Nginx** como proxy reverso, responsável pelo certificado SSL e terminação HTTPS. Todo tráfego externo é forçado para HTTPS antes de chegar ao container.
+
+### Proteção contra Spam
+
+Por ora, o e-mail de destino da empresa está configurado com **caixa de spam automática**, filtrando submissões indesejadas enquanto não há rate limiting implementado na aplicação.
+
+> 🔜 **Próxima atualização:** implementação de **Rate Limit** por identificador de cliente, usando **Redis** como backend de contagem, para proteção contra abuso do endpoint.
 
 ---
 
@@ -188,7 +204,6 @@ A imagem usa **eclipse-temurin:21-jre** (imagem oficial do OpenJDK, leve e segur
 
 ```
 realizaemailservice/
-├── .gitignore
 ├── Dockerfile
 ├── docker-compose.yml
 ├── build.gradle
