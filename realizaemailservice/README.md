@@ -106,26 +106,35 @@ Por ora, o e-mail de destino da empresa está configurado com **caixa de spam au
 
 ### Pré-requisitos
 
-- [Docker](https://docs.docker.com/get-docker/) e [Docker Compose](https://docs.docker.com/compose/) instalados
-- Java 21 (apenas para rodar localmente sem Docker)
-- Configurar servidor SMTP e ter um email de recebimento e passar as variáveis de ambiente necessárias para o application-demo.properties
+- [Docker](https://docs.docker.com/get-docker/) e [Docker Compose](https://docs.docker.com/compose/) instalados — para rodar via container
+- Java 21 + Gradle — para rodar localmente sem Docker
+- Um servidor SMTP configurado (ex: Gmail com senha de app) e um e-mail de destino para receber as mensagens
 
 ---
 
-### ▶️ Com Docker Compose (recomendado)
+### 1️⃣ Configure o `.env`
 
-A imagem do serviço está disponível no repositório. Para utilizá-la, você só precisa criar um arquivo `.env` na raiz do projeto com as variáveis abaixo — basta copiar, colar e preencher os valores:
+O repositório já inclui o arquivo `.env` na raiz com as variáveis prontas. **Basta preencher os valores:**
 
 ```env
-MAIL_USERNAME=
-MAIL_APP_PASSWORD=
-MAIL_TO=
+MAIL_USERNAME=       # e-mail de origem (pertencente ao servidor SMTP)
+MAIL_APP_PASSWORD=   # senha de app do e-mail de origem (não a senha normal)
+MAIL_TO=             # e-mail de destino que receberá as mensagens do formulário
 ```
 
-Com o arquivo `.env` criado, suba o container:
+> ⚠️ Não commite o `.env` com valores reais. Ele serve como template — preencha apenas localmente.
+
+---
+
+### ▶️ Opção A — Docker Compose (recomendado)
+
+Com o `.env` preenchido, basta gerar o JAR e subir o container:
 
 ```bash
-# Suba o container
+# 1. Gere o JAR
+./gradlew bootJar
+
+# 2. Suba o container (lê o .env automaticamente)
 docker compose up --build
 
 # Para rodar em background
@@ -139,21 +148,18 @@ O serviço ficará disponível em `http://localhost:8080`.
 
 ---
 
-### ▶️ Localmente via Gradle (profile demo)
+### ▶️ Opção B — Localmente via Gradle (profile demo)
 
-O projeto inclui o arquivo `src/main/resources/application-demo.properties` com a configuração pronta para rodar localmente. Basta declarar as variáveis de ambiente e ativar o profile `demo`:
+Com o `.env` preenchido, exporte as variáveis e inicie a aplicação com o profile `demo`:
 
 ```bash
-# Linux / macOS
-export MAIL_USERNAME=seu-email@gmail.com
-export MAIL_APP_PASSWORD="xxxx xxxx xxxx xxxx"
-export MAIL_TO=destino@empresa.com.br
-
+# Linux / macOS — exporta as variáveis do .env e sobe a aplicação
+export $(cat .env | grep -v '^#' | xargs)
 ./gradlew bootRun --args='--spring.profiles.active=demo'
 ```
 
 ```powershell
-# Windows (PowerShell)
+# Windows (PowerShell) — preencha os valores diretamente
 $env:MAIL_USERNAME="seu-email@gmail.com"
 $env:MAIL_APP_PASSWORD="xxxx xxxx xxxx xxxx"
 $env:MAIL_TO="destino@empresa.com.br"
@@ -212,6 +218,7 @@ A imagem usa **eclipse-temurin:21-jre** (imagem oficial do OpenJDK, leve e segur
 
 ```
 realizaemailservice/
+├── .env                         # Template de variáveis — preencha localmente
 ├── Dockerfile
 ├── docker-compose.yml
 ├── build.gradle
@@ -220,7 +227,7 @@ realizaemailservice/
 │   │   ├── java/...            # Código-fonte
 │   │   └── resources/
 │   │       ├── application.properties
-│   │       └── application-demo.properties  # Profile para rodar localmente
+│   │       └── application-demo.properties  # Profile para rodar localmente via Gradle
 │   └── test/
 │       └── java/...            # Testes
 └── build/

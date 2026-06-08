@@ -37,5 +37,5 @@ out/
 .vscode/
 
 ### Secrets ###
-.env
+# .env is committed as a template with empty values — fill locally, do not commit real credentials
 
