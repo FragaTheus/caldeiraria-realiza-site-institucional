@@ -2,6 +2,9 @@
 
 Microsserviço backend responsável por receber submissões do formulário de contato do site [caldeirariarealiza.com.br](https://caldeirariarealiza.com.br) e enviá-las por e-mail via SMTP do Gmail.
 
+> **Por que um backend SMTP próprio?**
+> Soluções de formulário de contato via frontend (EmailJS, FormSubmit, etc.) não suportam envio de **anexos e arquivos** de forma confiável. Por isso optamos por um microsserviço dedicado: ele recebe o multipart/form-data com o arquivo, processa o anexo server-side e o entrega diretamente via SMTP — sem limitações de terceiros.
+
 ---
 
 ## 🛠️ Tecnologias
@@ -83,27 +86,6 @@ Métodos permitidos: `POST`, `OPTIONS`.
 
 ---
 
-## ⚙️ Variáveis de Ambiente
-
-As variáveis são carregadas via arquivo `.env` (usado pelo Docker Compose) e injetadas pelo Spring Boot através do `application.properties`.
-
-| Variável | Descrição |
-|---|---|
-| `MAIL_USERNAME` | E-mail Gmail remetente |
-| `MAIL_APP_PASSWORD` | Senha de app gerada no Google |
-| `MAIL_TO` | E-mail destinatário dos contatos |
-
-Arquivo `.env` (na raiz do projeto, **não versionar**):
-```env
-MAIL_USERNAME=seu-email@gmail.com
-MAIL_APP_PASSWORD=xxxx xxxx xxxx xxxx
-MAIL_TO=destino@empresa.com.br
-```
-
-> ⚠️ O `.env` já está no `.gitignore` para proteger as credenciais.
-
----
-
 ## 🚀 Como Rodar
 
 ### Pré-requisitos
@@ -133,16 +115,26 @@ O serviço ficará disponível em `http://localhost:8080`.
 
 ---
 
-### ▶️ Localmente (sem Docker)
+### ▶️ Localmente via Gradle (profile demo)
+
+O projeto inclui o arquivo `src/main/resources/application-demo.properties` com a configuração pronta para rodar localmente. Basta declarar as variáveis de ambiente e ativar o profile `demo`:
 
 ```bash
-# Exportar variáveis de ambiente manualmente
+# Linux / macOS
 export MAIL_USERNAME=seu-email@gmail.com
 export MAIL_APP_PASSWORD="xxxx xxxx xxxx xxxx"
 export MAIL_TO=destino@empresa.com.br
 
-# Rodar a aplicação
-./gradlew bootRun
+./gradlew bootRun --args='--spring.profiles.active=demo'
+```
+
+```powershell
+# Windows (PowerShell)
+$env:MAIL_USERNAME="seu-email@gmail.com"
+$env:MAIL_APP_PASSWORD="xxxx xxxx xxxx xxxx"
+$env:MAIL_TO="destino@empresa.com.br"
+
+./gradlew bootRun --args='--spring.profiles.active=demo'
 ```
 
 ---
@@ -196,7 +188,6 @@ A imagem usa **eclipse-temurin:21-jre** (imagem oficial do OpenJDK, leve e segur
 
 ```
 realizaemailservice/
-├── .env                        # Variáveis de ambiente (não versionar!)
 ├── .gitignore
 ├── Dockerfile
 ├── docker-compose.yml
@@ -205,11 +196,11 @@ realizaemailservice/
 │   ├── main/
 │   │   ├── java/...            # Código-fonte
 │   │   └── resources/
-│   │       └── application.properties
+│   │       ├── application.properties
+│   │       └── application-demo.properties  # Profile para rodar localmente
 │   └── test/
 │       └── java/...            # Testes
 └── build/
     └── libs/
         └── *.jar               # JAR gerado pelo Gradle
 ```
-
