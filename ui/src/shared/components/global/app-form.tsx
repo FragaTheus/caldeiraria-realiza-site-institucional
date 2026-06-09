@@ -14,7 +14,15 @@ import FormField, {
 import { FaCircleNotch } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { FadeInUp, FadeInWithIndex } from "../animate";
-import { sendEmail } from "@/shared/api/api";
+import { sendEmail, EmailRequest } from "@/shared/api/api";
+
+const fileToBase64 = (file: File): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve((reader.result as string).split(",")[1]);
+    reader.onerror = reject;
+  });
 
 const ContactForm = ({ ctaText }: { ctaText: string }) => {
   const pathname = usePathname();
@@ -31,21 +39,28 @@ const ContactForm = ({ ctaText }: { ctaText: string }) => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const formData = new FormData();
-
-      formData.append("name", data.nome);
-      formData.append("company", data.empresa ?? "");
-      formData.append("phone", data.telefone ?? "");
-      formData.append("email", data.email);
-      formData.append("message", data.mensagem);
-
       const file = data.anexo instanceof FileList ? data.anexo[0] : data.anexo;
 
+      let attachmentBase64: string | undefined;
+      let attachmentName: string | undefined;
+
       if (file) {
-        formData.append("attachment", file);
+        attachmentBase64 = await fileToBase64(file);
+        attachmentName = file.name;
       }
+
+      const payload: EmailRequest = {
+        name: data.nome,
+        company: data.empresa ?? "",
+        phone: data.telefone ?? "",
+        email: data.email,
+        message: data.mensagem,
+        attachmentBase64,
+        attachmentName,
+      };
+
       reset();
-      sendEmail(formData);
+      sendEmail(payload);
     } catch (error) {
       console.error("Erro ao enviar:", error);
     }

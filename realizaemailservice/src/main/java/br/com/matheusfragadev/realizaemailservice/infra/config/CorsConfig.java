@@ -13,6 +13,8 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedOrigins(
                         "https://caldeirariarealiza.com.br",
                         "https://www.caldeirariarealiza.com.br",
+                        "https://caldeirariarealiza.com.br/",
+                        "https://www.caldeirariarealiza.com.br/",
                         "http://localhost:3000"
                 )
                 .allowedMethods("POST", "OPTIONS")

@@ -1,8 +1,6 @@
-package br.com.matheusfragadev.realizaemailservice.mail;
+package br.com.matheusfragadev.realizaemailservice.service;
 
 import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailRequest;
-import br.com.matheusfragadev.realizaemailservice.mail.service.EmailException;
-import br.com.matheusfragadev.realizaemailservice.mail.service.EmailService;
 import jakarta.mail.BodyPart;
 import jakarta.mail.Multipart;
 import jakarta.mail.Session;
@@ -14,20 +12,14 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import java.util.Base64;
 import java.util.Properties;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class EmailServiceTest {
@@ -49,12 +41,9 @@ class EmailServiceTest {
         when(javaMailSender.createMimeMessage()).thenReturn(mimeMessage);
 
         EmailRequest request = new EmailRequest(
-                "Matheus",
-                "Realiza",
-                "11999999999",
-                "matheus@email.com",
-                "Quero um orcamento",
-                null
+                "Matheus", "Realiza", "11999999999",
+                "matheus@email.com", "Quero um orcamento",
+                null, null
         );
 
         emailService.sendEmail(request);
@@ -66,10 +55,8 @@ class EmailServiceTest {
         assertEquals("Contato - Matheus", sent.getSubject());
         assertEquals("contato@caldeirariarealiza.com.br", sent.getAllRecipients()[0].toString());
         assertEquals("matheus@email.com", sent.getReplyTo()[0].toString());
-
-        String body = sent.getContent().toString();
-        assertTrue(body.contains("Novo contato recebido"));
-        assertTrue(body.contains("Nome: Matheus"));
+        assertTrue(sent.getContent().toString().contains("Novo contato recebido"));
+        assertTrue(sent.getContent().toString().contains("Nome: Matheus"));
     }
 
     @Test
@@ -77,20 +64,12 @@ class EmailServiceTest {
         MimeMessage mimeMessage = new MimeMessage(Session.getInstance(new Properties()));
         when(javaMailSender.createMimeMessage()).thenReturn(mimeMessage);
 
-        MockMultipartFile attachment = new MockMultipartFile(
-                "attachment",
-                "arquivo.txt",
-                "text/plain",
-                "conteudo".getBytes()
-        );
+        String base64 = Base64.getEncoder().encodeToString("conteudo".getBytes());
 
         EmailRequest request = new EmailRequest(
-                "Matheus",
-                "Realiza",
-                "11999999999",
-                "matheus@email.com",
-                "Segue anexo",
-                attachment
+                "Matheus", "Realiza", "11999999999",
+                "matheus@email.com", "Segue anexo",
+                base64, "arquivo.txt"
         );
 
         emailService.sendEmail(request);
@@ -112,12 +91,9 @@ class EmailServiceTest {
         doThrow(new RuntimeException("SMTP indisponivel")).when(javaMailSender).send(any(MimeMessage.class));
 
         EmailRequest request = new EmailRequest(
-                "Matheus",
-                "Realiza",
-                "11999999999",
-                "matheus@email.com",
-                "Teste",
-                null
+                "Matheus", "Realiza", "11999999999",
+                "matheus@email.com", "Teste",
+                null, null
         );
 
         EmailException exception = assertThrows(EmailException.class, () -> emailService.sendEmail(request));
@@ -126,58 +102,38 @@ class EmailServiceTest {
     }
 
     @Test
-    void sendEmailShouldFailWhenAttachmentFilenameIsNull() {
+    void sendEmailShouldFailWhenAttachmentExceedsLimit() {
         MimeMessage mimeMessage = new MimeMessage(Session.getInstance(new Properties()));
         when(javaMailSender.createMimeMessage()).thenReturn(mimeMessage);
 
-        MockMultipartFile attachment = new MockMultipartFile(
-                "attachment",
-                null,
-                "application/octet-stream",
-                "123".getBytes()
-        );
+        byte[] bigFile = new byte[6 * 1024 * 1024];
+        String base64 = Base64.getEncoder().encodeToString(bigFile);
 
         EmailRequest request = new EmailRequest(
-                "Matheus",
-                "Realiza",
-                "11999999999",
-                "matheus@email.com",
-                "Teste",
-                attachment
+                "Matheus", "Realiza", "11999999999",
+                "matheus@email.com", "Teste",
+                base64, "grande.bin"
         );
 
         EmailException exception = assertThrows(EmailException.class, () -> emailService.sendEmail(request));
-        assertNotNull(exception.getMessage());
-        assertTrue(exception.getMessage().contains("Failed to send email"));
+        assertTrue(exception.getMessage().contains("5MB"));
     }
 
     @Test
-    void sendEmailShouldTreatEmptyAttachmentAsNoAttachment() throws Exception {
+    void sendEmailShouldTreatNullBase64AsNoAttachment() throws Exception {
         MimeMessage mimeMessage = new MimeMessage(Session.getInstance(new Properties()));
         when(javaMailSender.createMimeMessage()).thenReturn(mimeMessage);
 
-        MockMultipartFile emptyAttachment = new MockMultipartFile(
-                "attachment",
-                "vazio.txt",
-                "text/plain",
-                new byte[0]
-        );
-
         EmailRequest request = new EmailRequest(
-                "Matheus",
-                "Realiza",
-                "11999999999",
-                "matheus@email.com",
-                "Sem anexo real",
-                emptyAttachment
+                "Matheus", "Realiza", "11999999999",
+                "matheus@email.com", "Sem anexo real",
+                null, null
         );
 
         emailService.sendEmail(request);
 
         ArgumentCaptor<MimeMessage> captor = ArgumentCaptor.forClass(MimeMessage.class);
         verify(javaMailSender).send(captor.capture());
-        String body = captor.getValue().getContent().toString();
-        assertTrue(body.contains("Sem anexo real"));
+        assertTrue(captor.getValue().getContent().toString().contains("Sem anexo real"));
     }
 }
-

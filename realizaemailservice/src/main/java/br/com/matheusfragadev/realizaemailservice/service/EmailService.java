@@ -1,4 +1,4 @@
-package br.com.matheusfragadev.realizaemailservice.mail.service;
+package br.com.matheusfragadev.realizaemailservice.service;
 
 import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailRequest;
 import jakarta.mail.internet.MimeMessage;
@@ -8,7 +8,8 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Base64;
 
 @Service
 @RequiredArgsConstructor
@@ -19,33 +20,31 @@ public class EmailService {
     @Value("${mail.to}")
     private String to;
 
-    public void sendEmail(EmailRequest request){
-        try{
-            boolean hasAttachment = request.attachment() != null && !request.attachment().isEmpty();
+    public void sendEmail(EmailRequest request) {
+        try {
+            boolean hasAttachment = request.getAttachmentBase64() != null
+                    && !request.getAttachmentBase64().isBlank()
+                    && request.getAttachmentName() != null
+                    && !request.getAttachmentName().isBlank();
+
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, hasAttachment, "UTF-8");
 
             helper.setTo(to);
-            helper.setSubject("Contato - " + request.name());
+            helper.setSubject("Contato - " + request.getName());
+            helper.setText(buildBody(request), false);
+            helper.setReplyTo(request.getEmail());
 
-            String body = buildBody(request);
-            helper.setText(body, false);
-            helper.setReplyTo(request.email());
             if (hasAttachment) {
-                MultipartFile file = request.attachment();
-                String originalFilename = file.getOriginalFilename();
-                if (originalFilename == null || originalFilename.isBlank()) {
-                    throw new IllegalArgumentException("Attachment filename is required.");
-                }
-                if (file.getSize() > 5 * 1024 * 1024) {
+                byte[] fileBytes = Base64.getDecoder().decode(request.getAttachmentBase64());
+
+                if (fileBytes.length > 5 * 1024 * 1024) {
                     throw new EmailException("Attachment size exceeds the 5MB limit.");
                 }
-                helper.addAttachment
-                        (
-                                originalFilename,
-                                new ByteArrayResource(file.getBytes())
-                        );
+
+                helper.addAttachment(request.getAttachmentName(), new ByteArrayResource(fileBytes));
             }
+
             javaMailSender.send(message);
         } catch (EmailException e) {
             throw e;
@@ -64,12 +63,11 @@ public class EmailService {
                 Email: %s
                 Mensagem: %s
                 """.formatted(
-                request.name(),
-                request.company(),
-                request.phone(),
-                request.email(),
-                request.message()
+                request.getName(),
+                request.getCompany(),
+                request.getPhone(),
+                request.getEmail(),
+                request.getMessage()
         );
     }
-
 }

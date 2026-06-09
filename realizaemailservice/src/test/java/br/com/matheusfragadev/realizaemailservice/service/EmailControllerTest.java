@@ -1,10 +1,9 @@
-package br.com.matheusfragadev.realizaemailservice.mail;
+package br.com.matheusfragadev.realizaemailservice.service;
 
 import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailController;
 import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailExceptionHandler;
 import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailRequest;
-import br.com.matheusfragadev.realizaemailservice.mail.service.EmailException;
-import br.com.matheusfragadev.realizaemailservice.mail.service.EmailService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,7 +18,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
@@ -29,6 +28,7 @@ class EmailControllerTest {
     private EmailService emailService;
 
     private MockMvc mockMvc;
+    private ObjectMapper objectMapper;
 
     @BeforeEach
     void setUp() {
@@ -40,17 +40,21 @@ class EmailControllerTest {
                 .setControllerAdvice(new EmailExceptionHandler())
                 .setValidator(validator)
                 .build();
+
+        objectMapper = new ObjectMapper();
     }
 
     @Test
     void contactShouldReturnNoContentForValidRequest() throws Exception {
-        mockMvc.perform(multipart("/api/v1/mail")
-                        .param("name", "Matheus")
-                        .param("company", "Realiza")
-                        .param("phone", "11999999999")
-                        .param("email", "matheus@email.com")
-                        .param("text", "Mensagem de contato")
-                        .contentType(MediaType.MULTIPART_FORM_DATA))
+        EmailRequest request = new EmailRequest(
+                "Matheus", "Realiza", "11999999999",
+                "matheus@email.com", "Mensagem de contato",
+                null, null
+        );
+
+        mockMvc.perform(post("/api/v1/mail")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isNoContent());
 
         verify(emailService).sendEmail(any(EmailRequest.class));
@@ -58,14 +62,15 @@ class EmailControllerTest {
 
     @Test
     void contactShouldReturnBadRequestWhenNameExceedsLimit() throws Exception {
-        String invalidName = "a".repeat(101);
+        EmailRequest request = new EmailRequest(
+                "a".repeat(101), "Realiza", "11999999999",
+                "matheus@email.com", "Mensagem",
+                null, null
+        );
 
-        mockMvc.perform(multipart("/api/v1/mail")
-                        .param("name", invalidName)
-                        .param("company", "Realiza")
-                        .param("phone", "11999999999")
-                        .param("email", "matheus@email.com")
-                        .param("text", "Mensagem"))
+        mockMvc.perform(post("/api/v1/mail")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isBadRequest());
 
         verify(emailService, never()).sendEmail(any(EmailRequest.class));
@@ -75,12 +80,15 @@ class EmailControllerTest {
     void contactShouldReturnServerErrorWhenServiceFails() throws Exception {
         doThrow(new EmailException("erro ao enviar")).when(emailService).sendEmail(any(EmailRequest.class));
 
-        mockMvc.perform(multipart("/api/v1/mail")
-                        .param("name", "Matheus")
-                        .param("company", "Realiza")
-                        .param("phone", "11999999999")
-                        .param("email", "matheus@email.com")
-                        .param("text", "Mensagem"))
+        EmailRequest request = new EmailRequest(
+                "Matheus", "Realiza", "11999999999",
+                "matheus@email.com", "Mensagem",
+                null, null
+        );
+
+        mockMvc.perform(post("/api/v1/mail")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isInternalServerError());
 
         verify(emailService).sendEmail(any(EmailRequest.class));
@@ -88,9 +96,15 @@ class EmailControllerTest {
 
     @Test
     void contactShouldAcceptRequestWithoutOptionalFields() throws Exception {
-        mockMvc.perform(multipart("/api/v1/mail")
-                        .param("name", "Matheus")
-                        .param("email", "matheus@email.com"))
+        EmailRequest request = new EmailRequest(
+                "Matheus", null, null,
+                "matheus@email.com", null,
+                null, null
+        );
+
+        mockMvc.perform(post("/api/v1/mail")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isNoContent());
 
         verify(emailService).sendEmail(any(EmailRequest.class));

@@ -1,4 +1,4 @@
-package br.com.matheusfragadev.realizaemailservice.mail.service;
+package br.com.matheusfragadev.realizaemailservice.service;
 
 public class EmailException extends RuntimeException {
     public EmailException(String message) {

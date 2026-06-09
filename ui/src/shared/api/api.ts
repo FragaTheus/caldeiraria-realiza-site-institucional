@@ -1,12 +1,21 @@
 import axios from "axios";
 
-export const api = axios.create(
-    {
-        baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-    }
-)
-export async function sendEmail(data: FormData) {
-    return await api.post("/mail", data);
+export interface EmailRequest {
+  name: string;
+  company: string;
+  phone: string;
+  email: string;
+  message: string;
+  attachmentBase64?: string;
+  attachmentName?: string;
+}
+
+export const api = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+});
+
+export async function sendEmail(data: EmailRequest) {
+  return await api.post("/mail", data);
 }
 
 const sleep = (ms: number) =>
