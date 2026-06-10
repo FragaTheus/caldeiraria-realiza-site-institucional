@@ -1,9 +1,9 @@
 # 📧 Realiza Email Service
 
-Microsserviço backend responsável por receber submissões do formulário de contato do site [caldeirariarealiza.com.br](https://caldeirariarealiza.com.br) e enviá-las por e-mail via SMTP do Gmail.
+Microsserviço backend responsável por receber submissões do formulário de contato do site [caldeirariarealiza.com.br](https://caldeirariarealiza.com.br) e enviá-las por e-mail via SMTP.
 
 > **Por que um backend SMTP próprio?**
-> Soluções de formulário de contato via frontend (EmailJS, FormSubmit, etc.) não suportam envio de **anexos e arquivos** de forma confiável. Por isso optamos por um microsserviço dedicado: ele recebe o multipart/form-data com o arquivo, processa o anexo server-side e o entrega diretamente via SMTP — sem limitações de terceiros.
+> Soluções de formulário via frontend (EmailJS, FormSubmit etc.) têm limitações para anexos. Neste serviço, o frontend envia o arquivo em Base64, o backend converte e envia como anexo real via SMTP.
 
 ---
 
@@ -13,159 +13,136 @@ Microsserviço backend responsável por receber submissões do formulário de co
 |---|---|
 | Java | 21 |
 | Spring Boot | 4.0.5 |
+| Spring Web MVC | — |
 | Spring Mail (JavaMailSender) | — |
 | Spring Validation (Jakarta) | — |
 | Lombok | — |
 | JUnit 5 / MockMvc | — |
 | Gradle | 9.x |
-| Docker / Docker Compose | — |
 
 ---
 
 ## 📐 Arquitetura
 
-```
+```text
 src/main/java/
 └── br.com.matheusfragadev.realizaemailservice
-    ├── RealizaemailserviceApplication.java   # Entry point Spring Boot
-    ├── mail/
-    │   └── service/
-    │       ├── EmailService.java             # Lógica de envio de e-mail
-    │       └── EmailException.java           # Exceção customizada
-    └── infra/
-        ├── config/
-        │   └── CorsConfig.java               # Configuração de CORS
-        └── controller/
-            ├── EmailController.java          # Endpoint REST
-            ├── EmailRequest.java             # DTO (record) com validações
-            └── EmailExceptionHandler.java    # Handler global de exceções
+    ├── RealizaemailserviceApplication.java
+    ├── controller/
+    │   ├── handler/
+    │   │   ├── EmailExceptionHandler.java
+    │   │   └── ErrorResponse.java
+    │   └── mail/
+    │       ├── EmailController.java
+    │       └── EmailRequest.java
+    └── service/
+        └── mail/
+            ├── EmailService.java
+            └── EmailException.java
 ```
 
 ---
 
-## 🔌 Endpoint
+## 🔌 API Pública
 
 ### `POST /api/v1/mail`
 
-Recebe os dados do formulário de contato via **multipart/form-data**.
+Recebe os dados do formulário via **JSON**.
 
-**Campos:**
+**Body (JSON):**
 
 | Campo | Tipo | Obrigatório | Limite |
 |---|---|---|---|
-| `name` | `String` | Sim | 100 caracteres |
+| `name` | `String` | Não | 100 caracteres |
 | `company` | `String` | Não | 100 caracteres |
 | `phone` | `String` | Não | 20 caracteres |
-| `email` | `String` | Sim | 150 caracteres |
-| `message` | `String` | Sim | 500 caracteres |
-| `attachment` | `MultipartFile` | Não | Máx. 5 MB |
+| `email` | `String` | Não | 150 caracteres |
+| `message` | `String` | Não | 500 caracteres |
+| `attachmentBase64` | `String` | Não | conteúdo Base64 |
+| `attachmentName` | `String` | Não | nome do arquivo |
 
 **Resposta de sucesso:** `204 No Content`
 
 **Exemplo com `curl`:**
 ```bash
-curl -X POST http://localhost:8080/api/v1/mail \
-  -F "name=João Silva" \
-  -F "company=Empresa LTDA" \
-  -F "phone=(11) 99999-9999" \
-  -F "email=joao@empresa.com" \
-  -F "message=Olá, gostaria de um orçamento."
+BASE64=$(base64 -w 0 carrinho.png)
+
+curl -v -X POST http://localhost:8081/api/v1/mail \
+  -H "Content-Type: application/json" \
+  -d "{\
+    \"name\": \"Matheus Fraga\",\
+    \"company\": \"Empresa Teste\",\
+    \"phone\": \"(11) 99999-9999\",\
+    \"email\": \"teste@teste.com\",\
+    \"message\": \"Olá, gostaria de um orçamento.\",\
+    \"attachmentBase64\": \"$BASE64\",\
+    \"attachmentName\": \"carrinho.png\"\
+  }"
 ```
+
+---
+
+## 📚 Swagger / OpenAPI
+
+A API possui documentação Swagger para consulta pública do contrato.
+
+- Swagger UI: `https://SEU-DOMINIO/swagger-ui/index.html`
+- OpenAPI JSON: `https://SEU-DOMINIO/v3/api-docs`
+
+Para ambiente local:
+
+- Swagger UI: `http://localhost:8081/swagger-ui/index.html`
+- OpenAPI JSON: `http://localhost:8081/v3/api-docs`
 
 ---
 
 ## 🔒 Segurança
 
-### CORS
+### CORS no Nginx
 
-Origens permitidas configuradas em `CorsConfig.java`:
+O CORS é aplicado no **Nginx** (camada de borda). Requisições de origens não autorizadas são bloqueadas antes de chegarem no backend.
 
-- `https://caldeirariarealiza.com.br`
-- `https://www.caldeirariarealiza.com.br`
-- `http://localhost:3000`
+### Rate Limit no Nginx
 
-Métodos permitidos: `POST`, `OPTIONS`.
+Foi configurado **Rate Limit por IP** no Nginx para reduzir sobrecarga no servidor e mitigar spam de e-mails.
+
+### Bloqueio por IP
+
+Além do limite de taxa, o Nginx permite aplicar regras de bloqueio por IP quando necessário para conter abuso.
+
+### SSL/TLS com HTTPS
+
+A terminação SSL/TLS também é feita no Nginx, garantindo comunicação externa via **HTTPS** com certificado válido.
 
 ### Validação de Dados
 
-Todos os campos do formulário passam por validação via **Jakarta Validation** antes de qualquer processamento. Campos obrigatórios, limites de tamanho e formato de e-mail são verificados server-side, garantindo que dados malformados ou incompletos sejam rejeitados com `400 Bad Request`.
-
-### SSL / HTTPS
-
-O servidor de produção está configurado com **Nginx** como proxy reverso, responsável pelo certificado SSL e terminação HTTPS. Todo tráfego externo é forçado para HTTPS antes de chegar ao container.
-
-### Proteção contra Spam
-
-Por ora, o e-mail de destino da empresa está configurado com **caixa de spam automática**, filtrando submissões indesejadas enquanto não há rate limiting implementado na aplicação.
-
-> 🔜 **Próxima atualização:** implementação de **Rate Limit** por ip de cliente, usando **Redis** como backend de contagem, para proteção contra abuso do endpoint.
+O backend aplica validação de payload com **Jakarta Validation** para rejeitar entradas malformadas com `400 Bad Request`.
 
 ---
 
-## 🚀 Como Rodar
+## 🚀 Como Rodar (Local)
 
 ### Pré-requisitos
 
-- [Docker](https://docs.docker.com/get-docker/) e [Docker Compose](https://docs.docker.com/compose/) instalados — para rodar via container
-- Java 21 + Gradle — para rodar localmente sem Docker
-- Um servidor SMTP configurado (ex: Gmail com senha de app) e um e-mail de destino para receber as mensagens
+- Java 21
+- Gradle
+- SMTP configurado (usuário, senha de app e e-mail de destino)
 
----
-
-### 1️⃣ Configure o `.env`
-
-O repositório já inclui o arquivo `.env` na raiz com as variáveis prontas. **Basta preencher os valores:**
-
-```env
-MAIL_USERNAME=       # e-mail de origem (pertencente ao servidor SMTP)
-MAIL_APP_PASSWORD=   # senha de app do e-mail de origem (não a senha normal)
-MAIL_TO=             # e-mail de destino que receberá as mensagens do formulário
-```
-
-> ⚠️ Não commite o `.env` com valores reais. Ele serve como template — preencha apenas localmente.
-
----
-
-### ▶️ Opção A — Docker Compose (recomendado)
-
-Com o `.env` preenchido, basta gerar o JAR e subir o container:
+### 1) Configure variáveis de ambiente
 
 ```bash
-# 1. Gere o JAR
-./gradlew bootJar
-
-# 2. Suba o container (lê o .env automaticamente)
-docker compose up --build
-
-# Para rodar em background
-docker compose up --build -d
-
-# Para parar
-docker compose down
+export MAIL_USERNAME="seu-email@gmail.com"
+export MAIL_APP_PASSWORD="sua-senha-app"
+export MAIL_TO="destino@empresa.com.br"
 ```
 
-O serviço ficará disponível em `http://localhost:8080`.
-
----
-
-### ▶️ Opção B — Localmente via Gradle (profile demo)
-
-Com o `.env` preenchido, exporte as variáveis e inicie a aplicação com o profile `demo`:
+### 2) Rode a aplicação
 
 ```bash
-# Linux / macOS — exporta as variáveis do .env e sobe a aplicação
-export $(cat .env | grep -v '^#' | xargs)
-./gradlew bootRun --args='--spring.profiles.active=demo'
+./gradlew bootRun
 ```
 
-```powershell
-# Windows (PowerShell) — preencha os valores diretamente
-$env:MAIL_USERNAME="seu-email@gmail.com"
-$env:MAIL_APP_PASSWORD="xxxx xxxx xxxx xxxx"
-$env:MAIL_TO="destino@empresa.com.br"
-
-./gradlew bootRun --args='--spring.profiles.active=demo'
-```
+Aplicação disponível em `http://localhost:8081`.
 
 ---
 
@@ -175,14 +152,9 @@ $env:MAIL_TO="destino@empresa.com.br"
 ./gradlew test
 ```
 
-Os testes cobrem:
+Relatório HTML:
 
-- **`EmailServiceTest`** — envio com e sem anexo, validação de tamanho do arquivo, nome de arquivo obrigatório, tratamento de exceções do JavaMailSender.
-- **`EmailControllerTest`** — integração via MockMvc: requisição válida retorna `204`, requisição inválida retorna `400`.
-- **`RealizaemailserviceApplicationTests`** — carregamento do contexto Spring.
-
-Relatório HTML gerado em:
-```
+```text
 build/reports/tests/test/index.html
 ```
 
@@ -191,46 +163,11 @@ build/reports/tests/test/index.html
 ## 📦 Build
 
 ```bash
-# Compilar e gerar JAR executável
-./gradlew bootJar
-
-# JAR gerado em:
-# build/libs/realizaemailservice-0.0.1-SNAPSHOT.jar
+./gradlew clean build
 ```
 
----
+JAR gerado em:
 
-## 🐳 Dockerfile
-
-```dockerfile
-FROM eclipse-temurin:21-jre
-WORKDIR /app
-COPY build/libs/*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
-```
-
-A imagem usa **eclipse-temurin:21-jre** (imagem oficial do OpenJDK, leve e segura).
-
----
-
-## 📁 Estrutura de Arquivos Relevantes
-
-```
-realizaemailservice/
-├── .env                         # Template de variáveis — preencha localmente
-├── Dockerfile
-├── docker-compose.yml
-├── build.gradle
-├── src/
-│   ├── main/
-│   │   ├── java/...            # Código-fonte
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── application-demo.properties  # Profile para rodar localmente via Gradle
-│   └── test/
-│       └── java/...            # Testes
-└── build/
-    └── libs/
-        └── *.jar               # JAR gerado pelo Gradle
+```text
+build/libs/realizaemailservice-0.0.1-SNAPSHOT.jar
 ```

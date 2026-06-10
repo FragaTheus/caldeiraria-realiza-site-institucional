@@ -1,6 +1,8 @@
 package br.com.matheusfragadev.realizaemailservice.service;
 
-import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailRequest;
+import br.com.matheusfragadev.realizaemailservice.controller.mail.EmailRequest;
+import br.com.matheusfragadev.realizaemailservice.service.mail.EmailException;
+import br.com.matheusfragadev.realizaemailservice.service.mail.EmailService;
 import jakarta.mail.BodyPart;
 import jakarta.mail.Multipart;
 import jakarta.mail.Session;

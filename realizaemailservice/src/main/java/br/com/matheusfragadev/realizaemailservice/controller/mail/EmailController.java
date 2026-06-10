@@ -1,9 +1,8 @@
-package br.com.matheusfragadev.realizaemailservice.infra.controller;
+package br.com.matheusfragadev.realizaemailservice.controller.mail;
 
-import br.com.matheusfragadev.realizaemailservice.service.EmailService;
+import br.com.matheusfragadev.realizaemailservice.service.mail.EmailService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

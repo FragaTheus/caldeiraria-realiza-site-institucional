@@ -1,4 +1,4 @@
-package br.com.matheusfragadev.realizaemailservice.infra.controller;
+package br.com.matheusfragadev.realizaemailservice.controller.handler;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

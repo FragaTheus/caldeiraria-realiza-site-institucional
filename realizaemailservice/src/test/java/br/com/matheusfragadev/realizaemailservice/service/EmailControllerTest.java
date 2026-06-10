@@ -1,8 +1,10 @@
 package br.com.matheusfragadev.realizaemailservice.service;
 
-import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailController;
-import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailExceptionHandler;
-import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailRequest;
+import br.com.matheusfragadev.realizaemailservice.controller.mail.EmailController;
+import br.com.matheusfragadev.realizaemailservice.controller.handler.EmailExceptionHandler;
+import br.com.matheusfragadev.realizaemailservice.controller.mail.EmailRequest;
+import br.com.matheusfragadev.realizaemailservice.service.mail.EmailException;
+import br.com.matheusfragadev.realizaemailservice.service.mail.EmailService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

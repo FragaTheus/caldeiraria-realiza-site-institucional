@@ -1,4 +1,4 @@
-package br.com.matheusfragadev.realizaemailservice.infra.controller;
+package br.com.matheusfragadev.realizaemailservice.controller.mail;
 
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

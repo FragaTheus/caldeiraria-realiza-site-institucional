@@ -1,6 +1,6 @@
-package br.com.matheusfragadev.realizaemailservice.service;
+package br.com.matheusfragadev.realizaemailservice.service.mail;
 
-import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailRequest;
+import br.com.matheusfragadev.realizaemailservice.controller.mail.EmailRequest;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
