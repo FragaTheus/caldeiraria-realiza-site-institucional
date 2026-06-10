@@ -3,6 +3,7 @@ package br.com.matheusfragadev.realizaemailservice.service;
 import br.com.matheusfragadev.realizaemailservice.infra.controller.EmailRequest;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Base64;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class EmailService {
@@ -22,6 +24,7 @@ public class EmailService {
 
     public void sendEmail(EmailRequest request) {
         try {
+            log.info("Preparing to send email from {} <{}>", request.getName(), request.getEmail());
             boolean hasAttachment = request.getAttachmentBase64() != null
                     && !request.getAttachmentBase64().isBlank()
                     && request.getAttachmentName() != null
@@ -36,6 +39,7 @@ public class EmailService {
             helper.setReplyTo(request.getEmail());
 
             if (hasAttachment) {
+                log.info("Processing attachment: {}", request.getAttachmentName());
                 byte[] fileBytes = Base64.getDecoder().decode(request.getAttachmentBase64());
 
                 if (fileBytes.length > 5 * 1024 * 1024) {
@@ -46,9 +50,12 @@ public class EmailService {
             }
 
             javaMailSender.send(message);
+            log.info("Email sent successfully to {}", to);
         } catch (EmailException e) {
+            log.error("EmailException: {}", e.getMessage());
             throw e;
         } catch (Exception e) {
+            log.error("Failed to send email: {}", e.getMessage(), e);
             throw new EmailException("Failed to send email: " + e.getMessage(), e);
         }
     }

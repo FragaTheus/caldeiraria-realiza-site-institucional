@@ -4,6 +4,7 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import headerContent from "@/shared/text-content/headerTextContent.json";
 import FooterWrapper from "@/shared/wrapper/footer-wrapper";
+import { Providers } from "./providers/providers";
 
 const AppHeader = dynamic(
   () => import("@/shared/components/global/app-header"),
@@ -122,7 +123,7 @@ export default function RootLayout({
           ctaLabel={headerContent.header.headerCta.label}
           links={headerContent.header.navLinks}
         />
-        {children}
+        <Providers>{children}</Providers>
         <FooterWrapper />
       </body>
     </html>

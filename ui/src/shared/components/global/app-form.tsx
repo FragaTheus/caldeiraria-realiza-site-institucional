@@ -6,63 +6,43 @@ import {
   contactSchema,
   ContactFormData,
 } from "@/shared/schemas/contact-schema";
+
 import FormField, {
   FormTextArea,
   FormFileField,
   FormFieldProps,
 } from "./form-field";
+
 import { FaCircleNotch } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { FadeInUp, FadeInWithIndex } from "../animate";
-import { sendEmail, EmailRequest } from "@/shared/api/api";
-
-const fileToBase64 = (file: File): Promise<string> =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve((reader.result as string).split(",")[1]);
-    reader.onerror = reject;
-  });
+import { useSendEmail } from "@/shared/hooks/use-send-email";
 
 const ContactForm = ({ ctaText }: { ctaText: string }) => {
   const pathname = usePathname();
+
   const {
     register,
     control,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<ContactFormData>({
     mode: "onChange",
     resolver: zodResolver(contactSchema),
   });
 
+  const { mutateAsync, isPending } = useSendEmail();
+
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const file = data.anexo instanceof FileList ? data.anexo[0] : data.anexo;
-
-      let attachmentBase64: string | undefined;
-      let attachmentName: string | undefined;
-
-      if (file) {
-        attachmentBase64 = await fileToBase64(file);
-        attachmentName = file.name;
-      }
-
-      const payload: EmailRequest = {
-        name: data.nome,
-        company: data.empresa ?? "",
-        phone: data.telefone ?? "",
-        email: data.email,
-        message: data.mensagem,
-        attachmentBase64,
-        attachmentName,
-      };
+      await mutateAsync(data);
 
       reset();
-      sendEmail(payload);
+      return true;
     } catch (error) {
       console.error("Erro ao enviar:", error);
+      return false;
     }
   };
 
@@ -106,16 +86,23 @@ const ContactForm = ({ ctaText }: { ctaText: string }) => {
           </FadeInWithIndex>
         )}
       />
+
       <FadeInUp>
         <button
           type="submit"
-          disabled={isSubmitting}
-          className={`p-2 w-full rounded-sm font-semibold hover:bg-muted-surface/95 group cursor-pointer ${pathname !== "/" ? "bg-primary text-white hover:bg-primary/80" : "bg-surface text-muted-light"}`}
+          disabled={isPending}
+          className={`p-2 w-full rounded-sm font-semibold hover:bg-muted-surface/95 group cursor-pointer ${
+            pathname !== "/"
+              ? "bg-primary text-white hover:bg-primary/80"
+              : "bg-surface text-muted-light"
+          }`}
         >
-          {isSubmitting ? (
+          {isPending ? (
             <div className="flex gap-2 justify-center">
               <FaCircleNotch
-                className={`animate-spin size-5 ${pathname !== "/" ? "text-white" : "text-muted"}`}
+                className={`animate-spin size-5 ${
+                  pathname !== "/" ? "text-white" : "text-muted"
+                }`}
               />
               <span className="text-sm">Enviando...</span>
             </div>

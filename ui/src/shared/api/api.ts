@@ -1,66 +1,18 @@
+"use client";
+
 import axios from "axios";
 
-export interface EmailRequest {
-  name: string;
-  company: string;
-  phone: string;
-  email: string;
-  message: string;
-  attachmentBase64?: string;
-  attachmentName?: string;
+export interface EmailRequest{
+    name: string,
+    company: string,
+    phone: string,
+    email: string,
+    message: string,
+    attachmentBase64?: string,
+    attachmentName?: string,
 }
 
 export const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
 });
 
-export async function sendEmail(data: EmailRequest) {
-  return await api.post("/mail", data);
-}
-
-const sleep = (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
-
-api.interceptors.response.use(
-  (response) => {
-    (response.config as any).__sent = true;
-    return response;
-  },
-
-  async (error) => {
-    const config = error.config;
-
-    if (!config) return Promise.reject(error);
-
-    if (config.__sent) {
-      return Promise.reject(error);
-    }
-
-    config.__retryCount = config.__retryCount || 0;
-
-    const maxRetries = 10;
-
-    const isNetworkError =
-      error.code === "ERR_NETWORK" ||
-      error.code === "ECONNABORTED" ||
-      !error.response;
-
-    const shouldRetry =
-      config.__retryCount < maxRetries &&
-      isNetworkError;
-
-    if (shouldRetry) {
-      config.__retryCount += 1;
-
-      console.log(
-        `Retry ${config.__retryCount}/${maxRetries} (conexão) em 10s...`
-      );
-
-      await sleep(10_000);
-
-      return api(config);
-    }
-
-    return Promise.reject(error);
-  }
-);
