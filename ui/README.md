@@ -1,23 +1,35 @@
-# 🖥️ Caldeiraria Realiza — UI (Frontend)
+# 🖥️ Caldeiraria Realiza — Frontend
 
-Site institucional da Caldeiraria Realiza, desenvolvido em **Next.js** com foco em performance, SEO e experiência visual. Consome o microsserviço de e-mail ([`realizaemailservice`](../realizaemailservice/README.md)) para envio do formulário de contato com suporte a anexos.
+Site institucional feito no ecossistema **Next.js**.
+
+---
+
+## 📚 Sumário
+
+- [Tecnologias](#-tecnologias)
+- [Arquitetura](#-arquitetura)
+- [Páginas](#-páginas)
+- [Formulário de Contato](#-formulário-de-contato)
+- [Validação e Segurança](#-validação-e-segurança)
+- [Como Rodar](#-como-rodar)
+- [Backend Vinculado](#-backend-vinculado)
 
 ---
 
 ## 🛠️ Tecnologias
 
-| Tecnologia | Versão | Uso |
-|---|---|---|
-| Next.js | 16 | Framework React (App Router) |
-| React | 19 | UI |
-| TypeScript | 5 | Tipagem estática |
-| Tailwind CSS | 4 | Estilização utilitária |
-| Framer Motion | 12 | Animações e transições |
-| Swiper | 12 | Carrosséis e sliders |
-| React Hook Form | 7 | Gerenciamento de formulários |
-| Zod | 4 | Validação de schema do formulário |
-| Axios | 1 | Requisições HTTP para o backend |
-| next-sitemap | 4 | Geração automática de sitemap.xml |
+| Tecnologia      | Versão | Uso                                                   |
+| --------------- | ------ | ----------------------------------------------------- |
+| Next.js         | 16     | Framework React (App Router)                          |
+| React           | 19     | UI                                                    |
+| TypeScript      | 5      | Tipagem estática                                      |
+| Tailwind CSS    | 4      | Estilização utilitária                                |
+| Framer Motion   | 12     | Animações e transições                                |
+| Swiper          | 12     | Carrosséis e sliders                                  |
+| React Hook Form | 7      | Gerenciamento de formulários                          |
+| Zod             | 4      | Validação client-side de schema do formulário         |
+| TanStack Query  | 5+     | Requisições HTTP, cache e sincronização com o backend |
+| next-sitemap    | 4      | Geração automática de sitemap.xml                     |
 
 ---
 
@@ -43,40 +55,54 @@ src/
 │   │   ├── component/
 │   │   ├── layout/
 │   │   └── text-content/
-│   └── ...                      # Demais módulos (qualidade, projetos, home)
-└── shared/                      # Componentes e utilitários reutilizáveis
+│   └── ...                      # Demais módulos
+├── shared/                      # Componentes e utilitários reutilizáveis
+│   ├── form/
+│   │   ├── schemas/             # Schemas Zod dos formulários
+│   │   ├── hooks/               # Custom hooks (TanStack Query)
+│   │   └── validation/          # Lógica de validação
+│   └── api/                     # Configuração do TanStack Query
+└── lib/                         # Utilitários gerais
 ```
 
-> **Padrão adotado:** cada feature é auto-contida com seus próprios componentes, layouts, wrappers e conteúdo textual. Os textos são separados em arquivos `.json`, facilitando manutenção e possível internacionalização futura.
+> **Padrão adotado:** cada feature é auto-contida com componentes, layouts, wrappers e conteúdo textual. Os textos estão em arquivos `.json`, facilitando manutenção e internacionalização futura.
 
 ---
 
 ## 📄 Páginas
 
-| Rota | Descrição |
-|---|---|
-| `/` | Página inicial — apresentação, diferenciais e CTA |
-| `/engenharia` | Capacidades técnicas e equipamentos |
-| `/qualidade` | Processos, controle e certificações |
-| `/projetos` | Portfólio de projetos realizados |
-| `/galeria` | Galeria visual: caldeiraria, serralheria, usinagem, soldagem |
+| Rota          | Descrição                                                    |
+| ------------- | ------------------------------------------------------------ |
+| `/`           | Página inicial — apresentação, diferenciais e CTA            |
+| `/engenharia` | Capacidades técnicas e equipamentos                          |
+| `/qualidade`  | Processos, controle e certificações                          |
+| `/projetos`   | Portfólio de projetos realizados                             |
+| `/galeria`    | Galeria visual: caldeiraria, serralheria, usinagem, soldagem |
 
 ---
 
-## 📬 Formulário de Contato
+## Campos do Formulário
 
-O formulário utiliza **React Hook Form** com validação **Zod** e envia os dados via **Axios** para o microsserviço backend [`realizaemailservice`](../realizaemailservice/README.md), que processa o anexo e entrega o e-mail via SMTP.
-
-Suporta envio de **arquivos e anexos** (até 5 MB), necessário para orçamentos com plantas e especificações técnicas.
+| Campo              | Tipo   | Validação Zod                     | Nota                        |
+| ------------------ | ------ | --------------------------------- | --------------------------- |
+| `name`             | String | Max 100 caracteres                | Obrigatório                 |
+| `company`          | String | Max 100 caracteres                | Opcional                    |
+| `phone`            | String | Max 20 caracteres                 | Opcional                    |
+| `email`            | String | Email válido + Max 150 caracteres | Obrigatório                 |
+| `message`          | String | Max 500 caracteres                | Obrigatório                 |
+| `attachmentBase64` | String | Base64 válido (até 5 MB)          | Opcional                    |
+| `attachmentName`   | String | Max 100 caracteres                | Obrigatório se houver anexo |
 
 ---
 
-## 🔒 Segurança
+## 🔒 Validação e Segurança
 
-- **Validação client-side** via Zod antes de qualquer requisição
-- **Validação server-side** no backend (Jakarta Validation)
-- **HTTPS** garantido pelo Nginx com SSL no servidor de produção
-- Comunicação com o backend restrita às origens permitidas via CORS
+- **Validação client-side com Zod** — rejeição de dados inválidos antes de sair do navegador
+- **Validação server-side com Jakarta Validation** — defesa em camadas
+- **HTTPS garantido pelo Nginx** com SSL em produção
+- **CORS** — apenas origens autorizadas podem acessar a API
+- **Rate Limit** — proteção contra spam de formulários
+- **Arquivo Base64** — encapsulamento seguro para anexos
 
 ---
 
@@ -85,7 +111,7 @@ Suporta envio de **arquivos e anexos** (até 5 MB), necessário para orçamentos
 ### Pré-requisitos
 
 - Node.js 20+
-- pnpm (recomendado) ou npm
+- pnpm (usado no projeto) ou npm
 
 ### Instalação
 
@@ -128,7 +154,8 @@ ui/
 ├── src/
 │   ├── app/                # Rotas e páginas (App Router)
 │   ├── features/           # Módulos por domínio
-│   └── shared/             # Componentes compartilhados
+│   ├── shared/             # Componentes e hooks compartilhados
+│   └── lib/                # Utilitários
 ├── public/                 # Assets estáticos
 ├── next.config.ts          # Configuração do Next.js
 ├── next-sitemap.config.js  # Configuração do sitemap
@@ -138,7 +165,7 @@ ui/
 
 ---
 
-## 🔗 Backend
+## 🔗 Backend Vinculado
 
 Este frontend depende do microsserviço de e-mail para o formulário de contato:
 👉 [`realizaemailservice` — documentação técnica](../realizaemailservice/README.md)

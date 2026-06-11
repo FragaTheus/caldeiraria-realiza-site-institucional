@@ -1,62 +1,77 @@
 # Caldeiraria Realiza — Site Institucional
 
-Site institucional da **Caldeiraria Realiza**, empresa especializada em caldeiraria, serralheria, usinagem e soldagem, com foco em qualidade, precisão e atendimento personalizado para clientes industriais e construtoras.
+Site profissional da **Caldeiraria Realiza**, empresa especializada em caldeiraria, serralheria, usinagem e soldagem. Funciona como canal direto de contato para orçamentos.
 
 ---
 
-## 🎯 Objetivo
+## 📚 Documentação Técnica
 
-O projeto nasceu da necessidade de dar presença digital profissional à empresa — um canal direto com o cliente que transmita credibilidade, apresente os serviços com clareza e permita o recebimento de contatos e solicitações de orçamento de forma organizada e confiável.
+Se você quer entender a arquitetura:
 
----
-
-## 📌 Escopo
-
-O site cobre as seguintes frentes:
-
-| Módulo | Propósito |
-|---|---|
-| **Página Inicial** | Apresentação da empresa, diferenciais e chamada para contato |
-| **Engenharia** | Capacidades técnicas, equipamentos e especializações |
-| **Qualidade** | Processos, certificações e compromisso com a excelência |
-| **Projetos** | Portfólio de trabalhos realizados |
-| **Galeria** | Acervo visual dos serviços: caldeiraria, serralheria, usinagem e soldagem |
-| **Formulário de Contato** | Submissão de mensagens e anexos diretamente para o e-mail da empresa |
+| Componente   | Link                                                       | Responsabilidade  |
+| ------------ | ---------------------------------------------------------- | ----------------- |
+| **Frontend** | [📄 Documentação Frontend](./ui/README.md)                 | Ecossistema Next  |
+| **Backend**  | [📄 Documentação Backend](./realizaemailservice/README.md) | Ecossitema Spring |
 
 ---
 
-## 💡 Por que este projeto foi necessário?
+## 🎯 Visão Geral do Negócio
 
-A Caldeiraria Realiza atendia majoritariamente por indicação, sem presença digital. A ausência de um canal oficial gerava:
+### O Problema
 
-- **Perda de oportunidades** de novos clientes que buscam fornecedores online
-- **Falta de credibilidade** percebida no primeiro contato com prospects
-- **Processo de contato ineficiente**, dependente de WhatsApp e ligações sem registro
+A Realiza dependia quase exclusivamente de indicações e WhatsApp, o que gerava:
 
-O site resolve esses problemas oferecendo uma vitrine profissional, acessível 24h, com informações completas sobre a empresa e um canal de contato estruturado.
+- **Perda de oportunidades comerciais** — potenciais clientes online não encontravam a empresa
+- **Ausência de presença digital estruturada** — falta de um canal oficial para apresentar serviços, diferenciais e informações da mesma
 
----
+### A Solução
 
-## 📬 Formulário de Contato com Suporte a Anexos
+Um site institucional funciona como canal 24h acessível, com:
 
-Um diferencial importante do projeto é a capacidade de receber **arquivos e anexos** junto com as mensagens de contato — algo essencial para orçamentos que exigem envio de plantas, especificações técnicas e desenhos.
-
-Isso foi viabilizado por um microsserviço backend dedicado, pois soluções de formulário via frontend não suportam envio confiável de arquivos.
-
----
-
-## 🗂️ Repositório
-
-Este repositório é um monorepo contendo:
-
-| Pasta | Descrição | README Técnico |
-|---|---|---|
-| [`ui/`](./ui/) | Frontend — site institucional (Next.js) | [📄 Ver documentação](./ui/README.md) |
-| [`realizaemailservice/`](./realizaemailservice/) | Backend — microsserviço de e-mail (Spring Boot) | [📄 Ver documentação](./realizaemailservice/README.md) |
+- Vitrine profissional consolidada
+- Informações completas sobre capacidades e serviços
+- Registro organizado de todas as solicitações de contato
 
 ---
 
-## 🌐 Acesse
+## ✅ O que o Site Oferece
+
+| Seção          | Função                                          |
+| -------------- | ----------------------------------------------- |
+| **Home**       | Apresentação, diferenciais e CTA para contato   |
+| **Engenharia** | Capacidades técnicas e equipamentos             |
+| **Qualidade**  | Processos, certificações e compromissos         |
+| **Projetos**   | Portfólio de trabalhos realizados               |
+| **Galeria**    | Acervo visual dos serviços                      |
+| **Contato**    | Formulário com suporte a anexos para orçamentos |
+
+---
+
+## 📦 Arquitetura
+
+Monorepo com duas aplicações independentes:
+
+```
+├── ui/                          # Frontend (Next.js)
+│   └── Consome API do backend
+│
+└── realizaemailservice/         # Backend (Spring Boot)
+    └── Processa formulários e envia e-mails via SMTP
+```
+
+| Componente   | Tecnologia                                       | Responsabilidade                                                 |
+| ------------ | ------------------------------------------------ | ---------------------------------------------------------------- |
+| **Frontend** | Next.js 16 + React 19 + Tailwind + Framer Motion | Interface de usuario                                             |
+| **Backend**  | Spring Boot 4.0.5 + Jakarta Validation           | Validação server-side, processamento de anexos e envio de emails |
+
+---
+
+## 🌍 Acesse o Site
 
 [caldeirariarealiza.com.br](https://caldeirariarealiza.com.br)
 
+---
+
+## 📞 Contato e Suporte
+
+Para dúvidas sobre o desenvolvimento ou infraestrutura, consulte os READMEs técnicos vinculados no topo deste documento.

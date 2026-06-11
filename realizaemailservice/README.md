@@ -3,7 +3,20 @@
 Microsserviço backend responsável por receber submissões do formulário de contato do site [caldeirariarealiza.com.br](https://caldeirariarealiza.com.br) e enviá-las por e-mail via SMTP.
 
 > **Por que um backend SMTP próprio?**
-> Soluções de formulário via frontend (EmailJS, FormSubmit etc.) têm limitações para anexos. Neste serviço, o frontend envia o arquivo em Base64, o backend converte e envia como anexo real via SMTP.
+> Soluções de formulário via frontend têm limitações para anexos. Neste serviço, o frontend envia o arquivo em Base64 via json, o backend converte e envia como anexo via SMTP.
+
+---
+
+## 📚 Sumário Técnico
+
+- [Tecnologias](#-tecnologias)
+- [Arquitetura](#-arquitetura)
+- [API Pública](#-api-pública)
+- [Swagger / OpenAPI](#-swagger--openapi)
+- [Segurança](#-segurança)
+- [Como Rodar](#-como-rodar-local)
+- [Testes](#-testes)
+- [Build](#-build)
 
 ---
 
@@ -82,25 +95,11 @@ curl -v -X POST http://localhost:8081/api/v1/mail \
 
 ---
 
-## 📚 Swagger / OpenAPI
-
-A API possui documentação Swagger para consulta pública do contrato.
-
-- Swagger UI: `https://SEU-DOMINIO/swagger-ui/index.html`
-- OpenAPI JSON: `https://SEU-DOMINIO/v3/api-docs`
-
-Para ambiente local:
-
-- Swagger UI: `http://localhost:8081/swagger-ui/index.html`
-- OpenAPI JSON: `http://localhost:8081/v3/api-docs`
-
----
-
 ## 🔒 Segurança
 
 ### CORS no Nginx
 
-O CORS é aplicado no **Nginx** (camada de borda). Requisições de origens não autorizadas são bloqueadas antes de chegarem no backend.
+O CORS é aplicado no **Nginx** (camada de borda que fica no servidor). Requisições de origens não autorizadas são bloqueadas antes de chegarem no backend.
 
 ### Rate Limit no Nginx
 
@@ -142,7 +141,7 @@ export MAIL_TO="destino@empresa.com.br"
 ./gradlew bootRun
 ```
 
-Aplicação disponível em `http://localhost:8081`.
+Aplicação disponível em `http://localhost:8080`.
 
 ---
 
